@@ -33,6 +33,7 @@
     		    ./nixos/configuration.nix
     		    inputs.nixvim.nixosModules.nixvim
     		  ];
+
     		};
 
 		homeConfigurations.edu = home-manager.lib.homeManagerConfiguration {
