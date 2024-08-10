@@ -5,12 +5,12 @@
   };
 
   environment.systemPackages = with pkgs; [
-	prismlauncher
-	google-chrome  
-	keepassxc
-	thunderbird
-	home-manager
-	git	
+	  prismlauncher
+	  google-chrome  
+	  keepassxc
+	  thunderbird
+	  home-manager
+	  git	
   ];
 
   fonts.packages = with pkgs; [
