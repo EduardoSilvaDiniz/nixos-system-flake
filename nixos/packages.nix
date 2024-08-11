@@ -11,6 +11,7 @@
 	  thunderbird
 	  home-manager
 	  git	
+    # unstable.neovim
   ];
 
   fonts.packages = with pkgs; [
