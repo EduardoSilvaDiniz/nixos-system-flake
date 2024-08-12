@@ -11,6 +11,10 @@
 	  thunderbird
 	  home-manager
 	  git	
+	qbittorrent
+	vlc
+	redshift
+	duckstation
     # unstable.neovim
   ];
 
