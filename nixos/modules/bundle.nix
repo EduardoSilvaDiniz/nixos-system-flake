@@ -6,6 +6,6 @@
     ./user.nix
     ./xserver.nix
     ./bootloader.nix
-    #./nixvim/nixvim.nix
+    ./docker.nix
   ];
 }

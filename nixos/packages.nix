@@ -1,19 +1,19 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-		prismlauncher
-		google-chrome  
-		keepassxc
-		thunderbird
-		home-manager
-		qbittorrent
-		vlc
-		redshift
-		duckstation
-		zoom-us
+    prismlauncher
+    google-chrome
+    keepassxc
+    thunderbird
+    home-manager
+    qbittorrent
+    vlc
+    redshift
+    duckstation
+    zoom-us
     git
-	  wget
-	  curl
-	  zsh
+    wget
+    curl
+    zsh
   ];
 
   fonts.packages = with pkgs; [
