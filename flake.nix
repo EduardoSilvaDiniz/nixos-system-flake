@@ -12,10 +12,16 @@
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+    };
   };
 
   outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, ... }@inputs:
     let
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
       system = "x86_64-linux";
       pkgs = nixpkgs-stable.legacyPackages.${system};
     in
