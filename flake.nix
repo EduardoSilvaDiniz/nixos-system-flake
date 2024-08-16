@@ -2,53 +2,41 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs-stable = {
-      url = "github:nixos/nixpkgs/nixos-24.05";
-    };
-    nixpkgs-unstable = {
-      url = "github:nixos/nixpkgs/nixos-unstable";
-    };
+    nixpkgs = { url = "github:nixos/nixpkgs/nixos-24.05"; };
+    nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
-      inputs.nixpkgs.follows = "nixpkgs-stable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
     };
   };
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
 
-  outputs = { nixpkgs-stable, nixpkgs-unstable, home-manager, ... }@inputs:
     let
-      overlays = [
-        inputs.neovim-nightly-overlay.overlays.default
-      ];
       system = "x86_64-linux";
-      pkgs = nixpkgs-stable.legacyPackages.${system};
     in
     {
-      nixosConfigurations = {
-        nixos = nixpkgs-stable.lib.nixosSystem {
-          specialArgs = {
-            pkgs-stable = import nixpkgs-stable {
-              inherit system;
-              config.allowUnfree = true;
-            };
 
-            inherit inputs system;
+      # nixos - system hostname
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
           };
-          modules = [
-            ./nixos/configuration.nix
-            home-manager.nixosModules.home-manager
-          ];
+          inherit inputs system;
         };
+        modules = [
+          ./nixos/configuration.nix
+        ];
       };
-      homeConfigurations = {
-        edu = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./home-manager/home.nix
-          ];
-        };
+
+      homeConfigurations.amper = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${system};
+        modules = [ ./home-manager/home.nix ];
       };
     };
 }
