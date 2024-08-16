@@ -13,7 +13,7 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -23,7 +23,7 @@
       # nixos - system hostname
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          pkgs-stable = import nixpkgs-stable {
+          pkgs-stable = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
           };
