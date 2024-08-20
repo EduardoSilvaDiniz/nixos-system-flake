@@ -21,6 +21,7 @@
   ];
 
   fonts.packages = with pkgs; [
+    fira-code
     jetbrains-mono
     noto-fonts
     noto-fonts-emoji
