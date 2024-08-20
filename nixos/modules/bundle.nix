@@ -7,6 +7,6 @@
     ./xserver.nix
     ./bootloader.nix
     ./docker.nix
-    ./usb-wakeup-disable.nix
+    ./tlp.nix
   ];
 }
