@@ -13,10 +13,11 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, ... }:
 
     let
       system = "x86_64-linux";
+      user = "edu";
     in
     {
 
@@ -27,14 +28,14 @@
             inherit system;
             config.allowUnfree = true;
           };
-          inherit inputs system;
+          inherit system;
         };
         modules = [
           ./nixos/configuration.nix
         ];
       };
 
-      homeConfigurations.amper = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         modules = [ ./home-manager/home.nix ];
       };
