@@ -14,6 +14,10 @@
     wget
     curl
     zsh
+    eza
+    bat
+    delta
+    kitty
   ];
 
   fonts.packages = with pkgs; [
