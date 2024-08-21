@@ -2,42 +2,40 @@
   description = "My system configuration";
 
   inputs = {
-    nixpkgs = { url = "github:nixos/nixpkgs/nixos-24.05"; };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05"; 
 
-    nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable"; 
 
-    nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
+    flake-utils.url = "github:numtide/flake-utils";
+
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
-  outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }: let
+   outputs = inputs @ { self, flake-utils, nixpkgs, nixpkgs-unstable, neovim-nightly-overlay, home-manager, ... }: let
     inherit (self) outputs;
-      system = "x86_64-linux";
-    in
-    {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          pkgs-stable = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          inherit system;
-        };
-        modules = [
-          ./nixos/configuration.nix
-        ];
-      };
 
-      homeConfigurations = {
-        "edu" = import ./hosts/edu {inherit inputs outputs;};
+     forAllSystems = nixpkgs.lib.genAttrs flake-utils.lib.defaultSystems; # change this if i need some weird systems
+    in {
+      defaultPackage =
+        forAllSystems (system: home-manager.defaultPackage.${system});
+
+      devShells = forAllSystems (system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        import ./shell.nix {inherit pkgs;});
+
+      overlays = import ./overlays {inherit inputs;};
+
+      nixosConfigurations = {
+        nixos = import ./hosts/nixos {inherit inputs outputs;};
       };
-    };
+      homeConfigurations = {
+        "edu" =
+          import ./hosts/edu {inherit inputs outputs;};
+      };
+  };
 }

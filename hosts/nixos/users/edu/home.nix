@@ -3,6 +3,8 @@ let cust_pkgs = import ../../pkgs { inherit pkgs; };
 in {
   imports = [
     ../../programs/neovim
+		./zsh.nix
+    ./modules/bundle.nix
   ];
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
