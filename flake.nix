@@ -13,26 +13,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, nixpkgs-unstable, neovim-nightly-overlay, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, neovim-nightly-overlay, home-manager, ... }@inputs:
     let
+      inherit (self) outputs;
       system = "x86_64-linux";
     in
     {
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          pkgs-stable = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          inherit inputs system;
-        };
-        modules = [
-          ./hosts/nixos/configuration.nix
-        ];
+      nixosConfigurations = {
+        nixos = import ./hosts/nixos { inherit inputs outputs system; };
       };
-      homeConfigurations.amper = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home/edu/home.nix ];
+
+      homeConfigurations = {
+        edu = import ./home/edu { inherit inputs outputs system; };
       };
     };
 }
