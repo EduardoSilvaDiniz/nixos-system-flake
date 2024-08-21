@@ -1,14 +1,13 @@
-{inputs, outputs, ...}:
+{inputs, system, ...}:
 inputs.nixpkgs.lib.nixosSystem {
-  specialArgs = {inherit inputs outputs;};
+  specialArgs = {
+    pkgs-stable = inputs.nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    inherit inputs system;
+  };
   modules = [
     ./configuration.nix
-    ./hardware.nix
-  inputs.home-manager.nixosModules.home-manager
-    {
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.users.vinny = import ./users/vinny/home.nix;
-    }
   ];
 }
