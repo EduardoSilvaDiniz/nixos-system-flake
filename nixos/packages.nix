@@ -17,7 +17,23 @@
     eza
     bat
     delta
+
+    ## neovim
     kitty
+    tmux
+    unzip
+    zip
+    fd
+    ripgrep
+    gcc
+    gnumake
+    cmake
+    lazygit
+    python3
+    nixfmt
+    go
+    unzip
+    zip
   ];
 
   fonts.packages = with pkgs; [
