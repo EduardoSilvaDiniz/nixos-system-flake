@@ -1,12 +1,21 @@
-{pkgs, ...}: {
-  nixpkgs.overlays = [
-  (import (builtins.fetchTarball {
-    url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-  }))
-];
+{ config, pkgs, inputs, ...}:
+let
+  neovimconfig = import ../nixvim;
+  nvim = inputs.nixvim.legacyPackages.x86_64-linux.makeNixvimWithModule {
+    inherit pkgs;
+    module = neovimconfig;
+  };
+in
+{
+  home.packages = with pkgs; [
+    nvim
+    # ...
+  ];
 
-programs.neovim = {
-  enable = true;
-  package = pkgs.neovim-nightly;
-};
+
+  programs = {
+    # Let Home Manager install and manage itself.
+    home-manager.enable = true;
+    # ...
+  };
 }

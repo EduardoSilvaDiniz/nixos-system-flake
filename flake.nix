@@ -3,24 +3,24 @@
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs/nixos-24.05"; };
+
     nixpkgs-unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
+
     nixos-hardware = { url = "github:NixOS/nixos-hardware/master"; };
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }@inputs:
-
-    let
+  outputs = inputs @ { self, nixpkgs, home-manager, nixvim, ... }: let
+    inherit (self) outputs;
       system = "x86_64-linux";
-      user = "edu";
-      overlays = [
-        inputs.neovim-nightly-overlay.overlays.default
-      ];
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -36,14 +36,8 @@
         ];
       };
 
-      homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ 
-          ./home-manager/home.nix 
-          {
-            nixpkgs.overlays = overlays;
-          }
-        ];
+      homeConfigurations = {
+        "edu" = import ./hosts/edu {inherit inputs outputs;};
       };
     };
 }

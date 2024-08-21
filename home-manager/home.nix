@@ -1,7 +1,8 @@
-{
+{inputs, ... }: {
 	imports = [
 		./zsh.nix
     ./modules/bundle.nix
+    inputs.nixvim.homeManagerModules.nixvim
 	];
 
 	home = {
