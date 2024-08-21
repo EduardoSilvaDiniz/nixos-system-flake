@@ -1,7 +1,11 @@
 { inputs, system, ... }:
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
-    pkgs-stable = import inputs.nixpkgs {
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgs-unstable = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };

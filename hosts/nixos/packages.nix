@@ -1,43 +1,43 @@
-{ pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-    prismlauncher
-    google-chrome
-    keepassxc
-    thunderbird
-    home-manager
-    qbittorrent
-    vlc
-    redshift
-    duckstation
-    zoom-us
-    git
-    wget
-    curl
-    zsh
-    eza
-    bat
-    delta
+{ pkgs, pkgs-unstable, ... }: {
+  environment.systemPackages = [
+    pkgs.prismlauncher
+    pkgs.google-chrome
+    pkgs.keepassxc
+    pkgs.thunderbird
+    pkgs.home-manager
+    pkgs.qbittorrent
+    pkgs.vlc
+    pkgs.redshift
+    pkgs.duckstation
+    pkgs.zoom-us
+    pkgs.git
+    pkgs.wget
+    pkgs.curl
+    pkgs.zsh
+    pkgs.eza
+    pkgs.bat
+    pkgs.delta
 
-    ## neovim
-    kitty
-    tmux
-    unzip
-    zip
-    fd
-    ripgrep
-    gcc
-    gnumake
-    cmake
-    lazygit
-    python3
-    nixfmt
-    go
-    unzip
-    zip
-    nodejs
-    gzip 
-    php
-    php83Packages.composer
+    pkgs.kitty
+    pkgs.tmux
+    pkgs.unzip
+    pkgs.zip
+    pkgs.fd
+    pkgs.ripgrep
+    pkgs.gcc
+    pkgs.gnumake
+    pkgs.cmake
+    pkgs.lazygit
+    pkgs.python3
+    pkgs.nixfmt
+    pkgs.go
+    pkgs.unzip
+    pkgs.zip
+    pkgs.nodejs
+    pkgs.gzip
+    pkgs.php
+    pkgs.php83Packages.composer
+    pkgs-unstable.neovim
   ];
 
   fonts.packages = with pkgs; [

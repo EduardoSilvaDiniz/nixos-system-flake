@@ -1,22 +1,9 @@
-{ lib, config, pkgs, ... }: let
-  custom-vim-plugins =
-    pkgs.vimPlugins.extend
-    (pkgs.callPackage ../../pkgs/vim-plugins.nix {
-      inherit (pkgs.vimUtils) buildVimPlugin;
-      inherit (pkgs.neovimUtils) buildNeovimPlugin;
-    });
-in {
+{ lib, config, pkgs, ... }: {
   home.file.".config/nvim" = {
     source = ../../dotfiles/nvim;
     recursive = true;
   };
-
-  home.shellAliases = {leetcode = "nvim leetcode.nvim";};
   programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    withPython3 = true;
-    withNodeJs = true;
     plugins = with pkgs.vimPlugins; [
       SchemaStore-nvim
       autosave-nvim
@@ -29,9 +16,6 @@ in {
       cmp-path
       cmp_luasnip
       comment-nvim
-      # copilot-lua
-      custom-vim-plugins.copilot-lua
-      custom-vim-plugins.leetcode-nvim
       diffview-nvim
       efmls-configs-nvim
       fidget-nvim
@@ -57,8 +41,6 @@ in {
       nvim-ts-autotag
       nvim-web-devicons
       oil-nvim
-      pkgs.master-pkgs.vimPlugins.nvim-remote-containers
-      pkgs.master-pkgs.vimPlugins.telescope-sg
       plenary-nvim
       rustaceanvim
       sg-nvim
@@ -121,24 +103,12 @@ in {
         xsel
         yaml-language-server
         zk
-      ]
-      ++ (
-        if stdenv.isLinux
-        then [master-pkgs.htmx-lsp]
-        else []
-      ); # do this until i can get htmx lsp to build on darwin
-
-    extraLuaPackages = ps: with ps; [magick];
+      ];
+    extraLuaPackages = ps: with ps; [
+    ];
 
     extraPython3Packages = pyPkgs:
       with pyPkgs; [
-        cairosvg
-        jupyter-client
-        nbformat
-        plotly
-        pnglatex
-        pynvim
-        pyperclip
       ];
   };
 }
