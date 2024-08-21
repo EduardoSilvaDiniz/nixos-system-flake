@@ -13,15 +13,16 @@
       url = "github:nix-community/neovim-nightly-overlay";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, ... }@inputs:
 
     let
       system = "x86_64-linux";
       user = "edu";
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
     in
     {
-
-      # nixos - system hostname
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         specialArgs = {
           pkgs-stable = import nixpkgs {
@@ -37,7 +38,12 @@
 
       homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        modules = [ ./home-manager/home.nix ];
+        modules = [ 
+          ./home-manager/home.nix 
+          {
+            nixpkgs.overlays = overlays;
+          }
+        ];
       };
     };
 }
