@@ -34,6 +34,10 @@
     go
     unzip
     zip
+    nodejs
+    gzip 
+    php
+    php83Packages.composer
   ];
 
   fonts.packages = with pkgs; [
