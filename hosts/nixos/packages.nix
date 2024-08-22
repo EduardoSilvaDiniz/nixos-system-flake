@@ -17,7 +17,6 @@
     pkgs.eza
     pkgs.bat
     pkgs.delta
-
     pkgs.kitty
     pkgs.tmux
     pkgs.unzip
@@ -37,7 +36,10 @@
     pkgs.gzip
     pkgs.php
     pkgs.php83Packages.composer
+    pkgs.cargo
+    pkgs.python312Packages.pip
     pkgs-unstable.neovim
+    pkgs.lua51Packages.rocks-nvim
   ];
 
   fonts.packages = with pkgs; [
