@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -9,65 +9,46 @@
       nvim-treesitter.withAllGrammars
     ];
     extraPackages = with pkgs; [
-      #LSPs
+      ## LSPs
       vscode-langservers-extracted # html/css/js
-      nil # nix
-      nixfmt #nix
       nodePackages.pyright # python
       nodePackages.sql-formatter # sql
       nodePackages.typescript-language-server # typescript
-
+      nil # nix
       gopls # Go
-      clang # C/C++
+      clang-tools # C/C++
       jdt-language-server # Java
       nodePackages_latest.intelephense # php
       lua-language-server # Lua
       nodePackages_latest.bash-language-server # bash
 
       ## DAP
-      #NOT FOUND js-debug-adapter # JavaScript/TypeScript
       delve # Go
       vscode-extensions.ms-vscode.cpptools # C/C++
-      #NOT FOUND java-debug-adapter # java
-      #php-debug-adapter # PHP
+      vscode-extensions.vscjava.vscode-java-debug # java
+      vscode-extensions.xdebug.php-debug # php
 
       ## linters
       eslint_d # JavaScript/TypeScript
       golangci-lint # Go
       shellcheck # Shell scripts
       checkstyle # Java
-      #phpcs # PHP
-      #luacheck # lua
+      luajitPackages.luacheck # lua
 
       ## formatter
       prettierd # JavaScript/TypeScript, HTML, CSS
-      #goimports # Go
+      gosimports # Go
       gofumpt # Go
       google-java-format  # Java
-      #phpcbf  # PHP
+      php83Packages.php-codesniffer
       stylua  # Lua
       shfmt  # Shell scripts
+      nixfmt-rfc-style # nix
 
       ## softwares utils
-      php83Packages.composer
-      nodejs
-      src-cli
       fd
       ripgrep
       lazygit
-      unzip
-      zip
-      gzip
-
-      ## compilers
-      gcc
-      gnumake
-      cmake
-      python3
-      go
-      nodejs
-      php
-      cargo
     ];
   };
          

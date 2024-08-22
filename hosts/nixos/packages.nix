@@ -1,26 +1,38 @@
-{ pkgs, pkgs-unstable, ... }: {
-  environment.systemPackages = [
-    pkgs.prismlauncher
-    pkgs.google-chrome
-    pkgs.keepassxc
-    pkgs.thunderbird
-    pkgs.home-manager
-    pkgs.qbittorrent
-    pkgs.vlc
-    pkgs.redshift
-    pkgs.duckstation
-    pkgs.zoom-us
-    pkgs.git
-    pkgs.wget
-    pkgs.curl
-    pkgs.zsh
-    pkgs.eza
-    pkgs.bat
-    pkgs.delta
-    pkgs.kitty
-    pkgs.tmux
-    pkgs.unzip
-    pkgs.zip
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [
+    prismlauncher
+    google-chrome
+    keepassxc
+    thunderbird
+    home-manager
+    qbittorrent
+    vlc
+    redshift
+    duckstation
+    zoom-us
+    git
+    wget
+    curl
+    zsh
+    eza
+    bat
+    delta
+    kitty
+    tmux
+    php83Packages.composer
+    src-cli
+    unzip
+    zip
+    gzip
+
+    ## compilers
+    gcc gnumake cmake
+    bintools
+    binutils
+    python3
+    nodejs
+    go
+    php
   ];
 
   fonts.packages = with pkgs; [
