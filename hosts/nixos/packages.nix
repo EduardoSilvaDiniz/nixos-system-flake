@@ -21,7 +21,6 @@
     pkgs.tmux
     pkgs.unzip
     pkgs.zip
-    pkgs-unstable.neovim
   ];
 
   fonts.packages = with pkgs; [
