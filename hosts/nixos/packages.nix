@@ -21,25 +21,7 @@
     pkgs.tmux
     pkgs.unzip
     pkgs.zip
-    pkgs.fd
-    pkgs.ripgrep
-    pkgs.gcc
-    pkgs.gnumake
-    pkgs.cmake
-    pkgs.lazygit
-    pkgs.python3
-    pkgs.nixfmt
-    pkgs.go
-    pkgs.unzip
-    pkgs.zip
-    pkgs.nodejs
-    pkgs.gzip
-    pkgs.php
-    pkgs.php83Packages.composer
-    pkgs.cargo
-    pkgs.python312Packages.pip
     pkgs-unstable.neovim
-    pkgs.lua51Packages.rocks-nvim
   ];
 
   fonts.packages = with pkgs; [

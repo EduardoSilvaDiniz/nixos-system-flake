@@ -2,15 +2,12 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    #enableAutosuggestions = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
-    shellAliases =
-      let
+    shellAliases = let
         flakeDir = "~/nix";
-      in
-      {
+      in {
         rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
         upd = "nix flake update ${flakeDir}";
         upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
@@ -31,7 +28,7 @@
     oh-my-zsh = {
       enable = true;
       plugins = [ "sudo" "golang" "tmux" "docker" "git" "git-commit" ];
-      theme = "agnoster";
+      theme = "gallois";
     };
   };
 }

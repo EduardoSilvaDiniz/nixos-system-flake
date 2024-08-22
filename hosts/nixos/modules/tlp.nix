@@ -17,6 +17,8 @@
       START_CHARGE_THRESH_BAT0 = 40; # 40 and bellow it starts to charge
       STOP_CHARGE_THRESH_BAT0 = 80; # 80 and above it stops charging
       USB_AUTOSUSPEND = 0;
+      USB_DENYLIST = "*";
+      USB_AUTOSUSPEND_DISABLE_ON_SHUTDOWN=1;
     };
   };
 }
