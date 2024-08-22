@@ -20,22 +20,22 @@
       shfmt
       src-cli
       stylua
-    fd
-    ripgrep
-    gcc
-    gnumake
-    cmake
-    lazygit
-    python3
-    nixfmt
-    go
-    unzip
-    zip
-    nodejs
-    gzip
-    php
-    php83Packages.composer
-    cargo
+      fd
+      ripgrep
+      gcc
+      gnumake
+      cmake
+      lazygit
+      python3
+      nixfmt
+      go
+      unzip
+      zip
+      nodejs
+      gzip
+      php
+      php83Packages.composer
+      cargo
     ];
   };
 }
