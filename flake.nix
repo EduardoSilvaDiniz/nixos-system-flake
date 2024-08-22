@@ -19,6 +19,8 @@
       system = "x86_64-linux";
     in
     {
+      overlays = import ./overlays {inherit inputs;};
+
       nixosConfigurations = {
         nixos = import ./hosts/nixos { inherit inputs outputs system; };
       };

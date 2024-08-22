@@ -1,5 +1,6 @@
 { lib, config, pkgs, ... }: {
   programs.neovim = {
+    enable = true;
     defaultEditor = true;
     withPython3 = true;
     withNodeJs = true;
@@ -12,7 +13,6 @@
       nodePackages.pyright
       nodePackages.sql-formatter
       nodePackages.typescript-language-server
-      vscode-html-languageserver
       nodejs
       prettierd
       rust-analyzer
