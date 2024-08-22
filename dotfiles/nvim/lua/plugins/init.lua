@@ -1,23 +1,33 @@
-require("plugins.autopairs")
-require("plugins.autosave")
-require("plugins.copilot")
-require("plugins.diffview")
-require("plugins.fzf")
-require("plugins.gitsigns")
-require("plugins.harpoon")
-require("plugins.image")
-require("plugins.indent-blankline")
-require("plugins.leetcode")
-require("plugins.lsp")
-require("plugins.lualine")
-require("plugins.nvim-cmp")
-require("plugins.nvim-web-devicons")
-require("plugins.oil")
-require("plugins.theme")
-require("plugins.tint")
-require("plugins.tmux")
-require("plugins.treesitter")
-require("plugins.undotree")
-require("plugins.vim-fugitive")
-require("plugins.which-key")
-require("plugins.zk")
+local function findFiles()
+  local status, files = pcall(io.popen, 'find "$HOME"/.config/nvim/lua/' .. "plugins" .. " -type f")
+  if not status then
+    vim.print("The find command could not be executed")
+  end
+
+  return files
+end
+
+local function clearPath(filePath)
+  return filePath:gmatch("%/lua%/(.+).lua$")({ 0 }):gsub("/", ".")
+end
+
+local function tableFactory()
+  local pluginsTable = {}
+  local files = findFiles()
+
+  for file in files:lines() do
+    if not string.find(file, "init") then
+      local pluginPath = clearPath(file)
+      --local objPlugin = require(pluginPath)
+      local status, objPlugin = pcall(require, pluginPath)
+      if not status then
+        vim.print("not found plugin " .. pluginPath)
+      end
+
+      table.insert(pluginsTable, objPlugin)
+    end
+  end
+  return pluginsTable
+end
+
+return tableFactory()
