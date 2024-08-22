@@ -6,37 +6,69 @@
     withPython3 = true;
     withNodeJs = true;
     plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
     ];
     extraPackages = with pkgs; [
-      lua-language-server
-      nil
-      nixfmt
-      nodePackages.pyright
-      nodePackages.sql-formatter
-      nodePackages.typescript-language-server
+      #LSPs
+      vscode-langservers-extracted # html/css/js
+      nil # nix
+      nixfmt #nix
+      nodePackages.pyright # python
+      nodePackages.sql-formatter # sql
+      nodePackages.typescript-language-server # typescript
+
+      gopls # Go
+      clang # C/C++
+      jdt-language-server # Java
+      nodePackages_latest.intelephense # php
+      lua-language-server # Lua
+      nodePackages_latest.bash-language-server # bash
+
+      ## DAP
+      #NOT FOUND js-debug-adapter # JavaScript/TypeScript
+      delve # Go
+      vscode-extensions.ms-vscode.cpptools # C/C++
+      #NOT FOUND java-debug-adapter # java
+      #php-debug-adapter # PHP
+
+      ## linters
+      eslint_d # JavaScript/TypeScript
+      golangci-lint # Go
+      shellcheck # Shell scripts
+      checkstyle # Java
+      #phpcs # PHP
+      #luacheck # lua
+
+      ## formatter
+      prettierd # JavaScript/TypeScript, HTML, CSS
+      #goimports # Go
+      gofumpt # Go
+      google-java-format  # Java
+      #phpcbf  # PHP
+      stylua  # Lua
+      shfmt  # Shell scripts
+
+      ## softwares utils
+      php83Packages.composer
       nodejs
-      prettierd
-      rust-analyzer
-      shellcheck
-      shfmt
       src-cli
-      stylua
       fd
       ripgrep
+      lazygit
+      unzip
+      zip
+      gzip
+
+      ## compilers
       gcc
       gnumake
       cmake
-      lazygit
       python3
-      nixfmt
       go
-      unzip
-      zip
       nodejs
-      gzip
       php
-      php83Packages.composer
       cargo
     ];
   };
+         
 }
