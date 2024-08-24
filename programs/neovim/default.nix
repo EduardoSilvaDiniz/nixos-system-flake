@@ -21,6 +21,7 @@
       nodePackages_latest.intelephense # php
       lua-language-server # Lua
       nodePackages_latest.bash-language-server # bash
+      markdown-oxide # markdown
 
       ## DAP
       delve # Go
