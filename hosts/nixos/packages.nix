@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
+    linuxKernel.packages.linux_6_1.xpadneo
     prismlauncher
     google-chrome
     keepassxc
@@ -24,6 +25,7 @@
     unzip
     zip
     gzip
+    steam
 
     ## compilers
     gcc gnumake cmake

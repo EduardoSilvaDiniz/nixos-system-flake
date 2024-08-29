@@ -1,7 +1,8 @@
-{ config, lib, modulesPath, ... }: {
+{ config, lib, modulesPath, pkgs, ... }: {
   imports =
     [
       (modulesPath + "/installer/scan/not-detected.nix")
+      ./xpadneo.nix
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "ahci" "usb_storage" "sd_mod" ];
@@ -32,4 +33,13 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.opengl = {
+  ## radv: an open-source Vulkan driver from freedesktop
+  driSupport = true;
+  driSupport32Bit = true;
+
+  ## amdvlk: an open-source Vulkan driver from AMD
+  extraPackages = [ pkgs.amdvlk ];
+  extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+};
 }

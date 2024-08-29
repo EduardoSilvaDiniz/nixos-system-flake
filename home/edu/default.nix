@@ -4,7 +4,6 @@ inputs.home-manager.lib.homeManagerConfiguration {
       inherit system;
       config.allowUnfree = true;
     };
-  #pkgs = inputs.nixpkgs.legacyPackages.${system};
   extraSpecialArgs = { inherit inputs outputs; };
   modules = [ ./home.nix ];
 }
