@@ -1,17 +1,34 @@
 {
-  services.xserver = {
-    enable = true;
+  services = {
+    xserver = {
+      enable = true;
 
-    displayManager.lightdm.enable = true;
-    desktopManager.cinnamon.enable = true;
+      displayManager.lightdm.enable = true;
+      desktopManager.cinnamon.enable = true;
 
-    layout = "br";
-    xkbVariant = "";
+      xkb = {
+        variant = "";
+        layout = "br";
+      };
+
+    };
+
+    displayManager = { 
+      autoLogin = {
+        enable = true;
+        user = "edu";
+      };
+    };
 
     libinput = {
       enable = true;
-      mouse.accelProfile = "flat";
-      touchpad.accelProfile = "flat";
+      mouse = {
+        accelProfile = "flat";
+      };
+
+      touchpad = {
+        accelProfile = "flat";
+      };
     };
   };
 }

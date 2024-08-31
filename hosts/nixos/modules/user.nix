@@ -5,12 +5,9 @@
     defaultUserShell = pkgs.zsh;
 
     users.edu = {
-    isNormalUser = true;
-    description = "Eduardo Silva";
-    extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" "docker" ];
+      isNormalUser = true;
+      description = "Eduardo Silva";
+      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" "docker" ];
     };
   };
-
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "edu";
 }

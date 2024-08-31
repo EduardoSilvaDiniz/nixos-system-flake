@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, pkgs, ... }: {
+{
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/b71e7e70-af18-4de2-bc98-bf4954832d9e";
