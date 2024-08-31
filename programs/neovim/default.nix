@@ -5,7 +5,7 @@
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     withPython3 = true;
     withNodeJs = true;
-    plugins =           with pkgs.vimPlugins; [
+    plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
     ];
     extraPackages = with pkgs; [

@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    linuxKernel.packages.linux_6_1.xpadneo
     prismlauncher
     google-chrome
     keepassxc
@@ -35,6 +34,8 @@
     nodejs
     go
     php
+    dart 
+    flutter
   ];
 
   fonts.packages = with pkgs; [
