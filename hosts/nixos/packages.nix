@@ -1,6 +1,6 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    prismlauncher
+    ## Softwares
     google-chrome
     keepassxc
     thunderbird
@@ -8,34 +8,38 @@
     qbittorrent
     vlc
     redshift
-    duckstation
     zoom-us
-    git
-    wget
-    curl
-    zsh
-    eza
-    bat
-    delta
     kitty
     tmux
-    php83Packages.composer
-    src-cli
-    unzip
-    zip
-    gzip
-    steam
+    tlp
 
-    ## compilers
-    gcc gnumake cmake
-    bintools
-    binutils
+    ## Commands utils
+    zip unzip unrar
+    eza bat delta
+    wget curl
+    src-cli
+    git
+    zsh
+    btop
+    bintools binutils
+
+    ## Games
+    steam
+    lutris
+    prismlauncher
+    duckstation
+
+    ## Compilers/Languages
+    gcc 
     python3
     nodejs
     go
     php
-    dart 
-    flutter
+    dart flutter
+
+    ## Project managers
+    php83Packages.composer
+    gnumake cmake
   ];
 
   fonts.packages = with pkgs; [

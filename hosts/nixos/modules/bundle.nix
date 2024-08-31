@@ -7,7 +7,6 @@
     ./xserver.nix
     ./bootloader.nix
     ./docker.nix
-    ./tlp.nix
     ./languages.nix
   ];
 }
