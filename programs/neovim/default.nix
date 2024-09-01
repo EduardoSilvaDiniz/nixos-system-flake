@@ -29,21 +29,26 @@
       vscode-extensions.vscjava.vscode-java-debug # java
       vscode-extensions.xdebug.php-debug # php
 
-      ## linters
-      eslint_d # JavaScript/TypeScript
-      golangci-lint # Go
-      shellcheck # Shell scripts
-      checkstyle # Java
-      luajitPackages.luacheck # lua
+      ## linters ## formatter
+      cppcheck # C/C++
+      isort black # python
+      cmake-format # cmake
 
-      ## formatter
+      #htmlbeautifier djlint # HTML
+      stylelint rustywind # CSS
+      eslint_d # JavaScript/TypeScript
       prettierd # JavaScript/TypeScript, HTML, CSS
-      gosimports # Go
-      gofumpt # Go
-      google-java-format  # Java
-      php83Packages.php-codesniffer
+      php83Packages.php-codesniffer 
+      php83Packages.php-cs-fixer 
+      php83Packages.phpinsights 
+      #php83Packages.pint 
+      #php83Packages.prettier 
+      #php83Packages.prettynd # PHP
+      rustfmt  # Rust
+      gosimports gofumpt goimports-reviser golines golangci-lint # Go
+      google-java-format checkstyle # Java
       stylua  # Lua
-      shfmt  # Shell scripts
+      shfmt shellcheck# Shell scripts
       nixfmt-rfc-style # nix
 
       ## softwares utils

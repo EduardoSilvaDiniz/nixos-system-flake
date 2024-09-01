@@ -14,14 +14,15 @@
     tlp
 
     ## Commands utils
+    zsh
     zip unzip unrar
     eza bat delta
     wget curl
     src-cli
     git
-    zsh
     btop
     bintools binutils
+    fastfetch
 
     ## Games
     steam
@@ -30,16 +31,19 @@
     duckstation
 
     ## Compilers/Languages
-    gcc 
-    python3
-    nodejs
-    go
-    php
-    dart flutter
+    gcc #C/C++
+    python3 # python
+    nodejs # js
+    go # golang
+    php # php
+    dart flutter # dart/Flutter
+    jdk jdk8 # java stable and java 8
 
     ## Project managers
-    php83Packages.composer
-    gnumake cmake
+    php83Packages.composer # php
+    gnumake meson ninja # C/C++
+    gradle gradle-completion # java/C/C++
+
   ];
 
   fonts.packages = with pkgs; [
