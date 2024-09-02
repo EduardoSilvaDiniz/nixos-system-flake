@@ -2,6 +2,7 @@
   imports = [
     ./hardware.nix
     ./packages.nix
+    ./packages-unstable.nix
     ./modules/bundle.nix
   ];
 

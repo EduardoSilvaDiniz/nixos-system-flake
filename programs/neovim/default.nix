@@ -16,7 +16,6 @@
       nodePackages.typescript-language-server # typescript
       nil # nix
       gopls # Go
-      clang-tools # C/C++
       jdt-language-server # Java
       nodePackages_latest.intelephense # php
       lua-language-server # Lua

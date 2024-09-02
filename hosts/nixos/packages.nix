@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs,pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
     ## Softwares
     google-chrome
