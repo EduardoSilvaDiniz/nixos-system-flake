@@ -23,6 +23,8 @@
     btop
     bintools binutils
     fastfetch
+    xclip
+
 
     ## Games
     steam
@@ -38,8 +40,16 @@
     php # php
     dart flutter # dart/Flutter
     jdk jdk8 # java stable and java 8
+    rustc
+    clang
+    cmake
+    gnumake
+
+    ## dap
+    vscode-extensions.ms-vscode.cpptools
 
     ## Project managers
+    cargo # rust
     php83Packages.composer # php
     gnumake meson ninja # C/C++
     gradle gradle-completion # java/C/C++
