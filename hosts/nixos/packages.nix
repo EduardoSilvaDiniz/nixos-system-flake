@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     ## Softwares
@@ -13,7 +13,6 @@
     kitty
     tmux
     tlp
-    discord
     dbeaver-bin
     vesktop
 
@@ -69,9 +68,10 @@
     gradle-completion # java/C/C++
 
     ## gnome
+    gnome3.gnome-tweaks
     gnomeExtensions.appindicator
     gnome.gnome-settings-daemon
-    adwaita-icon-theme
+    gnome.adwaita-icon-theme
   ];
 
   fonts.packages = with pkgs; [
@@ -85,4 +85,5 @@
     powerline-symbols
     (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
   ];
+
 }
