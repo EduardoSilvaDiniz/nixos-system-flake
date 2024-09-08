@@ -2,9 +2,8 @@
   services = {
     xserver = {
       enable = true;
-
-      displayManager.lightdm.enable = true;
-      desktopManager.cinnamon.enable = true;
+      displayManager.gdm.enable = true;
+      desktopManager.gnome.enable = true;
 
       xkb = {
         variant = "";
@@ -13,7 +12,7 @@
 
     };
 
-    displayManager = { 
+    displayManager = {
       autoLogin = {
         enable = true;
         user = "edu";

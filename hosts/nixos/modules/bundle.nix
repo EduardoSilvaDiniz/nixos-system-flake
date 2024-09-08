@@ -1,5 +1,7 @@
 {
   imports = [
+    ./extensions.nix
+    ./excludePackages.nix
     ./pcloud.nix
     ./sound.nix
     ./env.nix

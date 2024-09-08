@@ -7,7 +7,7 @@
     users.edu = {
       isNormalUser = true;
       description = "Eduardo Silva";
-      extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" "docker" ];
+      extraGroups = [ "audio" "networkmanager" "wheel" "input" "libvirtd" "docker" ];
     };
   };
 }

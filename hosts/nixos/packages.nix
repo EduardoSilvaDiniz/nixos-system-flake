@@ -1,4 +1,5 @@
-{ pkgs,pkgs-unstable, ... }: {
+{ pkgs, pkgs-unstable, ... }:
+{
   environment.systemPackages = with pkgs; [
     ## Softwares
     google-chrome
@@ -12,19 +13,27 @@
     kitty
     tmux
     tlp
+    discord
+    dbeaver-bin
+    vesktop
 
     ## Commands utils
     zsh
-    zip unzip unrar
-    eza bat delta
-    wget curl
+    zip
+    unzip
+    unrar
+    eza
+    bat
+    delta
+    wget
+    curl
     src-cli
     git
     btop
-    bintools binutils
+    bintools
+    binutils
     fastfetch
     xclip
-
 
     ## Games
     steam
@@ -33,13 +42,15 @@
     duckstation
 
     ## Compilers/Languages
-    gcc #C/C++
+    gcc # C/C++
     python3 # python
     nodejs # js
     go # golang
     php # php
-    dart flutter # dart/Flutter
-    jdk jdk8 # java stable and java 8
+    dart
+    flutter # dart/Flutter
+    jdk
+    jdk8 # java stable and java 8
     rustc
     clang
     cmake
@@ -51,9 +62,16 @@
     ## Project managers
     cargo # rust
     php83Packages.composer # php
-    gnumake meson ninja # C/C++
-    gradle gradle-completion # java/C/C++
+    gnumake
+    meson
+    ninja # C/C++
+    gradle
+    gradle-completion # java/C/C++
 
+    ## gnome
+    gnomeExtensions.appindicator
+    gnome.gnome-settings-daemon
+    adwaita-icon-theme
   ];
 
   fonts.packages = with pkgs; [

@@ -1,13 +1,12 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     withPython3 = true;
     withNodeJs = true;
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
-    ];
+    plugins = with pkgs.vimPlugins; [ nvim-treesitter.withAllGrammars ];
     extraPackages = with pkgs; [
       ## LSPs
       vscode-langservers-extracted # html/css/js
@@ -30,24 +29,32 @@
 
       ## linters ## formatter
       cppcheck # C/C++
-      isort black # python
+      isort
+      black # python
       cmake-format # cmake
 
       #htmlbeautifier djlint # HTML
-      stylelint rustywind # CSS
+      stylelint
+      rustywind # CSS
       eslint_d # JavaScript/TypeScript
       prettierd # JavaScript/TypeScript, HTML, CSS
-      php83Packages.php-codesniffer 
-      php83Packages.php-cs-fixer 
-      php83Packages.phpinsights 
+      php83Packages.php-codesniffer
+      php83Packages.php-cs-fixer
+      php83Packages.phpinsights
       #php83Packages.pint 
       #php83Packages.prettier 
       #php83Packages.prettynd # PHP
-      rustfmt  # Rust
-      gosimports gofumpt goimports-reviser golines golangci-lint # Go
-      google-java-format checkstyle # Java
-      stylua  # Lua
-      shfmt shellcheck# Shell scripts
+      rustfmt # Rust
+      gosimports
+      gofumpt
+      goimports-reviser
+      golines
+      golangci-lint # Go
+      google-java-format
+      checkstyle # Java
+      stylua # Lua
+      shfmt
+      shellcheck # Shell scripts
       nixfmt-rfc-style # nix
 
       ## softwares utils
@@ -56,5 +63,5 @@
       lazygit
     ];
   };
-         
+
 }
