@@ -8,7 +8,6 @@
     home-manager
     qbittorrent
     vlc
-    redshift
     zoom-us
     kitty
     tmux
@@ -48,8 +47,8 @@
     php # php
     dart
     flutter # dart/Flutter
-    jdk
-    jdk8 # java stable and java 8
+    jdk # java stable
+    jdk8 # java lts 8
     rustc
     clang
     cmake
@@ -70,6 +69,8 @@
     ## gnome
     gnome3.gnome-tweaks
     gnomeExtensions.appindicator
+    gnomeExtensions.vitals
+    gnomeExtensions.gtk4-desktop-icons-ng-ding
     gnome.gnome-settings-daemon
     gnome.adwaita-icon-theme
   ];
