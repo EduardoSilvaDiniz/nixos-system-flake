@@ -14,6 +14,7 @@
     tlp
     dbeaver-bin
     vesktop
+    (retroarch.override { cores = with libretro; [ parallel-n64 ]; })
 
     ## Commands utils
     zsh

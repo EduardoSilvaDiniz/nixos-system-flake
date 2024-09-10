@@ -18,7 +18,6 @@
 
       window_padding_width = 4;
 
-
       cursor = "#928374";
       cursor_text_color = "background";
 
