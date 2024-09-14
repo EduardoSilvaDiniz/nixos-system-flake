@@ -15,6 +15,7 @@
     dbeaver-bin
     vesktop
     gnucash
+    emacs
     (retroarch.override { cores = with libretro; [ parallel-n64 ]; })
 
     ## Commands utils
@@ -34,6 +35,12 @@
     binutils
     fastfetch
     xclip
+    ripgrep
+    coreutils
+    fd
+    python312Packages.pynvim
+    python312Packages.jupyter-client
+    python312Packages.jupyter-c-kernel
 
     ## Games
     steam
@@ -52,7 +59,8 @@
     jdk # java stable
     jdk8 # java lts 8
     rustc
-    clang
+    # clang
+    ccls
     cmake
     gnumake
 
@@ -70,11 +78,11 @@
 
     ## gnome
     gnome3.gnome-tweaks
+    gnome.gnome-settings-daemon
+    gnome.adwaita-icon-theme
     gnomeExtensions.appindicator
     gnomeExtensions.vitals
     gnomeExtensions.gtk4-desktop-icons-ng-ding
-    gnome.gnome-settings-daemon
-    gnome.adwaita-icon-theme
   ];
 
   fonts.packages = with pkgs; [

@@ -8,18 +8,28 @@
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
+    emacs.url = "github:nix-community/emacs-overlay";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, nixpkgs-unstable, neovim-nightly-overlay, home-manager, ... }@inputs:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      nixpkgs-unstable,
+      neovim-nightly-overlay,
+      home-manager,
+      ...
+    }@inputs:
     let
       inherit (self) outputs;
       system = "x86_64-linux";
     in
     {
-      overlays = import ./overlays {inherit inputs;};
+      overlays = import ./overlays { inherit inputs; };
 
       nixosConfigurations = {
         nixos = import ./hosts/nixos { inherit inputs outputs system; };

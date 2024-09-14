@@ -1,9 +1,9 @@
-{ inputs, outputs, pkgs, ... }:
 {
   imports = [
     ./zsh.nix
     ./modules/bundle.nix
     ../../programs/neovim
+    ../../programs/emacs
   ];
   home = {
     username = "edu";
