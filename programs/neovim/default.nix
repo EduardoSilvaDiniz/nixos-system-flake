@@ -1,12 +1,18 @@
-{ pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     withPython3 = true;
     withNodeJs = true;
-    plugins = with pkgs.vimPlugins; [ nvim-treesitter.withAllGrammars ];
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+    ];
+
     extraPackages = with pkgs; [
       ## LSPs
       vscode-langservers-extracted # html/css/js
@@ -41,8 +47,8 @@
       php83Packages.php-codesniffer
       php83Packages.php-cs-fixer
       php83Packages.phpinsights
-      #php83Packages.pint 
-      #php83Packages.prettier 
+      #php83Packages.pint
+      #php83Packages.prettier
       #php83Packages.prettynd # PHP
       rustfmt # Rust
       gosimports
@@ -63,5 +69,4 @@
       lazygit
     ];
   };
-
 }

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   hardware = {
     opengl = {
       driSupport = true;
@@ -10,5 +9,4 @@
       ];
     };
   };
-
 }

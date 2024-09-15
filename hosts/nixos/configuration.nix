@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./hardware.nix
     ./packages.nix
@@ -7,12 +6,12 @@
     ./modules/bundle.nix
   ];
 
-  services.udev.packages = [ pkgs.android-udev-rules ];
+  services.udev.packages = [pkgs.android-udev-rules];
   networking.networkmanager.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
-  systemd.tmpfiles.rules = [ "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}" ];
+  systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
 
   networking.hostName = "nixos";
 

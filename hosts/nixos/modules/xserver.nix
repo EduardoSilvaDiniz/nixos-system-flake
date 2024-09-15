@@ -2,7 +2,7 @@
   services = {
     xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" ];
+      videoDrivers = ["amdgpu"];
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
 
@@ -10,7 +10,6 @@
         variant = "";
         layout = "br";
       };
-
     };
 
     displayManager = {

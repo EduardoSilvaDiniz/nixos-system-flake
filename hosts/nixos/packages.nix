@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     ## Softwares
     google-chrome
@@ -16,7 +15,7 @@
     vesktop
     gnucash
     emacs
-    (retroarch.override { cores = with libretro; [ parallel-n64 ]; })
+    (retroarch.override {cores = with libretro; [parallel-n64];})
 
     ## Commands utils
     zsh
@@ -63,6 +62,7 @@
     ccls
     cmake
     gnumake
+    alejandra
 
     ## dap
     vscode-extensions.ms-vscode.cpptools
@@ -94,7 +94,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    (nerdfonts.override {fonts = ["NerdFontsSymbolsOnly"];})
   ];
-
 }

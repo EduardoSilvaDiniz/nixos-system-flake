@@ -1,8 +1,15 @@
-{ config, pkgs, lib, inputs, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}: {
   nixpkgs = {
-    overlays =  [
+    overlays = [
       inputs.neovim-nightly-overlay.overlay
+      inputs.emacs
+      inputs.alejandra.defaultPackage.x86_64-linux
     ];
   };
 }
-

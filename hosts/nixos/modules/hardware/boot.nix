@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   boot = {
     initrd = {
       availableKernelModules = [
@@ -9,10 +8,10 @@
         "usb_storage"
         "sd_mod"
       ];
-      kernelModules = [ "amdgpu" ];
+      kernelModules = ["amdgpu"];
     };
-    kernelModules = [ "kvm-amd" ];
+    kernelModules = ["kvm-amd"];
     kernelPackages = pkgs.linuxPackages_xanmod_stable;
-    extraModulePackages = [ ];
+    extraModulePackages = [];
   };
 }

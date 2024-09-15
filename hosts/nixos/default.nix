@@ -1,4 +1,8 @@
-{ inputs, system, ... }:
+{
+  inputs,
+  system,
+  ...
+}:
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     pkgs = import inputs.nixpkgs {
