@@ -11,6 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
       overlays = [
         (import (builtins.fetchTarball {
           url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+          sha256 = "1h59k5anc01x7k147c09kn5fmypv01x1pcmjw99jixxqs150qdig";
         }))
       ];
     };

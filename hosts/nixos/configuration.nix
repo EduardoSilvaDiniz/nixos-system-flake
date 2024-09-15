@@ -4,9 +4,13 @@
     ./packages.nix
     ./packages-unstable.nix
     ./modules/bundle.nix
+    ./cachix.nix
   ];
 
   services.udev.packages = [pkgs.android-udev-rules];
+  services.emacs.package = pkgs.emacs-unstable;
+  # services.emacs.enable = true;
+
   networking.networkmanager.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   systemd.services."getty@tty1".enable = false;

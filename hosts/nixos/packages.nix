@@ -14,7 +14,6 @@
     dbeaver-bin
     vesktop
     gnucash
-    emacs
     (retroarch.override {cores = with libretro; [parallel-n64];})
 
     ## Commands utils
