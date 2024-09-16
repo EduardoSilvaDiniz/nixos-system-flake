@@ -23,6 +23,5 @@ inputs.nixpkgs.lib.nixosSystem {
   };
   modules = [
     ./configuration.nix
-    ./hardware.nix
   ];
 }

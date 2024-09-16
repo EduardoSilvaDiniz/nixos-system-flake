@@ -1,8 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ../../modules/packages.nix
-    ../../modules/packages-unstable.nix
     ../../config/cachix.nix
+    ../../modules/system/all.nix
+    ../../modules/system/hardware/all.nix
+    ./hardware.nix
   ];
 
   services.udev.packages = [pkgs.android-udev-rules];

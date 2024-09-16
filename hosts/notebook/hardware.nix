@@ -1,8 +1,9 @@
-{}: {
+{
   imports = [
-    ./modules/hardware/boot.nix
-    ./modules/hardware/gpu.nix
-    ./modules/hardware/filesystems.nix
-    ./modules/hardware/tlp.nix
+    ./modules/kernel.nix
+    ./modules/bootloader.nix
+    ./modules/gpu.nix
+    ./modules/filesystems.nix
+    ../../modules/system/hardware/all.nix
   ];
 }

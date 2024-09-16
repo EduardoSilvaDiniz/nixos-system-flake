@@ -5,8 +5,6 @@
     ./desktop
     ./shell
     ./edu.nix
-    ./hardware/opts.nix
-    ./hardware/sound.nix
   ];
   home = {
     username = "edu";
