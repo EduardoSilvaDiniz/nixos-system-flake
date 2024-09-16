@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   imports = [
     ../../config/cachix.nix
-    ../../modules/system/all.nix
-    ../../modules/system/hardware/all.nix
+    ../../modules/system
+    ../../modules/system/hardware
     ./hardware.nix
   ];
 

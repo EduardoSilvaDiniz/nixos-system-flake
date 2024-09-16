@@ -2,9 +2,8 @@
   imports = [
     ./editors/emacs.nix
     ./editors/neovim.nix
-    ./desktop
+    ./editors/kitty.nix
     ./shell
-    ./edu.nix
   ];
   home = {
     username = "edu";
