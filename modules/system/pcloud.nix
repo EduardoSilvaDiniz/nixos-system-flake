@@ -1,4 +1,5 @@
 {pkgs, ...}: let
+  #TODO refatore-me!
   patchelfFixes = pkgs.patchelfUnstable.overrideAttrs (_finalAttrs: _previousAttrs: {
     src = pkgs.fetchFromGitHub {
       owner = "Patryk27";

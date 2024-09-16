@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{
   imports = [
     ./editors/emacs.nix
     ./editors/neovim.nix
@@ -12,9 +12,7 @@
     stateVersion = "24.05";
   };
 
-  programs.home-manager = {
-    enable = true;
-  };
+  programs.home-manager.enable = true;
 
   programs.emacs = {
     enable = true;

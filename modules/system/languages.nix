@@ -1,4 +1,5 @@
 {
+  #TODO é realmente necessario esse comodo?
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "pt_BR.UTF-8";
     LC_IDENTIFICATION = "pt_BR.UTF-8";

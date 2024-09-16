@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs.gnomeExtensions; [
-    #blur-my-shell
-    #pop-shell
-    # ...
+    appindicator
+    vitals
+    gtk4-desktop-icons-ng-ding
   ];
 }

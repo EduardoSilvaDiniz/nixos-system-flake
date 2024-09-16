@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  #TODO arrume um quarto para cada um dos meus filhos!
   home.packages = with pkgs; [
     ## Softwares
     google-chrome

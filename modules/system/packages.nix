@@ -9,12 +9,10 @@
     php83Packages.composer # php
     home-manager
     ## gnome
+    #TODO Voces devem ficar com seu pai!
     gnome3.gnome-tweaks
     gnome.gnome-settings-daemon
     gnome.adwaita-icon-theme
-    gnomeExtensions.appindicator
-    gnomeExtensions.vitals
-    gnomeExtensions.gtk4-desktop-icons-ng-ding
   ];
 
   fonts.packages = with pkgs; [

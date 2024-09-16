@@ -14,6 +14,7 @@
     ];
 
     extraPackages = with pkgs; [
+      #TODO estou grande de mais!
       ## LSPs
       vscode-langservers-extracted # html/css/js
       nodePackages.pyright # python
@@ -47,6 +48,7 @@
       php83Packages.php-codesniffer
       php83Packages.php-cs-fixer
       php83Packages.phpinsights
+      #TODO quem são vezes?
       #php83Packages.pint
       #php83Packages.prettier
       #php83Packages.prettynd # PHP

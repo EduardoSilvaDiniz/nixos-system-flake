@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  #TODO oque voces estão fazendo aqui?
   programs.zsh.enable = true;
   programs.adb.enable = true;
 
