@@ -4,7 +4,6 @@
     google-chrome
     keepassxc
     thunderbird
-    home-manager
     qbittorrent
     vlc
     zoom-us
@@ -30,7 +29,6 @@
     git
     btop
     bintools
-    binutils
     fastfetch
     xclip
     ripgrep
@@ -47,17 +45,12 @@
     duckstation
 
     ## Compilers/Languages
-    gcc # C/C++
     python3 # python
     nodejs # js
     go # golang
     php # php
     dart
-    flutter # dart/Flutter
-    jdk # java stable
-    jdk8 # java lts 8
     rustc
-    # clang
     ccls
     cmake
     gnumake
@@ -68,7 +61,6 @@
 
     ## Project managers
     cargo # rust
-    php83Packages.composer # php
     gnumake
     meson
     ninja # C/C++
@@ -76,11 +68,5 @@
     gradle-completion # java/C/C++
 
     ## gnome
-    gnome3.gnome-tweaks
-    gnome.gnome-settings-daemon
-    gnome.adwaita-icon-theme
-    gnomeExtensions.appindicator
-    gnomeExtensions.vitals
-    gnomeExtensions.gtk4-desktop-icons-ng-ding
   ];
 }
