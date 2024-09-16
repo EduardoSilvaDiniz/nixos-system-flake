@@ -1,4 +1,4 @@
-{
+{}: {
   imports = [
     ./modules/hardware/boot.nix
     ./modules/hardware/gpu.nix
