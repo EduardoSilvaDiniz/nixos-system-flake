@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  config,
   ...
 }: {
   programs.neovim = {
@@ -10,7 +9,10 @@
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     withPython3 = true;
     withNodeJs = true;
-    plugins = with pkgs.vimPlugins; [nvim-treesitter.withAllGrammars];
+    plugins = with pkgs.vimPlugins; [
+      nvim-treesitter.withAllGrammars
+    ];
+
     extraPackages = with pkgs; [
       ## LSPs
       vscode-langservers-extracted # html/css/js
@@ -59,7 +61,7 @@
       stylua # Lua
       shfmt
       shellcheck # Shell scripts
-      # nixfmt-rfc-style # nix
+      nixfmt-rfc-style # nix
 
       ## softwares utils
       fd
