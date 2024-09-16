@@ -10,30 +10,19 @@
     username = "edu";
     homeDirectory = "/home/edu";
     stateVersion = "24.05";
-    file.".emacs.d" = {
-      source = ../config/.emacs.d;
-      recursive = true;
-    };
+    sessionPath = ["/home/edu/.config/emacs/bin"];
   };
 
   programs.home-manager.enable = true;
-
-  # services.emacs.package = pkgs.emacs-unstable;
 
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-git;
     extraPackages = epkgs:
       with epkgs; [
-        nix-mode
-        magit
-        org-contrib
-        evil
-        evil-collection
-        company
-        eglot
-        format-all
-        flycheck
+        treesit-grammars.with-all-grammars
+        vterm
+        mu4e
       ];
   };
 
