@@ -34,7 +34,8 @@
       vscode-extensions.vscjava.vscode-java-debug # java
       vscode-extensions.xdebug.php-debug # php
 
-      ## linters ## formatter
+      ## linters
+      ## formatter
       cppcheck # C/C++
       isort
       black # python
