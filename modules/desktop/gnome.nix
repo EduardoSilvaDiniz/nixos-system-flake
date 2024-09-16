@@ -12,13 +12,6 @@
       };
     };
 
-    displayManager = {
-      autoLogin = {
-        enable = true;
-        user = "edu";
-      };
-    };
-
     libinput = {
       enable = true;
       mouse = {

@@ -1,20 +1,14 @@
 {pkgs, ...}: {
   imports = [
-    ./hardware.nix
-    ./packages.nix
-    ./packages-unstable.nix
-    ./modules/bundle.nix
-    ./cachix.nix
+    ../../modules/packages.nix
+    ../../modules/packages-unstable.nix
+    ../../config/cachix.nix
   ];
 
   services.udev.packages = [pkgs.android-udev-rules];
-  services.emacs.package = pkgs.emacs-unstable;
-  # services.emacs.enable = true;
 
   networking.networkmanager.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
   systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
 
   networking.hostName = "nixos";
@@ -23,10 +17,14 @@
 
   i18n.defaultLocale = "pt_BR.UTF-8";
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
+    auto-optimise-store = true;
+  };
 
   system.stateVersion = "24.05";
 }
