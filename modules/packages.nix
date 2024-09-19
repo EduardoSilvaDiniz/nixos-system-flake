@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   #TODO arrume um quarto para cada um dos meus filhos!
   home.packages = with pkgs; [
+    neovide
     ripgrep
     gnutls # for TLS connectivity
 
@@ -40,6 +41,10 @@
     dbeaver-bin
     vesktop
     gnucash
+    krita
+    ncmpcpp
+    mpc-cli
+    mpd
     (retroarch.override {cores = with libretro; [parallel-n64];})
 
     ## Commands utils

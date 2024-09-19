@@ -4,6 +4,7 @@
     ./editors/neovim.nix
     ./editors/kitty.nix
     ./shell
+    ./sound
     ./packages.nix
   ];
   home = {

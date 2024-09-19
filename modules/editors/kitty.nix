@@ -2,8 +2,8 @@
   programs.kitty = {
     enable = true;
     settings = {
-      font_size = 16;
-      font_family = "Fira Code SemiBold";
+      font_size = 15;
+      font_family = "Fira Code";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
