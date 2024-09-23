@@ -9,6 +9,7 @@
       flakeDir = "~/Projetos/nix";
     in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
+      rbi = "sudo nixos-rebuild boot --flake ${flakeDir}";
       upd = "nix flake update ${flakeDir}";
       upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
       hms = "home-manager switch --flake ${flakeDir}";

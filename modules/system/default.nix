@@ -6,7 +6,8 @@
     ./env.nix
     ./excludePackages.nix
     ./extensions.nix
-    ./gnome.nix
+    # ./gnome.nix
+    ./kde.nix
     ./languages.nix
     ./packages-unstable.nix
     ./packages.nix

@@ -2,11 +2,8 @@
   #TODO arrume um quarto para cada um dos meus filhos!
   home.packages = with pkgs; [
     neovide
-    ripgrep
     gnutls # for TLS connectivity
 
-    ## Optional dependencies
-    fd # faster projectile indexing
     imagemagick # for image-dired
     pinentry-emacs # in-emacs gnupg prompts
     zstd # for undo-fu-session/undo-tree compression
@@ -28,7 +25,8 @@
     # :lang nix
     age
 
-    ## Softwares
+    winetricks
+    wineWowPackages.waylandFull
     google-chrome
     keepassxc
     thunderbird

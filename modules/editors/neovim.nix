@@ -36,7 +36,7 @@
 
       ## linters
       ## formatter
-      cppcheck # C/C++
+      cpplint
       isort
       black # python
       cmake-format # cmake
