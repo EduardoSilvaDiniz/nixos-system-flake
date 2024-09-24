@@ -8,9 +8,17 @@
     defaultEditor = true;
     package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
     withPython3 = true;
-    withNodeJs = true;
+    withNodeJs = false;
+    withRuby = false;
+
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
+    ];
+
+    extraPython3Packages = with pkgs.python311Packages; [
+      tasklib
+      six
+      packaging
     ];
 
     extraPackages = with pkgs; [
@@ -49,7 +57,7 @@
       php83Packages.php-codesniffer
       php83Packages.php-cs-fixer
       php83Packages.phpinsights
-      #TODO quem são vezes?
+      #TODO quem são eles?
       #php83Packages.pint
       #php83Packages.prettier
       #php83Packages.prettynd # PHP
@@ -67,8 +75,6 @@
       nixfmt-rfc-style # nix
 
       ## softwares utils
-      fd
-      ripgrep
       lazygit
     ];
   };
