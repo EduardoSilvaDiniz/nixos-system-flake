@@ -4,7 +4,7 @@
   ...
 }: {
   #TODO preciso ser configurado!
-  services.emacs = {
-    enable = true;
-  };
+  # services.emacsGcc = {
+  #   enable = true;
+  # };
 }

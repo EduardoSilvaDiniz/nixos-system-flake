@@ -3,14 +3,40 @@
   home.packages = with pkgs; [
     ## vimwiki + taskwiki
     taskwarrior
+    taskserver
 
     kdePackages.plasma-browser-integration
+    kdePackages.kcrash
+    kdePackages.drkonqi
+    gdb
+    file
+    libtool
+
+    ## depedencias do doomemcas
+    glslang
+    gopls
+    gomodifytags
+    gotests
+    gore
+    gh-markdown-preview
+    nixfmt-rfc-style
+    graphviz
+    pipenv
+    python311Packages.pynose
+    python311Packages.pytest
+    shellcheck
+    html-tidy
+    stylelint
+    jsbeautifier
+    semgrep
 
     sqlite
 
     winetricks
     wineWowPackages.waylandFull
 
+    wl-clipboard-rs
+    neovide
     google-chrome
     keepassxc
     thunderbird
@@ -67,6 +93,7 @@
     cmake
     gnumake
     alejandra
+    python3Full
 
     ## Project managers
     gnumake

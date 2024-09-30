@@ -15,11 +15,12 @@
       nvim-treesitter.withAllGrammars
     ];
 
-    extraPython3Packages = with pkgs.python311Packages; [
-      tasklib
-      six
-      packaging
-    ];
+    extraPython3Packages = ps:
+      with ps; [
+        tasklib
+        six
+        packaging
+      ];
 
     extraPackages = with pkgs; [
       #TODO estou grande de mais!
@@ -48,6 +49,7 @@
       isort
       black # python
       cmake-format # cmake
+      deadnix
 
       #htmlbeautifier djlint # HTML
       stylelint
@@ -73,6 +75,7 @@
       shfmt
       shellcheck # Shell scripts
       nixfmt-rfc-style # nix
+      lua51Packages.luacheck
 
       ## softwares utils
       lazygit
