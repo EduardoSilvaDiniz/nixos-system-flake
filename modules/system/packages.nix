@@ -10,9 +10,13 @@
     home-manager
     ## gnome
     #TODO Voces devem ficar com seu pai!
-    gnome3.gnome-tweaks
-    gnome.gnome-settings-daemon
-    gnome.adwaita-icon-theme
+    # gnome3.gnome-tweaks
+    # gnome.gnome-settings-daemon
+    # gnome.adwaita-icon-theme
+    xdg-desktop-portal-hyprland
+    dconf
+    xwayland
+    ly
   ];
 
   fonts.packages = with pkgs; [

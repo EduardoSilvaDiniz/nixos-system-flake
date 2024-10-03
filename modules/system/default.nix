@@ -8,6 +8,7 @@
     ./extensions.nix
     # ./gnome.nix
     # ./kde.nix
+    ./hypr.nix
     ./languages.nix
     ./packages-unstable.nix
     ./packages.nix
