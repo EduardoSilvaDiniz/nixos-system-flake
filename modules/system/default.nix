@@ -9,6 +9,7 @@
     # ./gnome.nix
     # ./kde.nix
     ./hypr.nix
+    ./display-manager.nix
     ./languages.nix
     ./packages-unstable.nix
     ./packages.nix

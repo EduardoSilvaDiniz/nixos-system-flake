@@ -1,11 +1,10 @@
-
 {
   services = {
     xserver = {
       enable = true;
       videoDrivers = ["amdgpu"];
       displayManager.sddm.wayland.enable = true;
-desktopManager.plasma6.enable = true;
+      desktopManager.plasma6.enable = true;
 
       xkb = {
         variant = "";
