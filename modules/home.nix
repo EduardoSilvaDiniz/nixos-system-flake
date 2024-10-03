@@ -6,6 +6,7 @@
     ./shell
     ./sound
     ./packages.nix
+    ./wms/hyprland.nix
   ];
   home = {
     username = "edu";

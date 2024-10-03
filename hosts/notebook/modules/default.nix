@@ -1,8 +1,7 @@
 {
   imports = [
-    ./bootloader.nix
-    ./filesystems.nix
+    ./boot.nix
     ./gpu.nix
-    ./kernel.nix
+    ./filesystems.nix
   ];
 }
