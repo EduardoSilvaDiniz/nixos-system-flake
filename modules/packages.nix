@@ -5,7 +5,6 @@
     taskwarrior
     taskserver
 
-    kdePackages.plasma-browser-integration
     kdePackages.kcrash
     kdePackages.drkonqi
     gdb
@@ -31,12 +30,11 @@
     semgrep
 
     sqlite
+    wezterm
 
     winetricks
     wineWowPackages.waylandFull
 
-    wl-clipboard-rs
-    neovide
     google-chrome
     keepassxc
     thunderbird
@@ -46,6 +44,7 @@
     kitty
     tmux
     tlp
+    bc
     dbeaver-bin
     vesktop
     gnucash
