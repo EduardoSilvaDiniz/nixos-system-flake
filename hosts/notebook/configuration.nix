@@ -10,6 +10,7 @@
   services.udev.packages = [pkgs.android-udev-rules];
 
   networking.networkmanager.enable = true;
+  networking.wireless.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   systemd.tmpfiles.rules = ["L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"];
 
