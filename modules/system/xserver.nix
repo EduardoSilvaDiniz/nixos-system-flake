@@ -1,7 +1,7 @@
 {
   services.xserver = {
     enable = true;
-    windowManager.herbstluftwm.enable = true;
+    # windowManager.herbstluftwm.enable = true;
 
     # displayManager = {
     #   autoLogin.enable = true;
@@ -9,8 +9,10 @@
     #   lightdm.enable = true;
     # };
 
-    layout = "us";
-    xkbVariant = "";
+    xkb = {
+      variant = "";
+      layout = "br";
+    };
 
     libinput = {
       enable = true;
@@ -18,9 +20,12 @@
       touchpad.accelProfile = "flat";
     };
 
-    videoDrivers = [ "amdgpu" ];
+    videoDrivers = ["amdgpu"];
     deviceSection = ''Option "TearFree" "True"'';
     #displayManager.gdm.enable = true;
     #desktopManager.gnome.enable = true;
+    # displayManager.sddm.wayland.enable = true;
+    # desktopManager.plasma6.enable = true;
   };
+  programs.hyprland.enable = true;
 }

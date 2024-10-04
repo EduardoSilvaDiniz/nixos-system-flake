@@ -6,14 +6,11 @@
     ./env.nix
     ./excludePackages.nix
     ./extensions.nix
-    # ./gnome.nix
-    # ./kde.nix
-    ./hypr.nix
-    ./display-manager.nix
     ./languages.nix
     ./packages-unstable.nix
     ./packages.nix
     ./pcloud.nix
     ./user.nix
+    ./xserver.nix
   ];
 }
