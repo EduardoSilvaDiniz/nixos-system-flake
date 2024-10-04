@@ -3,10 +3,6 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    kernelModules = ["kvm-amd" "amdgpu"];
-    kernelPackages = pkgs.linuxPackages_latest;
-    extraModulePackages = [];
-
     initrd = {
       availableKernelModules = [
         "nvme"
@@ -15,6 +11,10 @@
         "usb_storage"
         "sd_mod"
       ];
+      kernelModules = ["amdgpu"];
     };
+    kernelModules = ["kvm-amd"];
+    kernelPackages = pkgs.linuxPackages_latest;
+    extraModulePackages = [];
   };
 }

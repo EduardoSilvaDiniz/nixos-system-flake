@@ -7,6 +7,8 @@
       vulkan-loader
       vulkan-validation-layers
       vulkan-extension-layer
+      rocm-opencl-icd
+      rocm-opencl-runtime
     ];
   };
 }
