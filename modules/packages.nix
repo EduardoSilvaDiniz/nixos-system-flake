@@ -1,27 +1,25 @@
 {pkgs, ...}: {
-  #TODO arrume um quarto para cada um dos meus filhos!
   home.packages = with pkgs; [
-    taskwarrior
-    taskserver
-    gdb
-    file
-    libtool
-    sqlite
-    wezterm
+    ## Aplications
     google-chrome
     keepassxc
     thunderbird
     qbittorrent
     vlc
     zoom-us
-    kitty
-    bc
     dbeaver-bin
     vesktop
     gnucash
 
+    ## DBs
+    sqlite
+
     ## Commands utils
-    lua51Packages.luarocks
+    file
+    libtool
+    bc
+    taskwarrior
+    taskserver
     viu
     chafa
     ueberzugpp
@@ -44,24 +42,27 @@
     ripgrep
     coreutils
     fd
+    gradle-completion
 
-    ## Compilers/Languages
-    nodejs # js
-    go # golang
-    php # php
+    ## Compilers/interpreters
+    rustc
+    cargo
+    lua
+    lua51Packages.luarocks
+    gdb
+    nodejs
+    go
+    php
     dart
-    cmake
-    gnumake
-    alejandra
     python3Full
     glslang
     gh-markdown-preview
 
     ## Project managers
+    cmake
     gnumake
     meson
-    ninja # C/C++
+    ninja
     gradle
-    gradle-completion # java/C/C++
   ];
 }

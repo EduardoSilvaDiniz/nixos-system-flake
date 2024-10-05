@@ -47,7 +47,7 @@ with pkgs; [
 
   ### Nix
   nil # LSP
-  nixfmt-rfc-style # Format
+  alejandra # Format
   deadnix # Linter
 
   ### Markdown

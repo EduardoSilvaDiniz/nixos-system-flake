@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  home.Packages = with pkgs; [
+  home.packages = with pkgs; [
     winetricks
     wineWowPackages.waylandFull
     steam
