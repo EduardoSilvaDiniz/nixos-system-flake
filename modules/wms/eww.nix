@@ -1,6 +1,6 @@
 {
   programs.eww = {
     enable = true;
+    configDir = ../../config/eww;
   };
-  xdg.configFile."eww".source = ../../config/eww;
 }

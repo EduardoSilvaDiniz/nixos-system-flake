@@ -1,24 +1,9 @@
 {pkgs, ...}: {
   #TODO arrume um quarto para cada um dos meus filhos!
   home.packages = with pkgs; [
-    ## hyprland
-    eww
-    rofi-wayland
-    xdg-desktop-portal-hyprland
-    pavucontrol
-    libnotify
-    brightnessctl
-    playerctl
-    pamixer
-    dunst
-    tlp
-
     ## vimwiki + taskwiki
     taskwarrior
     taskserver
-
-    kdePackages.kcrash
-    kdePackages.drkonqi
     gdb
     file
     libtool

@@ -18,16 +18,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.emacs = {
-    enable = true;
-    package = pkgs.emacs-git;
-    extraPackages = epkgs:
-      with epkgs; [
-        treesit-grammars.with-all-grammars
-        vterm
-        mu4e
-      ];
-  };
 
   services.gpg-agent = {
     enable = true;
