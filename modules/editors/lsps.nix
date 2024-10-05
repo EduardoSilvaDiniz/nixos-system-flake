@@ -82,4 +82,7 @@ with pkgs; [
 
   ### Sql
   nodePackages.sql-formatter # Format
+
+  #others
+  sqlite
 ]

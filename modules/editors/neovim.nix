@@ -28,5 +28,6 @@
 
   home.packages = with pkgs; [
     lazygit
+    lua51Packages.luarocks
   ];
 }

@@ -1,4 +1,4 @@
-{config, ...}: {
+{config, pkgs, ...}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -34,4 +34,35 @@
       theme = "gallois";
     };
   };
+  home.packages = with pkgs; [
+    tmux
+    file
+    libtool
+    bc
+    taskwarrior
+    taskserver
+    viu
+    chafa
+    ueberzugpp
+    fzf
+    zsh
+    zip
+    unzip
+    unrar
+    eza
+    bat
+    delta
+    wget
+    curl
+    src-cli
+    git
+    btop
+    bintools
+    fastfetch
+    xclip
+    ripgrep
+    coreutils
+    fd
+    gradle-completion
+  ];
 }

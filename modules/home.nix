@@ -5,6 +5,7 @@
     ./sound
     ./games
     ./window-manager
+    ./terminais
     ./packages.nix
   ];
   home = {

@@ -11,44 +11,10 @@
     vesktop
     gnucash
 
-    ## DBs
-    sqlite
-
-    ## Commands utils
-    file
-    libtool
-    bc
-    taskwarrior
-    taskserver
-    viu
-    chafa
-    ueberzugpp
-    fzf
-    zsh
-    zip
-    unzip
-    unrar
-    eza
-    bat
-    delta
-    wget
-    curl
-    src-cli
-    git
-    btop
-    bintools
-    fastfetch
-    xclip
-    ripgrep
-    coreutils
-    fd
-    gradle-completion
-
     ## Compilers/interpreters
     rustc
     cargo
     lua
-    lua51Packages.luarocks
     gdb
     nodejs
     go
