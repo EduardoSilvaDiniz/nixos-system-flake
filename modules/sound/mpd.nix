@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   services.mpd = {
     enable = true;
     musicDirectory = "~/Músicas/";
@@ -10,4 +10,9 @@
       }
     '';
   };
+  home.packages = with pkgs; [
+    ncmpcpp
+    mpc-cli
+    mpd
+  ];
 }

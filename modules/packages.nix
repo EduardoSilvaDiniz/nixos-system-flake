@@ -8,8 +8,6 @@
     libtool
     sqlite
     wezterm
-    winetricks
-    wineWowPackages.waylandFull
     google-chrome
     keepassxc
     thunderbird
@@ -21,10 +19,6 @@
     dbeaver-bin
     vesktop
     gnucash
-    ncmpcpp
-    mpc-cli
-    mpd
-    (retroarch.override {cores = with libretro; [parallel-n64];})
 
     ## Commands utils
     lua51Packages.luarocks
@@ -50,12 +44,6 @@
     ripgrep
     coreutils
     fd
-
-    ## Games
-    steam
-    lutris
-    prismlauncher
-    duckstation
 
     ## Compilers/Languages
     nodejs # js

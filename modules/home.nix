@@ -1,13 +1,11 @@
 {pkgs, ...}: {
   imports = [
-    ./editors/emacs.nix
-    ./editors/neovim.nix
-    ./editors/kitty.nix
+    ./editors
     ./shell
     ./sound
+    ./games
+    ./window-manager
     ./packages.nix
-    ./wms/hyprland.nix
-    ./wms/eww.nix
   ];
   home = {
     username = "edu";
@@ -18,10 +16,4 @@
 
   programs.home-manager.enable = true;
 
-
-  services.gpg-agent = {
-    enable = true;
-    defaultCacheTtl = 1800;
-    enableSshSupport = true;
-  };
 }
