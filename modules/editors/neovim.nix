@@ -23,9 +23,10 @@
         python-lsp-server # LSP python
       ];
 
-    extraPackages = [
-      pkgs.lazygit
-      (import ./lsps.nix {inherit pkgs;})
-    ];
+    extraPackages = import ./lsps.nix {inherit pkgs;};
   };
+
+  home.packages = with pkgs; [
+    lazygit
+  ];
 }

@@ -1,4 +1,4 @@
-{pkgs ? import <nixpkgs> {}}:
+{pkgs, ...}:
 with pkgs; [
   #TODO ESTA FALTANDO LSP,FORMAT,CHECK,LINTER,DAP
   ## Languages
@@ -12,7 +12,7 @@ with pkgs; [
   golangci-lint # Linter
   delve # DAP
 
-  gomodifytags # show tags  
+  gomodifytags # show tags
   gosimports # fix imports
   gotests # tests
   gore # REPL
