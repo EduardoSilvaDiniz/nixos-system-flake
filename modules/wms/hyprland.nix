@@ -3,7 +3,13 @@
     enable = true;
     xwayland.enable = true;
   };
-  extraPackages = with pkgs; [
+  xdg = {
+    enable = true;
+    configFile."hypr" = {
+      source = ../../config/hypr;
+    };
+  };
+  home.packages = with pkgs; [
     eww
     rofi-wayland
     xdg-desktop-portal-hyprland
@@ -15,10 +21,4 @@
     dunst
     tlp
   ];
-  xdg = {
-    enable = true;
-    configFile."hypr" = {
-      source = ../../config/hypr;
-    };
-  };
 }

@@ -1,9 +1,8 @@
 {
   pkgs,
-  inputs ? import <nixpkgs> {},
-}: let
-  LSPs = ./lsps.nix;
-in {
+  inputs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -21,9 +20,12 @@ in {
         tasklib
         six
         packaging
+        python-lsp-server # LSP python
       ];
+
     extraPackages = [
-      LSPs
+      pkgs.lazygit
+      (import ./lsps.nix {inherit pkgs;})
     ];
   };
 }

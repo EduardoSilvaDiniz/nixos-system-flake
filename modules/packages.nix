@@ -1,37 +1,15 @@
 {pkgs, ...}: {
   #TODO arrume um quarto para cada um dos meus filhos!
   home.packages = with pkgs; [
-    ## vimwiki + taskwiki
     taskwarrior
     taskserver
     gdb
     file
     libtool
-
-    ## depedencias do doomemcas
-    glslang
-    gopls
-    gomodifytags
-    gotests
-    gore
-    gh-markdown-preview
-    nixfmt-rfc-style
-    graphviz
-    pipenv
-    python311Packages.pynose
-    python311Packages.pytest
-    shellcheck
-    html-tidy
-    stylelint
-    jsbeautifier
-    semgrep
-
     sqlite
     wezterm
-
     winetricks
     wineWowPackages.waylandFull
-
     google-chrome
     keepassxc
     thunderbird
@@ -39,8 +17,6 @@
     vlc
     zoom-us
     kitty
-    tmux
-    tlp
     bc
     dbeaver-bin
     vesktop
@@ -90,6 +66,8 @@
     gnumake
     alejandra
     python3Full
+    glslang
+    gh-markdown-preview
 
     ## Project managers
     gnumake

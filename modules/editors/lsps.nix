@@ -1,38 +1,71 @@
 {pkgs ? import <nixpkgs> {}}:
 with pkgs; [
-  #TODO estou grande de mais!
-  ## LSPs
-  vscode-langservers-extracted # html/css/js
-  nodePackages.pyright # python
-  nodePackages.sql-formatter # sql
-  nodePackages.typescript-language-server # typescript
-  nil # nix
-  gopls # Go
-  jdt-language-server # Java
-  nodePackages_latest.intelephense # php
-  lua-language-server # Lua
-  nodePackages_latest.bash-language-server # bash
-  markdown-oxide # markdown
+  #TODO ESTA FALTANDO LSP,FORMAT,CHECK,LINTER,DAP
+  ## Languages
+  ### All
+  semgrep # format, lint debug?
 
-  ## DAP
-  delve # Go
-  vscode-extensions.ms-vscode.cpptools # C/C++
-  vscode-extensions.vscjava.vscode-java-debug # java
-  vscode-extensions.xdebug.php-debug # php
+  ### Go
+  gopls # LSP
+  gofumpt # Format
+  goimports-reviser # Linter imports
+  golangci-lint # Linter
+  delve # DAP
 
-  ## linters
-  ## formatter
-  cpplint
-  isort
-  black # python
-  cmake-format # cmake
-  deadnix
+  gomodifytags # show tags  
+  gosimports # fix imports
+  gotests # tests
+  gore # REPL
 
+  ### C/C++
+  cpplint # Lint
+  vscode-extensions.ms-vscode.cpptools # DAP
+
+  ### Java
+  jdt-language-server # LSP
+  google-java-format # format
+  checkstyle # Lint
+  vscode-extensions.vscjava.vscode-java-debug # DAP
+
+  ### Lua
+  lua-language-server # LSP
+  lua51Packages.luacheck # Format
+  stylua # Lint
+
+  ### JavaScript/Typescript
+  eslint_d # LSP
+  jsbeautifier
+  nodePackages.typescript-language-server # LSP
+
+  ### Html/Css
+  html-tidy
+  vscode-langservers-extracted
+  prettierd
   #htmlbeautifier djlint # HTML
+  rustywind
   stylelint
-  rustywind # CSS
-  eslint_d # JavaScript/TypeScript
-  prettierd # JavaScript/TypeScript, HTML, CSS
+
+  ### Nix
+  nil # LSP
+  nixfmt-rfc-style # Format
+  deadnix # Linter
+
+  ### Markdown
+  markdown-oxide # LSP
+
+  ### Shellscript
+  nodePackages_latest.bash-language-server # LSP
+  shellcheck # Check, Linter
+  shfmt # Format, Linter
+
+  ### Python
+  nodePackages.pyright # Check
+  black # Format
+  isort # Linter
+
+  ### PHP
+  vscode-extensions.xdebug.php-debug # php
+  nodePackages_latest.intelephense # php
   php83Packages.php-codesniffer
   php83Packages.php-cs-fixer
   php83Packages.phpinsights
@@ -40,20 +73,13 @@ with pkgs; [
   #php83Packages.pint
   #php83Packages.prettier
   #php83Packages.prettynd # PHP
-  rustfmt # Rust
-  gosimports
-  gofumpt
-  goimports-reviser
-  golines
-  golangci-lint # Go
-  google-java-format
-  checkstyle # Java
-  stylua # Lua
-  shfmt
-  shellcheck # Shell scripts
-  nixfmt-rfc-style # nix
-  lua51Packages.luacheck
 
-  ## softwares utils
-  lazygit
+  ### Rust
+  rustfmt # Format
+
+  ### Make/Cmake
+  cmake-format # Format
+
+  ### Sql
+  nodePackages.sql-formatter # Format
 ]
