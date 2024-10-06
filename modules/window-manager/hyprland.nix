@@ -20,5 +20,6 @@
     pamixer
     dunst
     tlp
+    pulseaudio
   ];
 }

@@ -1,10 +1,18 @@
+(defpoll volume :interval "0s"
+  "scripts/getvol")
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(deflisten time :interval "10s"
+  "date '+%H:%M %b %d, %Y'")
+
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces)
-    (time)
+    (music)
     (sidestuff)))
   
-
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
     (metric :label "󱄠"
@@ -26,26 +34,11 @@
        :space-evenly true
        :halign "start"
        :spacing 10
-    (button :onclick "hyprctl dispatch workspace 0" 1)
-    (button :onclick "hyprctl dispatch workspace 1" 2)
-    (button :onclick "hyprctl dispatch workspace 2" 3)
-    (button :onclick "hyprctl dispatch workspace 3" 4)
-    (button :onclick "hyprctl dispatch workspace 4" 5)))
-
-(defwindow audio_menu
-    :monitor 0
-    :exclusive "false"
-    :stacking "overlay"
-    :geometry
-    (geometry :anchor "center")
-    (audio_menu))
-
-(defwidget music []
-  (box :class "music"
-       :orientation "h"
-       :space-evenly false
-       :halign "center"
-    {music != "" ? "󰝚   ${music}" : ""}))
+    (button :onclick "hyprctl dispatch workspace 1" 1)
+    (button :onclick "hyprctl dispatch workspace 2" 2)
+    (button :onclick "hyprctl dispatch workspace 3" 3)
+    (button :onclick "hyprctl dispatch workspace 4" 4)
+    (button :onclick "hyprctl dispatch workspace 5" 5)))
 
 
 (defwidget audio_menu []
@@ -54,26 +47,59 @@
          :orientation "v"
         (box :class "header" 
              :space-evenly "false"
-            (label :text "    Switch Audio Devices" 
+            (label :text "Switch Audio Devices" 
                    :class "title")
             (button :class "exit" 
                     :onclick "eww open audio_menu --toggle"
-                (label :text " ")))
+                (label :text "󰅖 ")))
         (box :class "body" 
              :space-evenly "false" 
              :orientation "v"
             (button :class "button"
                     :vexpand "false"
-                    :onclick "scripts/set_audio_device.sh alsa_output.pci-0000_01_00.1.hdmi-stereo"
+                    :onclick "scripts/set_audio_device.sh alsa_output.pci-0000_03_00.6.analog-stereo"
                 (label :text "󰓃   Speakers"))
             (button :class "button"
                     :hexpand "false"
-                    :onclick "scripts/set_audio_device.sh alsa_output.pci-0000_00_1b.0.analog-surround-40"
-                (label :text "󰋋   Headphones"))
+                    :onclick "scripts/set_audio_device.sh bluez_output.AC_12_2F_DF_8F_A8.1"
+                (label :text "󰋋   Headphone"))
             (button :class "button" 
                     :hexpand "false"
-                    :onclick "scripts/set_audio_device.sh alsa_output.usb-Sony_Interactive_Entertainment_DualSense_Wireless_Controller-00.analog-surround-40"
-                (label :text "    PS5 Controller")))))
+                    :onclick "scripts/set_audio_device.sh alsa_output.pci-0000_03_00.1.hdmi-stereo"
+                (label :text "󰔂   HDMI")))))
+
+(defwidget monitor_menu []
+    (box :class "parent" 
+         :space-evenly "false" 
+         :orientation "v"
+        (box :class "header" 
+             :space-evenly "false"
+            (label :text "Switch Monitors" 
+                   :class "title")
+            (button :class "exit" 
+                    :onclick "eww open monitor_menu --toggle"
+                (label :text "󰅖 ")))
+        (box :class "body" 
+             :space-evenly "false" 
+             :orientation "v"
+            (button :class "button"
+                    :vexpand "false"
+                    :onclick "hyprctl keyword monitor eDP-1,1920x1080@60,0x0,1 && hyprctl keyword monitor HDMI-A-1,disable,1"
+                (label :text "󰌢   Internal"))
+            (button :class "button"
+                    :hexpand "false"
+                    :onclick "hyprctl keyword monitor eDP-1,disable,1 && hyprctl keyword monitor HDMI-A-1,1920x1080@75,1920x0,1"
+                (label :text "󰔂   External"))
+            (button :class "button" 
+                    :hexpand "false"
+                    :onclick "hyprctl keyword monitor eDP-1,1920x1080@60,0x0,1 && hyprctl keyword monitor HDMI-A-1,1920x1080@75,1920x0,1"
+                (label :text "󰍺   Multiple"))
+            (button :class "button"
+                    :hexpand "false"
+                    :onclick "hyprctl keyword monitor eDP-1,1920x1080@60,0x0,1 && hyprctl keyword monitor HDMI-A-1,3840x2160@60,1920x0,2"
+                (label :text "󰔂   Multiple 4k")))))
+
+
 
 (defwidget metric [label value onchange]
   (box :orientation "h"
@@ -86,17 +112,15 @@
            :value value
            :onchange onchange)))
 
-(deflisten music :initial ""
-  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
-
-(defpoll volume :interval "1s"
-  "scripts/getvol")
-
-(defpoll time :interval "10s"
-  "date '+%H:%M %b %d, %Y'")
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "🎵${music}" : ""}))
 
 (defwindow bar
-  :monitor 1
+  :monitor 0
   :windowtype "dock"
   :geometry (geometry :x "0%"
                       :y "0%"
@@ -107,3 +131,20 @@
   :exclusive true
   :namespace "bar"
   (bar))
+
+(defwindow audio_menu
+    :monitor 0
+    :exclusive "false"
+    :stacking "overlay"
+    :geometry
+    (geometry :anchor "center")
+    (audio_menu))
+
+
+(defwindow monitor_menu 
+    :monitor 0
+    :exclusive "false"
+    :stacking "overlay"
+    :geometry
+    (geometry :anchor "center")
+    (monitor_menu))
