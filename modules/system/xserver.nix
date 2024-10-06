@@ -1,13 +1,12 @@
 {
   services.xserver = {
     enable = true;
-    # windowManager.herbstluftwm.enable = true;
 
-    # displayManager = {
-    #   autoLogin.enable = true;
-    #   autoLogin.user = "amper";
-    #   lightdm.enable = true;
-    # };
+    displayManager = {
+      autoLogin.enable = true;
+      autoLogin.user = "edu";
+      lightdm.enable = true;
+    };
 
     xkb = {
       variant = "";
@@ -24,8 +23,8 @@
     deviceSection = ''Option "TearFree" "True"'';
     #displayManager.gdm.enable = true;
     #desktopManager.gnome.enable = true;
-    # displayManager.sddm.wayland.enable = true;
-    # desktopManager.plasma6.enable = true;
+    #displayManager.sddm.wayland.enable = true;
+    #desktopManager.plasma6.enable = true;
   };
   programs.hyprland.enable = true;
 }
