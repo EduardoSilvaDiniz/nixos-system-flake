@@ -30,5 +30,6 @@
     rose-pine-cursor
     glib
     nwg-panel
+    kdePackages.dolphin
   ];
 }

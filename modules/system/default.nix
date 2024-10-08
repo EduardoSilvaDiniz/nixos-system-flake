@@ -12,5 +12,6 @@
     ./pcloud.nix
     ./user.nix
     ./xserver.nix
+    ./tlp.nix
   ];
 }

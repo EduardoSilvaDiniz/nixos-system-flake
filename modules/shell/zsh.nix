@@ -64,5 +64,6 @@
     coreutils
     fd
     gradle-completion
+    usbutils
   ];
 }
