@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
     gcc # C/C++
     binutils
@@ -8,6 +8,7 @@
     clang
     php83Packages.composer # php
     home-manager
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ## gnome
     #TODO Voces devem ficar com seu pai!
     # gnome3.gnome-tweaks

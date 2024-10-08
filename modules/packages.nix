@@ -10,6 +10,7 @@
     dbeaver-bin
     vesktop
     gnucash
+    obsidian
 
     ## Compilers/interpreters
     rustc

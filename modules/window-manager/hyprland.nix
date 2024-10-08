@@ -21,5 +21,14 @@
     dunst
     tlp
     pulseaudio
+    grim
+    slurp
+    wl-clipboard-rs
+    imv
+    hyprshot
+    nwg-look
+    rose-pine-cursor
+    glib
+    nwg-panel
   ];
 }
