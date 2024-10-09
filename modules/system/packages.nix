@@ -10,10 +10,6 @@
     home-manager
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ## gnome
-    #TODO Voces devem ficar com seu pai!
-    # gnome3.gnome-tweaks
-    # gnome.gnome-settings-daemon
-    # gnome.adwaita-icon-theme
   ];
 
   fonts.packages = with pkgs; [

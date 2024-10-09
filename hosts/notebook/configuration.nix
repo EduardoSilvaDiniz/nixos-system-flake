@@ -4,10 +4,16 @@
     ../../config/cachix.nix
     ../../modules/system
     ../../modules/system/hardware
+    ../../modules/system/desktops
     ./hardware.nix
   ];
 
-  services.udev.packages = [pkgs.android-udev-rules];
+  services.udev = {
+    extraRules = ''
+      ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c52b", ATTR{power/autosuspend}="0"
+    '';
+    packages = [pkgs.android-udev-rules];
+  };
 
   networking.networkmanager.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

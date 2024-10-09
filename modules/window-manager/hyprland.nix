@@ -31,5 +31,6 @@
     glib
     nwg-panel
     kdePackages.dolphin
+    greetd.tuigreet
   ];
 }
