@@ -3,15 +3,15 @@ local config = wezterm.config_builder()
 
 config = {
 	color_scheme = "Gruvbox Dark (Gogh)",
+	font_size = 13.0,
+	enable_wayland = true,
+  hide_mouse_cursor_when_typing = false,
 	window_padding = {
 		left = 0,
 		right = 0,
 		top = 0,
 		bottom = 0,
 	},
-	font_size = 13.0,
-	enable_wayland = true,
-
 	tiling_desktop_environments = {
 		"X11 LG3D",
 		"X11 bspwm",

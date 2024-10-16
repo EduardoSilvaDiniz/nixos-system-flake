@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     ## Aplications
-    google-chrome
+    firefox-unwrapped
     keepassxc
     thunderbird
     qbittorrent

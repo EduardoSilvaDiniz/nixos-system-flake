@@ -1,5 +1,6 @@
 {pkgs, inputs, ...}: {
   environment.systemPackages = with pkgs; [
+    google-chrome
     gcc # C/C++
     binutils
     flutter # dart/Flutter

@@ -2,7 +2,9 @@
   boot = {
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
-
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = [];
     initrd = {
       availableKernelModules = [
         "nvme"
@@ -13,8 +15,9 @@
       ];
       kernelModules = ["amdgpu"];
     };
-    kernelModules = ["kvm-amd"];
-    kernelPackages = pkgs.linuxPackages_latest;
-    extraModulePackages = [];
+    extraModprobeConfig = ''
+      drm_kms_helper
+      options drm_kms_helper poll=N
+    '';
   };
 }
