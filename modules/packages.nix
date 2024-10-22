@@ -31,5 +31,8 @@
     meson
     ninja
     gradle
+
+    ## TODO coloca no emacs config
+    emacs-lsp-booster
   ];
 }
