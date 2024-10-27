@@ -11,7 +11,7 @@ inputs.home-manager.lib.homeManagerConfiguration {
     overlays = [
       (import (builtins.fetchTarball {
         url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        sha256 = "1h59k5anc01x7k147c09kn5fmypv01x1pcmjw99jixxqs150qdig";
+        sha256 = "1chsz3vzcf5pwm2dn2zq6qi5nh0rnlv823qfis1gm77mpd5mmdik";
       }))
     ];
   };

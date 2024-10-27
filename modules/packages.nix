@@ -11,6 +11,9 @@
     vesktop
     gnucash
     obsidian
+    flowtime
+    foliate
+    tor-browser
 
     ## Compilers/interpreters
     rustc

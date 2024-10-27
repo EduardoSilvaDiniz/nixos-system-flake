@@ -4,7 +4,7 @@
     ./shell
     ./sound
     ./games
-    ./window-manager
+    # ./window-manager
     ./terminais
     ./packages.nix
   ];

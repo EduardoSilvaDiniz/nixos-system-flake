@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.mpd = {
-    enable = true;
+    enable = false;
     musicDirectory = "~/Músicas/";
 
     extraConfig = ''

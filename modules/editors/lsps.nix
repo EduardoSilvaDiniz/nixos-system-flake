@@ -26,6 +26,7 @@ with pkgs; [
   google-java-format # format
   checkstyle # Lint
   vscode-extensions.vscjava.vscode-java-debug # DAP
+  graalvm-ce # Extra
 
   ### Lua
   lua-language-server # LSP
