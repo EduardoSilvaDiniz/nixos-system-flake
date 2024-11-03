@@ -36,6 +36,7 @@
   };
   home.packages = with pkgs; [
     tmux
+    zellij
     file
     libtool
     bc

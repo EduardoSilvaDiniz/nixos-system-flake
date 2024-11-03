@@ -12,7 +12,7 @@
     username = "edu";
     homeDirectory = "/home/edu";
     stateVersion = "24.05";
-    sessionPath = ["/home/edu/.config/emacs/bin"];
+    sessionPath = ["/home/edu/.config/emacs/bin" "/home/edu/.yarn/bin"];
   };
 
   programs.home-manager.enable = true;

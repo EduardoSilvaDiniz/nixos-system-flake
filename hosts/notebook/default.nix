@@ -3,6 +3,7 @@
   system,
   ...
 }:
+#TODO passa a usar a definição pkgs, pkgs-unstable que esta no flake
 inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {
     pkgs = import inputs.nixpkgs {

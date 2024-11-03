@@ -10,32 +10,38 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
   outputs = {
     self,
     nixpkgs,
     nixpkgs-unstable,
-    neovim-nightly-overlay,
     home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
     system = "x86_64-linux";
+    user = "edu";
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      overlays = [
+        (import (builtins.fetchTarball {
+          url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+          sha256 = "1chsz3vzcf5pwm2dn2zq6qi5nh0rnlv823qfis1gm77mpd5mmdik";
+        }))
+      ];
+    };
+    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
   in {
     overlays = import ./overlays {inherit inputs;};
 
-    nixosConfigurations = {
-      nixos = import ./hosts/notebook {inherit inputs outputs system;};
-    };
+    nixosConfigurations.nixos = import ./hosts/notebook {inherit inputs outputs pkgs pkgs-unstable;};
 
-    homeConfigurations = {
-      edu = import ./modules {inherit inputs outputs system;};
-    };
+    homeConfigurations.${user} = import ./modules {inherit inputs outputs pkgs pkgs-unstable;};
   };
 }

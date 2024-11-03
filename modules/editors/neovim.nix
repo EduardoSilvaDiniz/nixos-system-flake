@@ -1,12 +1,12 @@
 {
   pkgs,
-  inputs,
+  pkgs-unstable,
   ...
 }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    package = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+    package = pkgs-unstable.neovim-unwrapped;
     withPython3 = true;
     withNodeJs = false;
     withRuby = false;
@@ -17,9 +17,6 @@
 
     extraPython3Packages = ps:
       with ps; [
-        tasklib
-        six
-        packaging
         python-lsp-server # LSP python
       ];
 

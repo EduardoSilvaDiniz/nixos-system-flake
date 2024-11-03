@@ -21,12 +21,19 @@ with pkgs; [
   cpplint # Lint
   vscode-extensions.ms-vscode.cpptools # DAP
 
+  ## Clojure
+  clojure-lsp # LSP
+  clj-kondo # Lint
+
   ### Java
   jdt-language-server # LSP
   google-java-format # format
   checkstyle # Lint
-  vscode-extensions.vscjava.vscode-java-debug # DAP
   graalvm-ce # Extra
+  vscode-extensions.vscjava.vscode-java-test # DAP
+  vscode-extensions.vscjava.vscode-java-debug # DAP
+  vscode-extensions.vscjava.vscode-gradle # DAP
+  lombok
 
   ### Lua
   lua-language-server # LSP

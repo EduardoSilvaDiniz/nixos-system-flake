@@ -27,15 +27,18 @@
     python3Full
     glslang
     gh-markdown-preview
+    gmp
 
     ## Project managers
-    cmake
-    gnumake
-    meson
-    ninja
-    gradle
+    cmake # c
+    gnumake # c
+    meson # java
+    ninja # C
+    gradle # java
+    leiningen # clojure
 
     ## TODO coloca no emacs config
     emacs-lsp-booster
+    yarn
   ];
 }
