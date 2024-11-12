@@ -36,11 +36,14 @@
         }))
       ];
     };
-    pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+    pkgs-unstable = import inputs.nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in {
     overlays = import ./overlays {inherit inputs;};
 
-    nixosConfigurations.nixos = import ./hosts/notebook {inherit inputs outputs pkgs pkgs-unstable;};
+    nixosConfigurations.nixos = import ./hosts/notebook {inherit inputs outputs system;};
 
     homeConfigurations.${user} = import ./modules {inherit inputs outputs pkgs pkgs-unstable;};
   };

@@ -4,7 +4,6 @@
     firefox-unwrapped
     keepassxc
     thunderbird
-    qbittorrent
     vlc
     zoom-us
     dbeaver-bin
@@ -14,6 +13,11 @@
     flowtime
     foliate
     tor-browser
+    gimp
+    anki-bin
+    morgen
+    pdfarranger
+    obs-studio
 
     ## Compilers/interpreters
     rustc
@@ -40,5 +44,6 @@
     ## TODO coloca no emacs config
     emacs-lsp-booster
     yarn
+
   ];
 }

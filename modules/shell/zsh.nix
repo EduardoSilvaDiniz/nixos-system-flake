@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -41,7 +45,9 @@
     libtool
     bc
     taskwarrior
-    taskserver
+    taskwarrior-tui
+    syncall
+    python312Packages.pip
     viu
     chafa
     ueberzugpp
@@ -66,5 +72,7 @@
     fd
     gradle-completion
     usbutils
+    zk
+    ffmpeg-full
   ];
 }

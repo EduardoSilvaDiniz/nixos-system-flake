@@ -1,7 +1,14 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    android-studio
-    jetbrains.idea-community-bin
-    jetbrains.clion
-  ];
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
+  home.packages =
+    (with pkgs; [
+      jetbrains.idea-community-bin
+      jetbrains.clion
+    ])
+    ++ (with pkgs-unstable; [
+      android-studio
+    ]);
 }

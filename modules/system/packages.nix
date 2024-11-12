@@ -10,7 +10,10 @@
     php83Packages.composer # php
     home-manager
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-    ## gnome
+
+    ## python
+    python312Packages.google
+    python312Packages.tw
   ];
 
   fonts.packages = with pkgs; [

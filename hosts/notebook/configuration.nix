@@ -14,7 +14,15 @@
     '';
     packages = [pkgs.android-udev-rules];
   };
+
   services.flatpak.enable = true;
+
+  services.syncthing = {
+    enable = true;
+    user = "edu";
+    dataDir = "/home/edu/Sync/";
+    openDefaultPorts = true;
+  };
 
   networking.networkmanager.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

@@ -47,7 +47,7 @@ with pkgs; [
 
   ### Html/Css
   html-tidy
-  # vscode-langservers-extracted # erro na atualização
+  vscode-langservers-extracted # erro na atualização
   prettierd
   #htmlbeautifier djlint # HTML
   rustywind
