@@ -15,12 +15,14 @@
       nvim-treesitter.withAllGrammars
     ];
 
-    extraPython3Packages = ps:
-      with ps; [
-        python-lsp-server # LSP python
-      ];
+    # por enquanto vou deixa comentado pois já coloquei a instalação
+    # do lsp do python dentro do coding-tools.
+    # extraPython3Packages = ps:
+    #   with ps; [
+    #     python-lsp-server # LSP python
+    #   ];
 
-    extraPackages = import ./lsps.nix {inherit pkgs pkgs-unstable;};
+    extraPackages = import ./coding-tools.nix {inherit pkgs pkgs-unstable;};
   };
 
   home.packages = with pkgs; [
