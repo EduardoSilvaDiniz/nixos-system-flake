@@ -1,96 +1,147 @@
-{pkgs, ...}:
-with pkgs; [
-  #TODO ESTA FALTANDO LSP,FORMAT,CHECK,LINTER,DAP
-  ## Languages
-  ### All
-  semgrep # format, lint debug?
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
+(with pkgs; [
+  ## C/C++, C#, Java
+  uncrustify
 
-  ### Go
-  gopls # LSP
-  gofumpt # Format
-  goimports-reviser # Linter imports
-  golangci-lint # Linter
-  delve # DAP
+  ## Go, javascript, lua, Python, Typescript
+  # refactoring
 
-  gomodifytags # show tags
-  gosimports # fix imports
-  gotests # tests
-  gore # REPL
-
-  ### C/C++
-  cpplint # Lint
+  ## C/C++
+  ccls # LSP
   vscode-extensions.ms-vscode.cpptools # DAP
+  # REPL
+  cppcheck # Diagnostics
 
   ## Clojure
   clojure-lsp # LSP
-  clj-kondo # Lint
+  # DAP
+  # REPL
+  clj-kondo # Diagnostics
 
-  ### Java
+  ## Editorconfig
+  editorconfig-checker # Diagnostics
+
+  ## Docker
+  # LSP
+  hadolint # format
+
+  ## Java
   jdt-language-server # LSP
-  google-java-format # format
-  checkstyle # Lint
-  graalvm-ce # Extra
-  vscode-extensions.vscjava.vscode-java-test # DAP
-  vscode-extensions.vscjava.vscode-java-debug # DAP
-  vscode-extensions.vscjava.vscode-gradle # DAP
+  ### DAP
+  vscode-extensions.vscjava.vscode-java-test
+  vscode-extensions.vscjava.vscode-java-debug
+  vscode-extensions.vscjava.vscode-gradle
   lombok
+  # REPL
+  google-java-format # format
+  ### Diagnostics
+  checkstyle
+  pmd
+  graalvm-ce # Extra
 
-  ### Lua
-  lua-language-server # LSP
-  lua51Packages.luacheck # Format
-  stylua # Lint
-
-  ### JavaScript/Typescript
-  eslint_d # LSP
-  jsbeautifier
+  ## JavaScript/Typescript
   nodePackages.typescript-language-server # LSP
+  # REPL
+  nodePackages_latest.prettier # format
 
-  ### Html/Css
-  html-tidy
-  vscode-langservers-extracted # erro na atualização
+  ## Go
+  gopls # LSP
+  delve # DAP
+  gotests # tests
+  gore # REPL
+  ### Formats
+  gofumpt # Enforce a stricter format than gofmt, while being backwards compatible.
+  golines # long lines
+  gosimports # imports
+  goimports-reviser
+  golangci-lint # diagnostics
+  gomodifytags # code actions
+
+  ## Html
+  vscode-langservers-extracted # LSP
+  html-tidy # diagnostics
+  ### Format
+  djlint
   prettierd
-  #htmlbeautifier djlint # HTML
   rustywind
-  stylelint
 
-  ### Nix
-  nil # LSP
-  alejandra # Format
-  deadnix # Linter
-
-  ### Markdown
+  ## Markdown
   markdown-oxide # LSP
+  ### Format
+  cbfmt
+  textlint
+  ### Diagnostics
+  markdownlint-cli2
+  mdl
+  proselint
+  vale
+  write-good
 
-  ### Shellscript
-  nodePackages_latest.bash-language-server # LSP
-  shellcheck # Check, Linter
-  shfmt # Format, Linter
+  ## Make
+  checkmake
+  cmake-format
 
-  ### Python
-  nodePackages.pyright # Check
-  black # Format
-  isort # Linter
+  ## Nix
+  nil # LSP
+  # DAP
+  alejandra # Format
+  deadnix # diagnostics
+  statix # code action
 
-  ### PHP
-  vscode-extensions.xdebug.php-debug # php
-  nodePackages_latest.intelephense # php
+  ## PHP
+  phpactor # LSP
+  vscode-extensions.xdebug.php-debug # DAP
+  php83Packages.psysh # REPL
+  # Format
   php83Packages.php-codesniffer
   php83Packages.php-cs-fixer
-  php83Packages.phpinsights
-  #TODO quem são eles?
-  #php83Packages.pint
-  #php83Packages.prettier
-  #php83Packages.prettynd # PHP
+  # Diagnostics
+  php83Packages.phpstan
+  php83Packages.phpmd
 
-  ### Rust
+  ## Python
+  python312Packages.python-lsp-server # LSP
+  # DAP
+  python312Packages.ptpython # REPL
+  ### Diagnostics
+  pylint
+  black
+  isort
+
+  ## Lua
+  lua-language-server # LSP
+  # DAP
+  # REPL
+  stylua # format
+
+  ## Rust
+  # LSP
+  # DAP
+  # REPL
   rustfmt # Format
 
-  ### Make/Cmake
-  cmake-format # Format
+  ## Shellscript
+  nodePackages_latest.bash-language-server # LSP
+  # DAP
+  # REPL
+  ### Format
+  shellharden
+  shfmt
+  dotenv-linter # Diagnostics
 
-  ### Sql
-  nodePackages.sql-formatter # Format
+  ## Sql
+  ### Format
+  python312Packages.sqlparse
+  nodePackages_latest.sql-formatter
+  sqlfluff
 
-  #others
+  ## others
   sqlite
-]
+])
+++ (with pkgs-unstable; [
+  vscode-js-debug # js DAP
+])

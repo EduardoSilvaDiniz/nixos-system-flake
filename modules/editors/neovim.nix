@@ -20,7 +20,7 @@
         python-lsp-server # LSP python
       ];
 
-    extraPackages = import ./lsps.nix {inherit pkgs;};
+    extraPackages = import ./lsps.nix {inherit pkgs pkgs-unstable;};
   };
 
   home.packages = with pkgs; [
