@@ -7,7 +7,6 @@
     ./excludePackages.nix
     ./extensions.nix
     ./languages.nix
-    ./packages-unstable.nix
     ./packages.nix
     ./pcloud.nix
     ./user.nix

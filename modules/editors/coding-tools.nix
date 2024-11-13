@@ -4,6 +4,10 @@
   ...
 }:
 (with pkgs; [
+  ## softwares
+  sqlite
+  tree-sitter
+
   ## C/C++, C#, Java
   uncrustify
 
@@ -12,31 +16,25 @@
 
   ## C/C++
   ccls # LSP
-  vscode-extensions.ms-vscode.cpptools # DAP
-  # REPL
+  lldb # DAP
   cppcheck # Diagnostics
 
   ## Clojure
   clojure-lsp # LSP
-  # DAP
-  # REPL
   clj-kondo # Diagnostics
 
   ## Editorconfig
   editorconfig-checker # Diagnostics
 
   ## Docker
-  # LSP
   hadolint # format
 
   ## Java
   jdt-language-server # LSP
-  ### DAP
-  vscode-extensions.vscjava.vscode-java-test
-  vscode-extensions.vscjava.vscode-java-debug
-  vscode-extensions.vscjava.vscode-gradle
+  # vscode-extensions.vscjava.vscode-java-test
+  # vscode-extensions.vscjava.vscode-java-debug
+  # vscode-extensions.vscjava.vscode-gradle
   lombok
-  # REPL
   google-java-format # format
   ### Diagnostics
   checkstyle
@@ -45,18 +43,17 @@
 
   ## JavaScript/Typescript
   nodePackages.typescript-language-server # LSP
-  # REPL
+  # DAP pkgs-unstable
   nodePackages_latest.prettier # format
 
   ## Go
   gopls # LSP
   delve # DAP
-  gotests # tests
-  gore # REPL
+  gotests # Test
   ### Formats
   gofumpt # Enforce a stricter format than gofmt, while being backwards compatible.
   golines # long lines
-  gosimports # imports
+  gotools # adds several tools (goimports)
   goimports-reviser
   golangci-lint # diagnostics
   gomodifytags # code actions
@@ -87,7 +84,6 @@
 
   ## Nix
   nil # LSP
-  # DAP
   alejandra # Format
   deadnix # diagnostics
   statix # code action
@@ -95,7 +91,6 @@
   ## PHP
   phpactor # LSP
   vscode-extensions.xdebug.php-debug # DAP
-  php83Packages.psysh # REPL
   # Format
   php83Packages.php-codesniffer
   php83Packages.php-cs-fixer
@@ -105,8 +100,7 @@
 
   ## Python
   python312Packages.python-lsp-server # LSP
-  # DAP
-  python312Packages.ptpython # REPL
+  python312Packages.debugpy # DAP
   ### Diagnostics
   pylint
   black
@@ -114,20 +108,17 @@
 
   ## Lua
   lua-language-server # LSP
-  # DAP
-  # REPL
   stylua # format
 
   ## Rust
-  # LSP
-  # DAP
-  # REPL
+  rust-analyzer # LSP
+  gdb # DAP
   rustfmt # Format
+  leptosfmt
 
   ## Shellscript
   nodePackages_latest.bash-language-server # LSP
-  # DAP
-  # REPL
+  # bash-debug # DAP não existe, talvez seja outro nome...
   ### Format
   shellharden
   shfmt
@@ -139,8 +130,6 @@
   nodePackages_latest.sql-formatter
   sqlfluff
 
-  ## others
-  sqlite
 ])
 ++ (with pkgs-unstable; [
   vscode-js-debug # js DAP

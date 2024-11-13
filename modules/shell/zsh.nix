@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   programs.zsh = {
@@ -38,41 +39,45 @@
       theme = "gallois";
     };
   };
-  home.packages = with pkgs; [
-    tmux
-    zellij
-    file
-    libtool
-    bc
-    taskwarrior
-    taskwarrior-tui
-    syncall
-    python312Packages.pip
-    viu
-    chafa
-    ueberzugpp
-    fzf
-    zsh
-    zip
-    unzip
-    unrar
-    eza
-    bat
-    delta
-    wget
-    curl
-    src-cli
-    git
-    btop
-    bintools
-    fastfetch
-    xclip
-    ripgrep
-    coreutils
-    fd
-    gradle-completion
-    usbutils
-    zk
-    ffmpeg-full
-  ];
+  home.packages =
+    (with pkgs; [
+      tmux
+      zellij
+      file
+      libtool
+      bc
+      taskwarrior
+      taskwarrior-tui
+      syncall
+      python312Packages.pip
+      viu
+      chafa
+      ueberzugpp
+      zsh
+      zip
+      unzip
+      unrar
+      eza
+      bat
+      delta
+      wget
+      curl
+      src-cli
+      git
+      btop
+      bintools
+      fastfetch
+      xclip
+      ripgrep
+      coreutils
+      fd
+      gradle-completion
+      usbutils
+      zk
+      ffmpeg
+      mercurial
+    ])
+    ++ (with pkgs-unstable; [
+      fzf
+    ]);
 }

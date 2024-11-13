@@ -1,20 +1,18 @@
-{pkgs, inputs, ...}: {
-  environment.systemPackages = with pkgs; [
-    google-chrome
-    gcc # C/C++
-    binutils
-    flutter # dart/Flutter
-    jdk # java stable
-    jdk8 # java lts 8
-    clang
-    php83Packages.composer # php
-    home-manager
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-
-    ## python
-    python312Packages.google
-    python312Packages.tw
-  ];
+{
+  pkgs,
+  pkgs-unstable,
+  # inputs,
+  ...
+}: {
+  environment.systemPackages =
+    (with pkgs; [
+      home-manager
+      # inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    ])
+    ++ (with pkgs-unstable; [
+      clang-tools
+      qbittorrent # a compilação estavel esta com uma falha de segurança
+    ]);
 
   fonts.packages = with pkgs; [
     fira-code
