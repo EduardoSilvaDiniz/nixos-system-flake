@@ -42,21 +42,22 @@
   graalvm-ce # Extra
 
   ## JavaScript/Typescript
-  nodePackages.typescript-language-server # LSP
+  # nodePackages.typescript-language-server # LSP
+  # vscode-js-debug # js DAP
   # DAP pkgs-unstable
-  nodePackages_latest.prettier # format
+  # nodePackages_latest.prettier # format
 
   ## Go
-  gopls # LSP
-  delve # DAP
-  gotests # Test
-  ### Formats
-  gofumpt # Enforce a stricter format than gofmt, while being backwards compatible.
-  golines # long lines
-  gotools # adds several tools (goimports)
-  goimports-reviser
-  golangci-lint # diagnostics
-  gomodifytags # code actions
+  # gopls # LSP
+  # delve # DAP
+  # gotests # Test
+  # ### Formats
+  # gofumpt # Enforce a stricter format than gofmt, while being backwards compatible.
+  # golines # long lines
+  # gotools # adds several tools (goimports)
+  # goimports-reviser
+  # golangci-lint # diagnostics
+  # gomodifytags # code actions
 
   ## Html
   vscode-langservers-extracted # LSP
@@ -67,20 +68,20 @@
   rustywind
 
   ## Markdown
-  markdown-oxide # LSP
-  ### Format
-  cbfmt
-  textlint
-  ### Diagnostics
-  markdownlint-cli2
-  mdl
-  proselint
-  vale
-  write-good
+  # markdown-oxide # LSP
+  # ### Format
+  # cbfmt
+  # textlint
+  # ### Diagnostics
+  # markdownlint-cli2
+  # mdl
+  # proselint
+  # vale
+  # write-good
 
   ## Make
-  checkmake
-  cmake-format
+  # checkmake
+  # cmake-format
 
   ## Nix
   nil # LSP
@@ -89,48 +90,47 @@
   statix # code action
 
   ## PHP
-  phpactor # LSP
-  vscode-extensions.xdebug.php-debug # DAP
-  # Format
-  php83Packages.php-codesniffer
-  php83Packages.php-cs-fixer
-  # Diagnostics
-  php83Packages.phpstan
-  php83Packages.phpmd
+  # phpactor # LSP
+  # vscode-extensions.xdebug.php-debug # DAP
+  # # Format
+  # php83Packages.php-codesniffer
+  # php83Packages.php-cs-fixer
+  # # Diagnostics
+  # php83Packages.phpstan
+  # php83Packages.phpmd
 
   ## Python
-  python312Packages.python-lsp-server # LSP
-  python312Packages.debugpy # DAP
-  ### Diagnostics
-  pylint
-  black
-  isort
+  # python312Packages.python-lsp-server # LSP
+  # python312Packages.debugpy # DAP
+  # ### Diagnostics
+  # pylint
+  # black
+  # isort
 
   ## Lua
   lua-language-server # LSP
   stylua # format
 
   ## Rust
-  rust-analyzer # LSP
-  gdb # DAP
-  rustfmt # Format
-  leptosfmt
+  # rust-analyzer # LSP
+  # gdb # DAP
+  # rustfmt # Format
+  # leptosfmt
 
   ## Shellscript
-  nodePackages_latest.bash-language-server # LSP
-  # bash-debug # DAP não existe, talvez seja outro nome...
-  ### Format
-  shellharden
-  shfmt
-  dotenv-linter # Diagnostics
+  # nodePackages_latest.bash-language-server # LSP
+  # # bash-debug # DAP não existe, talvez seja outro nome...
+  # ### Format
+  # shellharden
+  # shfmt
+  # dotenv-linter # Diagnostics
 
   ## Sql
   ### Format
-  python312Packages.sqlparse
-  nodePackages_latest.sql-formatter
-  sqlfluff
+  # python312Packages.sqlparse
+  # nodePackages_latest.sql-formatter
+  # sqlfluff
 
 ])
 ++ (with pkgs-unstable; [
-  vscode-js-debug # js DAP
 ])

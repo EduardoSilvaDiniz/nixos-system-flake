@@ -1,8 +1,7 @@
 {pkgs, ...}: {
-  environment.gnome.excludePackages =
-    (with pkgs; [gnome-tour])
-    ++ (with pkgs.gnome; [
-      epiphany # web browser
-      geary # email reader
-    ]);
+  environment.gnome.excludePackages = with pkgs; [
+    gnome-tour
+    epiphany # web browser
+    geary # email reader
+  ];
 }

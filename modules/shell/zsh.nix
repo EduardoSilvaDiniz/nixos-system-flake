@@ -35,24 +35,16 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = ["sudo" "golang" "tmux" "docker" "git" "git-commit"];
+      plugins = ["sudo" "golang" "docker" "git" "git-commit"];
       theme = "gallois";
     };
   };
   home.packages =
     (with pkgs; [
-      tmux
-      zellij
       file
       libtool
       bc
-      taskwarrior
-      taskwarrior-tui
-      syncall
-      python312Packages.pip
       viu
-      chafa
-      ueberzugpp
       zsh
       zip
       unzip
@@ -73,12 +65,9 @@
       fd
       gradle-completion
       usbutils
-      zk
       ffmpeg
-      mercurial
-      imagemagick
+      fzf
     ])
     ++ (with pkgs-unstable; [
-      fzf
     ]);
 }

@@ -15,8 +15,6 @@
     pdfarranger
     obs-studio
     google-chrome
-    joplin-desktop
-    firefox
 
     ## Compilers/interpreters
     rustc
@@ -25,7 +23,7 @@
     gdb
     nodejs
     go
-    php
+    # php
     # dart
     python3Full
     glslang
@@ -49,7 +47,7 @@
     # Java vem do openjdk
     # Javascript vem do nodejs_22
     gore # Go
-    php83Packages.psysh # Php
+    # php83Packages.psysh # Php
     python312Packages.ptpython # Python
     # Rust vem do cargo
     # Lua vem do luarocks

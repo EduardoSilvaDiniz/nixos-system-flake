@@ -1,7 +1,6 @@
 {
   pkgs,
   pkgs-unstable,
-  # inputs,
   ...
 }: {
   environment.systemPackages =
@@ -10,12 +9,12 @@
       gcc
       clang
       binutils
+      clang-tools
+      qbittorrent
       # inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ])
     ++ (with pkgs-unstable; [
-      clang-tools
-      qbittorrent # a compilação estavel esta com uma falha de segurança
-    ]);
+      ]);
 
   fonts.packages = with pkgs; [
     fira-code
