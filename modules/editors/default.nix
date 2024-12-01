@@ -1,6 +1,6 @@
 {
   imports = [
-    ./emacs.nix
+    #./emacs.nix
     ./neovim.nix
     ./temporary.nix
   ];

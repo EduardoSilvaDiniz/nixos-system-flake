@@ -6,9 +6,8 @@
   home.packages =
     (with pkgs; [
       jetbrains.idea-community-bin
-      jetbrains.clion
+      android-studio
     ])
     ++ (with pkgs-unstable; [
-      android-studio
-    ]);
+      ]);
 }

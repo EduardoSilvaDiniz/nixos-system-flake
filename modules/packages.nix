@@ -55,8 +55,8 @@
     # Lua vem do luarocks
 
     ## TODO coloca no emacs config
-    emacs-lsp-booster
-    yarn
+    #emacs-lsp-booster
+    #yarn
 
     ## Removido do system
     # clang

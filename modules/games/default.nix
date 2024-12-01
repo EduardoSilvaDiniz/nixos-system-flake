@@ -1,9 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    winetricks
-    wineWowPackages.waylandFull
+    wineWowPackages.wayland
     steam
-    lutris
     prismlauncher
     duckstation
     (retroarch.override {cores = with libretro; [parallel-n64];})
