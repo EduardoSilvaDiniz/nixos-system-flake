@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 config = {
-	color_scheme = "Gruvbox Dark (Gogh)",
+	color_scheme = "Everforest Dark (Gogh)",
 	font_size = 13.0,
 	enable_wayland = true,
   hide_mouse_cursor_when_typing = false,

@@ -7,6 +7,9 @@
   environment.systemPackages =
     (with pkgs; [
       home-manager
+      gcc
+      clang
+      binutils
       # inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
     ])
     ++ (with pkgs-unstable; [

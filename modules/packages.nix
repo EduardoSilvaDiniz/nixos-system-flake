@@ -1,24 +1,22 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     ## Aplications
-    firefox-unwrapped
     keepassxc
     thunderbird
     vlc
     zoom-us
     dbeaver-bin
     vesktop
-    gnucash
     obsidian
     flowtime
     foliate
     tor-browser
     gimp
-    anki-bin
-    morgen
     pdfarranger
     obs-studio
     google-chrome
+    joplin-desktop
+    firefox
 
     ## Compilers/interpreters
     rustc
@@ -61,7 +59,8 @@
     yarn
 
     ## Removido do system
-    clang
+    # clang
+    ninja # necessario para flutter
     #TODO resolver as colições
     # gcc # colisão com binutils
     # binutils ## colisão com gcc
@@ -69,5 +68,8 @@
     # jdk ## colisão com graalvm-ce
     # jdk8
     # php83Packages.composer # colisão com flutter
+
+    #Test
+    python312Packages.matplotlib
   ];
 }

@@ -76,6 +76,7 @@
       zk
       ffmpeg
       mercurial
+      imagemagick
     ])
     ++ (with pkgs-unstable; [
       fzf
