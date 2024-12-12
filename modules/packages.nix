@@ -6,7 +6,7 @@
     vlc
     zoom-us
     dbeaver-bin
-    vesktop
+    discord
     obsidian
     flowtime
     foliate
@@ -15,6 +15,9 @@
     pdfarranger
     obs-studio
     google-chrome
+    firefox
+    syncthing
+    stremio
 
     ## Compilers/interpreters
     rustc

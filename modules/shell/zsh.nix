@@ -26,6 +26,10 @@
       ll = "exa -lh --group-directories-first";
       la = "exa -lha --group-directories-first";
       l = "exa -lha --group-directories-first";
+      nlg= "nix-env --list-generations";
+      nixListGen = "nix-env --list-generations";
+      ndog= "nix-collect-garbage  --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      nixDeleteOldGen = "nix-collect-garbage  --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
     };
 
     history = {
@@ -67,6 +71,8 @@
       usbutils
       ffmpeg
       fzf
+      tesseract4
+      imagemagick
     ])
     ++ (with pkgs-unstable; [
     ]);

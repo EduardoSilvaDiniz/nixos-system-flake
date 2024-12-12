@@ -8,9 +8,9 @@
     ];
   };
   inputs = {
+    # nixcats.url = "github:EduardoSilvaDiniz/nixCats-flake";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,17 +29,13 @@
     pkgs = import inputs.nixpkgs {
       inherit system;
       config.allowUnfree = true;
-        #overlays = [
-        #(import (builtins.fetchTarball {
-        #  url = "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-        #  sha256 = "1chsz3vzcf5pwm2dn2zq6qi5nh0rnlv823qfis1gm77mpd5mmdik";
-        #}))
-        #];
     };
     pkgs-unstable = import inputs.nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
+    # nixcats = import inputs.nixcats;
+
   in {
     overlays = import ./overlays {inherit inputs;};
 
