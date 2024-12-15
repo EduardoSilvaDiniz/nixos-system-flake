@@ -34,13 +34,12 @@
       inherit system;
       config.allowUnfree = true;
     };
-    # nixcats = import inputs.nixcats;
 
   in {
     overlays = import ./overlays {inherit inputs;};
 
-    nixosConfigurations.nixos = import ./hosts/notebook {inherit inputs outputs system;};
+    nixosConfigurations.nixos = import ./hosts/desktop {inherit inputs outputs system;};
 
-    homeConfigurations.${user} = import ./modules {inherit inputs outputs pkgs pkgs-unstable;};
+    homeConfigurations.${user} = import ./modules {inherit inputs outputs pkgs pkgs-unstable ;};
   };
 }

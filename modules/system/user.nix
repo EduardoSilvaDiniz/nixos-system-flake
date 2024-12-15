@@ -17,6 +17,7 @@
         "input"
         "libvirtd"
         "docker"
+        "gamemode"
       ];
     };
   };

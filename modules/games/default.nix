@@ -7,6 +7,12 @@
     heroic
     gogdl
     gamescope
+    gamemode
+    bottles
+    mangohud
+    goverlay
+    unigine-superposition
+    lutris
     (retroarch.override {cores = with libretro; [parallel-n64];})
   ];
 }

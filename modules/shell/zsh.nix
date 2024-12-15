@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   programs.zsh = {
@@ -11,7 +10,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = let
-      flakeDir = "~/Projetos/nix";
+      flakeDir = "~/Projetos/nixos";
     in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
       rbi = "sudo nixos-rebuild boot --flake ${flakeDir}";
@@ -26,9 +25,9 @@
       ll = "exa -lh --group-directories-first";
       la = "exa -lha --group-directories-first";
       l = "exa -lha --group-directories-first";
-      nlg= "nix-env --list-generations";
+      nlg = "nix-env --list-generations";
       nixListGen = "nix-env --list-generations";
-      ndog= "nix-collect-garbage  --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      ndog = "nix-collect-garbage  --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       nixDeleteOldGen = "nix-collect-garbage  --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
     };
 
@@ -43,37 +42,36 @@
       theme = "gallois";
     };
   };
-  home.packages =
-    (with pkgs; [
-      file
-      libtool
-      bc
-      viu
-      zsh
-      zip
-      unzip
-      unrar
-      eza
-      bat
-      delta
-      wget
-      curl
-      src-cli
-      git
-      btop
-      bintools
-      fastfetch
-      xclip
-      ripgrep
-      coreutils
-      fd
-      gradle-completion
-      usbutils
-      ffmpeg
-      fzf
-      tesseract4
-      imagemagick
-    ])
-    ++ (with pkgs-unstable; [
-    ]);
+  home.packages = with pkgs; [
+    file
+    libtool
+    bc
+    viu
+    zsh
+    zip
+    unzip
+    unrar
+    eza
+    bat
+    delta
+    wget
+    curl
+    src-cli
+    git
+    btop
+    bintools
+    fastfetch
+    xclip
+    ripgrep
+    coreutils
+    fd
+    gradle-completion
+    usbutils
+    ffmpeg
+    fzf
+    tesseract4
+    imagemagick
+    taskwarrior3
+    e2fsprogs
+  ];
 }

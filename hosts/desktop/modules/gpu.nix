@@ -1,46 +1,59 @@
-{pkgs, config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   services.xserver.videoDrivers = ["nvidia"];
+  boot.extraModulePackages = [
+    config.boot.kernelPackages.nvidia_x11
+  ];
+  boot.blacklistedKernelModules = [
+    "nouveau"
+    "rivafb"
+    "nvidiafb"
+    "rivatv"
+    "nv"
+    "uvcvideo"
+  ];
 
   hardware = {
     graphics = {
       enable = true;
       enable32Bit = true;
-      nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-      extraPackages = with pkgs; [
-        vulkan-loader
-        vulkan-validation-layers
-        vulkan-extension-layer
-      ];
+      extraPackages = [pkgs.vaapiVdpau];
     };
+
     nvidia = {
-      # Modesetting is required.
       modesetting.enable = true;
-
-      # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-      # Enable this if you have graphical corruption issues or application crashes after waking
-      # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-      # of just the bare essentials.
-      powerManagement.enable = false;
-
-      # Fine-grained power management. Turns off GPU when not in use.
-      # Experimental and only works on modern Nvidia GPUs (Turing or newer).
+      powerManagement.enable = true;
       powerManagement.finegrained = false;
-
-      # Use the NVidia open source kernel module (not to be confused with the
-      # independent third-party "nouveau" open source driver).
-      # Support is limited to the Turing and later architectures. Full list of 
-      # supported GPUs is at: 
-      # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-      # Only available from driver 515.43.04+
-      # Currently alpha-quality/buggy, so false is currently the recommended setting.
-      open = false;
-
-      # Enable the Nvidia settings menu,
-	    #accessible via `nvidia-settings`.
+      open = true;
       nvidiaSettings = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
+    };
+  };
+  boot.kernelParams = ["nvidia-drm.fbdev=1"];
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "nvidia";
+    WLR_NO_HARDWARE_CURSORS = "1";
 
-      # Optionally, you may need to select the appropriate driver version for your specific GPU.
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
-    }
+    # May cause Firefox crashes
+    GBM_BACKEND = "nvidia-drm";
+
+    # If you face problems with Discord windows not displaying or screen
+    # sharing not working in Zoom, remove or comment this:
+    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+  };
+  environment = {
+    systemPackages = with pkgs; [
+      cudaPackages.cudatoolkit # required for CUDA support
+    ];
+    variables = {
+      CUDA_PATH = "${pkgs.cudaPackages.cudatoolkit}";
+      CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv";
+
+      # $EXTRA_LDFLAGS and $EXTRA_CCFLAGS are sometimes necessary too, but I
+      # set those in nix-shells instead.
+    };
   };
 }
