@@ -6,7 +6,10 @@
       "flakes"
       "nix-command"
     ];
+    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
+    auto-optimise-store = true;
   };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -15,28 +18,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = {
+  outputs = inputs @ {
     self,
     nixpkgs,
     nixpkgs-unstable,
     ...
-  } @ inputs: let
-    inherit (self) outputs;
+  }: let
     system = "x86_64-linux";
     user = "edu";
-    pkgs = import inputs.nixpkgs {
+    pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
-    pkgs-unstable = import inputs.nixpkgs-unstable {
+    pkgs-unstable = import nixpkgs-unstable {
       inherit system;
       config.allowUnfree = true;
     };
+    lib = nixpkgs.lib;
   in {
-    overlays = import ./overlays {inherit inputs;};
-
-    nixosConfigurations.nixos = import ./hosts/notebook {inherit inputs outputs system;};
-
-    homeConfigurations.${user} = import ./modules {inherit inputs outputs pkgs pkgs-unstable;};
+    nixosConfigurations.nagakiba = import ./hosts/nagakiba {inherit system pkgs pkgs-unstable lib;};
+    homeConfigurations.${user} = import ./modules {inherit pkgs pkgs-unstable lib;};
   };
 }
