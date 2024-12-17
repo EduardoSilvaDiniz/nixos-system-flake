@@ -1,20 +1,13 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
-  environment.systemPackages =
-    (with pkgs; [
-      home-manager
-      gcc
-      clang
-      binutils
-      clang-tools
-      qbittorrent
-      # inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
-    ])
-    ++ (with pkgs-unstable; [
-      ]);
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    home-manager
+    gcc
+    clang
+    binutils
+    clang-tools
+    qbittorrent
+    # inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+  ];
 
   fonts.packages = with pkgs; [
     fira-code

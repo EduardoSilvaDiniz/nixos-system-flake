@@ -1,0 +1,36 @@
+{pkgs, ...}: {
+  #TODO oque voces estão fazendo aqui?
+  programs.zsh.enable = true;
+  programs.adb.enable = true;
+
+  users = {
+    defaultUserShell = pkgs.zsh;
+
+    users.edu = {
+      isNormalUser = true;
+      description = "Eduardo Silva";
+      extraGroups = [
+        "adbusers"
+        "audio"
+        "networkmanager"
+        "wheel"
+        "input"
+        "libvirtd"
+        "docker"
+      ];
+    };
+  };
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "pt_BR.UTF-8";
+    LC_IDENTIFICATION = "pt_BR.UTF-8";
+    LC_MEASUREMENT = "pt_BR.UTF-8";
+    LC_MONETARY = "pt_BR.UTF-8";
+    LC_NAME = "pt_BR.UTF-8";
+    LC_NUMERIC = "pt_BR.UTF-8";
+    LC_PAPER = "pt_BR.UTF-8";
+    LC_TELEPHONE = "pt_BR.UTF-8";
+    LC_TIME = "pt_BR.UTF-8";
+  };
+  console.keyMap = "br-abnt2";
+}

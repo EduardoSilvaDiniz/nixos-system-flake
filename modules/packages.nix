@@ -15,7 +15,6 @@
     pdfarranger
     obs-studio
     google-chrome
-    firefox
     syncthing
     stremio
 
@@ -27,7 +26,6 @@
     nodejs
     go
     # php
-    # dart
     python3Full
     glslang
     gh-markdown-preview
@@ -61,16 +59,11 @@
 
     ## Removido do system
     # clang
-    ninja # necessario para flutter
     #TODO resolver as colições
     # gcc # colisão com binutils
     # binutils ## colisão com gcc
-    flutter ## colisão com dart
     # jdk ## colisão com graalvm-ce
     # jdk8
-    # php83Packages.composer # colisão com flutter
-
-    #Test
-    python312Packages.matplotlib
+    # php83Packages.composer
   ];
 }

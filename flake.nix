@@ -8,7 +8,6 @@
     ];
   };
   inputs = {
-    # nixcats.url = "github:EduardoSilvaDiniz/nixCats-flake";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
@@ -20,7 +19,6 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
-    home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -34,8 +32,6 @@
       inherit system;
       config.allowUnfree = true;
     };
-    # nixcats = import inputs.nixcats;
-
   in {
     overlays = import ./overlays {inherit inputs;};
 
