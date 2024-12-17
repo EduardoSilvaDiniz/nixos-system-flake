@@ -1,14 +1,6 @@
 {
   description = "My system configuration";
 
-  nixConfig = {
-    experimental-features = [
-      "flakes"
-      "nix-command"
-    ];
-    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
-    auto-optimise-store = true;
-  };
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";

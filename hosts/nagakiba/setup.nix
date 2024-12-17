@@ -1,15 +1,27 @@
-{lib, ...}:
-with lib;
-with builtins; {
-  system = "x86_64-linux";
+{
+  lib,
+  pkgs,
+  ...
+}:
+with lib; {
+
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
+    auto-optimise-store = true;
+  };
 
   networking.hostName = "nagakiba";
+  system.stateVersion = "24.11";
 
-  services.fstrim.enable = lib.mkDefault true;
-  hardware.amdgpu.initrd.enable = lib.mkDefault true;
+  services.fstrim.enable = true;
+  hardware.amdgpu.initrd.enable = true;
   hardware.graphics = {
-    enable = lib.mkDefault true;
-    enable32Bit = lib.mkDefault true;
+    enable = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       vulkan-loader
       vulkan-validation-layers
