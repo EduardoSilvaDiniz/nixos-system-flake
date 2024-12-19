@@ -5,10 +5,8 @@
 }: {
   #TODO Refatore-me Porfavor!!!
   imports = [
-    ../../config/cachix.nix
-    ../../modules/system
-    ../../modules/system/hardware
-    ../../modules/system/desktops
+    ./modules/system
+    ./modules/system/desktops
     ./hardware.nix
   ];
 

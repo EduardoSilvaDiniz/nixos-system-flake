@@ -1,6 +1,6 @@
 {
   imports = [
-    ./modules
-    ../../modules/system/hardware
+    ./modules/hardware
+    ./modules/system/hardware
   ];
 }
