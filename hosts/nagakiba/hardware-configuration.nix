@@ -1,32 +1,22 @@
 {
-  lib,
   pkgs,
+  lib,
+  config,
   ...
-}:
-with lib; {
-
-  nix.settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
-    auto-optimise-store = true;
-  };
-
-  networking.hostName = "nagakiba";
-  system.stateVersion = "24.11";
-
-  services.fstrim.enable = true;
-  hardware.amdgpu.initrd.enable = true;
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      vulkan-loader
-      vulkan-validation-layers
-      vulkan-extension-layer
-    ];
+}: {
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [
+        vulkan-loader
+        vulkan-validation-layers
+        vulkan-extension-layer
+      ];
+    };
+    bluetooth.enable = true;
+    amdgpu.initrd.enable = true;
+    cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
   };
 
   fileSystems = {
@@ -51,6 +41,7 @@ with lib; {
   ];
 
   boot = {
+    kernelParams = ["amd_pstate=active"];
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     kernelPackages = pkgs.linuxPackages_latest;
@@ -64,11 +55,8 @@ with lib; {
         "usb_storage"
         "sd_mod"
       ];
-      kernelModules = ["amdgpu"];
     };
-    extraModprobeConfig = ''
-      drm_kms_helper
-      options drm_kms_helper poll=N
-    '';
   };
+
+  services.fstrim.enable = true;
 }

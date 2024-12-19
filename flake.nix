@@ -29,6 +29,8 @@
     lib = nixpkgs.lib;
   in {
     nixosConfigurations.nixos = import ./hosts/nagakiba {inherit inputs system pkgs pkgs-unstable lib;};
+    nixosConfigurations.nagakiba = import ./hosts/nagakiba {inherit inputs system pkgs pkgs-unstable lib;};
+    # nixosConfigurations.zweihander = import ./hosts/zweihander {inherit inputs system pkgs pkgs-unstable lib;};
     homeConfigurations.${user} = import ./modules {inherit pkgs pkgs-unstable lib;};
   };
 }

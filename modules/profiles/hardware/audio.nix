@@ -7,7 +7,8 @@
   };
 
   security.rtkit.enable = true;
-  user.extraGroups = ["audio"];
+  #TODO não home
+  # user.extraGroups = ["audio"];
   hardware.pulseaudio.enable = lib.mkForce false;
   services.pipewire.wireplumber.enable = true;
 }

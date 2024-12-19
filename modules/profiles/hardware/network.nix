@@ -1,7 +1,8 @@
-{lib, ...}: {
+{
   networking.networkmanager.enable = true;
-  user.extraGroups = ["networkmanager"];
-  networking.useDHCP = lib.mkDefault true;
+  #TODO nao home
+  # user.extraGroups = ["networkmanager"];
+  networking.useDHCP = true;
   networking.nameservers = [
     "45.90.28.0#6cf6f6.dns.nextdns.io"
     "2a07:a8c0::#6cf6f6.dns.nextdns.io"

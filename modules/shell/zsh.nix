@@ -42,35 +42,36 @@
       theme = "gallois";
     };
   };
-  home.packages = with pkgs; [
-    file
-    libtool
-    bc
-    viu
-    zsh
-    zip
-    unzip
-    unrar
-    eza
-    bat
-    delta
-    wget
-    curl
-    src-cli
-    git
-    btop
-    bintools
-    fastfetch
-    xclip
-    ripgrep
-    coreutils
-    fd
-    gradle-completion
-    usbutils
-    ffmpeg
-    fzf
-    tesseract4
-    imagemagick
-    taskwarrior3
-  ];
+  ## TODO esta comentado porque não é o home manager que esta carregando esse arquivo
+  # home.packages = with pkgs; [
+  #   file
+  #   libtool
+  #   bc
+  #   viu
+  #   zsh
+  #   zip
+  #   unzip
+  #   unrar
+  #   eza
+  #   bat
+  #   delta
+  #   wget
+  #   curl
+  #   src-cli
+  #   git
+  #   btop
+  #   bintools
+  #   fastfetch
+  #   xclip
+  #   ripgrep
+  #   coreutils
+  #   fd
+  #   gradle-completion
+  #   usbutils
+  #   ffmpeg
+  #   fzf
+  #   tesseract4
+  #   imagemagick
+  #   taskwarrior3
+  # ];
 }

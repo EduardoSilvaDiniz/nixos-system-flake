@@ -22,12 +22,14 @@
     #     python-lsp-server # LSP python
     #   ];
 
-    extraPackages = import ./coding-tools.nix {inherit pkgs pkgs-unstable;};
+    ## TODO mesmo motivo de baixo!
+    # extraPackages = import ./coding-tools.nix {inherit pkgs pkgs-unstable;};
   };
 
-  home.packages = with pkgs; [
-    lazygit
-    lua51Packages.lua
-    lua51Packages.luarocks
-  ];
+  # TODO não é home manager que esta carregando esse arquivo
+  # home.packages = with pkgs; [
+  #   lazygit
+  #   lua51Packages.lua
+  #   lua51Packages.luarocks
+  # ];
 }
