@@ -37,7 +37,6 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/nixos
-        ./hosts/nixos/modules/common.nix
       ];
     };
 

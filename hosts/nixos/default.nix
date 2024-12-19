@@ -14,10 +14,17 @@
   system.stateVersion = "24.11";
   i18n.defaultLocale = "pt_BR.UTF-8";
 
+
   imports = [
-    ./modules/system
+    ../common/synching.nix
+    ../common/pcloud.nix
+    ../common/sound.nix
+    ../common/packages.nix
+    ../common/opts.nix
+    ../common/languages.nix
+    ../common/extensions.nix
+    ../common/desktops/gnome.nix
     ./hardware.nix
-    ./modules/system/synching.nix
   ];
 }
 
