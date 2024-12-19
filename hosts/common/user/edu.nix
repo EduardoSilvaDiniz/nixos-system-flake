@@ -2,7 +2,7 @@
   users.users.edu = {
     isNormalUser = true;
     description = "Eduardo Silva";
-    defaultUserShell = pkgs.zsh;
+    # defaultUserShell = pkgs.zsh; # apenas em home-manager
     extraGroups = [
       "networkmanager"
       "wheel"

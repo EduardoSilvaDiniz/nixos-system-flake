@@ -10,6 +10,7 @@
   networking.hostName = "nixos";
   system.stateVersion = "24.11";
   imports = [
+    ../common/user/edu.nix
     ../common/network.nix
     ../common/synching.nix
     ../common/pcloud.nix
