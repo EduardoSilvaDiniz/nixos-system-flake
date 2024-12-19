@@ -12,12 +12,11 @@
   imports = [
     ../common/user/edu.nix
     ../common/network.nix
-    ../common/services/synching.nix
     ../common/apps/pcloud.nix
     ../common/sound.nix
     ../common/packages.nix
     ../common/opts.nix
-    ../common/desktops/gnome.nix
+    ../common/desktops/sway.nix
     ./hardware.nix
   ];
 }
