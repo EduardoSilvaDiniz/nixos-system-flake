@@ -1,9 +1,10 @@
-{
-  # lib,
-  # pkgs,
-  # config,
-  # ...
-}:
+# comentado porque não esta sendo usando
+# {
+#   lib,
+#   pkgs,
+#   config,
+#   ...
+# }:
 # with lib; {
 {
   imports = [

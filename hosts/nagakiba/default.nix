@@ -6,6 +6,6 @@
 inputs.nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   modules = [
-    ./setup.nix
+    ./configuration.nix
   ];
 }
