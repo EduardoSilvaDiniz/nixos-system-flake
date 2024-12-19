@@ -17,6 +17,7 @@
     google-chrome
     syncthing
     stremio
+    just
 
     ## Compilers/interpreters
     rustc

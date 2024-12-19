@@ -1,7 +1,7 @@
 {
   imports = [
     ./boot.nix
-    ./gpu.nix
+    # ./gpu.nix
     ./filesystems.nix
   ];
 }

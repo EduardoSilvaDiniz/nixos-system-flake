@@ -1,22 +1,23 @@
-{
-  inputs,
-  system,
-  ...
-}:
-#TODO passa a usar a definição pkgs, pkgs-unstable que esta no flake
-inputs.nixpkgs.lib.nixosSystem {
-  specialArgs = {
-    pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgs-unstable = import inputs.nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    inherit inputs system;
+{ modules, pkgs, lib, ... }: {
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
+    auto-optimise-store = true;
   };
-  modules = [
-    ./configuration.nix
+
+  networking.networkmanager.enable = true;
+  networking.hostName = "nixos";
+  time.timeZone = "America/Sao_Paulo";
+  system.stateVersion = "24.11";
+  i18n.defaultLocale = "pt_BR.UTF-8";
+
+  imports = [
+    ./modules/system
+    ./hardware.nix
+    ./modules/system/synching.nix
   ];
 }
+

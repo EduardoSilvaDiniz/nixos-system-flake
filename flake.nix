@@ -8,14 +8,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs @ {
+  outputs = {
     self,
     nixpkgs,
     nixpkgs-unstable,
+    home-manager,
     ...
-  }: let
+  } @ inputs: let
+    lib = pkgs.lib;
     system = "x86_64-linux";
-    user = "edu";
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
@@ -24,13 +25,22 @@
       inherit system;
       config.allowUnfree = true;
     };
-    lib = nixpkgs.lib;
   in {
-    nixosConfigurations.nixos = import ./hosts/nixos {inherit inputs system pkgs pkgs-unstable lib;};
-    nixosConfigurations.nagakiba = import ./hosts/nixos {inherit inputs system pkgs pkgs-unstable lib;};
-    # nixosConfigurations.nixos = import ./hosts/nagakiba {inherit inputs system pkgs pkgs-unstable lib;};
-    # nixosConfigurations.nagakiba = import ./hosts/nagakiba {inherit inputs system pkgs pkgs-unstable lib;};
-    # nixosConfigurations.zweihander = import ./hosts/zweihander {inherit inputs system pkgs pkgs-unstable lib;};
-    homeConfigurations.${user} = import ./modules {inherit pkgs pkgs-unstable lib;};
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/nixos
+      ];
+    };
+
+    nixosConfigurations.nagakiba = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/nixos
+        ./hosts/nixos/modules/common.nix
+      ];
+    };
+
+    homeConfigurations.edu = import ./modules {inherit pkgs pkgs-unstable lib;};
   };
 }
