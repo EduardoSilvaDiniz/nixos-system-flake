@@ -21,12 +21,13 @@
   ];
 
   imports = [
-    ../common/boot.nix
-    ../common/graphics.nix
-    ../common/bluetooth.nix
-    ../common/cpu-amd.nix
-    ../common/audio.nix
-    ../common/network.nix
-    ../common/laptop-lenovo-15alc6.nix
+    ../common/hardware/boot.nix
+    ../common/hardware/laptop-lenovo-15alc6.nix
+    ../common/hardware/cpu/amd.nix
+    ../common/hardware/gpu/amd.nix
+    ../common/hardware/gpu/graphics.nix
+    ../common/hardware/bluetooth.nix
+    ../common/hardware/audio.nix
+    ../common/hardware/network.nix
   ];
 }
