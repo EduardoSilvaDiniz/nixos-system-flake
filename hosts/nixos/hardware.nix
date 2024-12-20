@@ -44,6 +44,7 @@
   imports = [
     ../common/graphics.nix
     ../common/bluetooth.nix
+    ../common/cpu-amd.nix
     # ../common/graphicApis.nix
     # ../common/xserver.nix
   ];
