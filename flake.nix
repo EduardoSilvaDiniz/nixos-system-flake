@@ -40,6 +40,6 @@
       ];
     };
 
-    homeConfigurations.edu = import ./modules {inherit pkgs pkgs-unstable lib;};
+    homeConfigurations.edu = import ./modules {inherit inputs pkgs pkgs-unstable lib;};
   };
 }

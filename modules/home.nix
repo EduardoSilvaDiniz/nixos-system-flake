@@ -2,11 +2,11 @@
   imports = [
     ./editors
     ./shell
-    ./sound
     ./games
     # ./window-manager
-    ./terminais
+    ./desktop/term
     ./packages.nix
+    ./sway.nix
   ];
   home = {
     username = "edu";
