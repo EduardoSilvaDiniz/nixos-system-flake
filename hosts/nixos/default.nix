@@ -16,5 +16,14 @@
     ../common/desktops/sway.nix
     ../common/desktops/fonts.nix
     ./hardware.nix
+
+    ## Services
+    # ../common/services/android.nix
+    # ../common/services/docker.nix
+    # ../common/services/flatpak.nix
+    ../common/services/libinput.nix
+    # ../common/services/mpd.nix
+    ../common/services/syncthing.nix
+    ../common/services/tlp.nix
   ];
 }

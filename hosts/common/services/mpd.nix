@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   services.mpd = {
-    enable = false;
-    musicDirectory = "~/Músicas/";
-
+    enable = true;
+    musicDirectory = "/home/edu/Músicas/";
     extraConfig = ''
       audio_output {
         type "pipewire"
@@ -10,7 +9,7 @@
       }
     '';
   };
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     ncmpcpp
     mpc-cli
     mpd

@@ -1,4 +1,4 @@
 {
-  virtualisation.docker.enable = false;
-  user.extraGroups = ["docker"];
+  virtualisation.docker.enable = true;
+  users.users.edu.extraGroups = ["docker"];
 }

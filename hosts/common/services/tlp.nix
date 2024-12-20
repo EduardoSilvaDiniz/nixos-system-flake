@@ -1,6 +1,6 @@
 {
   services.tlp = {
-    enable = false;
+    enable = true;
     settings = {
       PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "balanced";

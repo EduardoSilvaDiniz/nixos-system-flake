@@ -34,7 +34,6 @@ in {
     qbittorrent
     ## SAIU DO HOSTS
     gcc
-    clang
     binutils
     clang-tools
 
