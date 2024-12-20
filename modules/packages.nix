@@ -32,7 +32,6 @@ in {
     just
     pcloudFixes
     qbittorrent
-    ## SAIU DO HOSTS
     gcc
     binutils
     clang-tools

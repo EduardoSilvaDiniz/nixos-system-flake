@@ -26,13 +26,6 @@
       config.allowUnfree = true;
     };
   in {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
-      modules = [
-        ./hosts/nagakiba
-      ];
-    };
-
     nixosConfigurations.nagakiba = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
