@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   networking.hostName = "nixos";
   system.stateVersion = "24.11";
   nixpkgs.config.allowUnfree = true;
@@ -10,10 +10,11 @@
     substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
     auto-optimise-store = true;
   };
+  environment.systemPackages = with pkgs; [home-manager];
   imports = [
     ../common/user/edu.nix
-    ../common/packages.nix
     ../common/desktops/sway.nix
+    ../common/desktops/fonts.nix
     ./hardware.nix
   ];
 }

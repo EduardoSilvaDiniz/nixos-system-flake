@@ -1,13 +1,4 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [
-    home-manager
-    gcc
-    clang
-    binutils
-    clang-tools
-    qbittorrent
-  ];
-
   fonts.packages = with pkgs; [
     fira-code
     jetbrains-mono

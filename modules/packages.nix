@@ -31,6 +31,12 @@ in {
     stremio
     just
     pcloudFixes
+    qbittorrent
+    ## SAIU DO HOSTS
+    gcc
+    clang
+    binutils
+    clang-tools
 
     ## Compilers/interpreters
     rustc
