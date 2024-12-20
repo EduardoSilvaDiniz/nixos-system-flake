@@ -27,5 +27,6 @@
     ../common/cpu-amd.nix
     ../common/audio.nix
     ../common/network.nix
+    ../common/laptop-lenovo-15alc6.nix
   ];
 }
