@@ -22,9 +22,11 @@
     #     python-lsp-server # LSP python
     #   ];
 
+    ## TODO mesmo motivo de baixo!
     extraPackages = import ./coding-tools.nix {inherit pkgs pkgs-unstable;};
   };
 
+  # TODO não é home manager que esta carregando esse arquivo
   home.packages = with pkgs; [
     lazygit
     lua51Packages.lua
