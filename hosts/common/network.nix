@@ -25,7 +25,7 @@
   time.timeZone = "America/Sao_Paulo";
 
   location = {
-    latitude = 43.70011;
-    longitude = -79.4163;
+    latitude = -23.5489;
+    longitude = -46.6388;
   };
 }
