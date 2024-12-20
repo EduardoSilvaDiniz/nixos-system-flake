@@ -19,4 +19,14 @@
   };
 
   swapDevices = [];
+
+  imports = [
+    ../common/hardware/boot.nix
+    ../common/hardware/cpu/amd.nix
+    ../common/hardware/gpu/nvidia.nix
+    ../common/hardware/gpu/graphics.nix
+    ../common/hardware/bluetooth.nix
+    ../common/hardware/audio.nix
+    ../common/hardware/network.nix
+  ];
 }
