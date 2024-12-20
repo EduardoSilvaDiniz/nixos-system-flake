@@ -43,6 +43,7 @@
   ];
   imports = [
     ../common/graphics.nix
+    ../common/bluetooth.nix
     # ../common/graphicApis.nix
     # ../common/xserver.nix
   ];
