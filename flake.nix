@@ -29,14 +29,14 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/nixos
+        ./hosts/nagakiba
       ];
     };
 
     nixosConfigurations.nagakiba = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/nixos
+        ./hosts/nagakiba
       ];
     };
 
