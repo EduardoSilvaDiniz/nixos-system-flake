@@ -10,7 +10,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = let
-      flakeDir = "~/Projetos/nix";
+      flakeDir = "~/Projetos/nixos";
     in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
       rbi = "sudo nixos-rebuild boot --flake ${flakeDir}";
@@ -42,36 +42,36 @@
       theme = "gallois";
     };
   };
-  ## TODO esta comentado porque não é o home manager que esta carregando esse arquivo
-  # home.packages = with pkgs; [
-  #   file
-  #   libtool
-  #   bc
-  #   viu
-  #   zsh
-  #   zip
-  #   unzip
-  #   unrar
-  #   eza
-  #   bat
-  #   delta
-  #   wget
-  #   curl
-  #   src-cli
-  #   git
-  #   btop
-  #   bintools
-  #   fastfetch
-  #   xclip
-  #   ripgrep
-  #   coreutils
-  #   fd
-  #   gradle-completion
-  #   usbutils
-  #   ffmpeg
-  #   fzf
-  #   tesseract4
-  #   imagemagick
-  #   taskwarrior3
-  # ];
+  home.packages = with pkgs; [
+    file
+    libtool
+    bc
+    viu
+    zsh
+    zip
+    unzip
+    unrar
+    eza
+    bat
+    delta
+    wget
+    curl
+    src-cli
+    git
+    btop
+    bintools
+    fastfetch
+    xclip
+    ripgrep
+    coreutils
+    fd
+    gradle-completion
+    usbutils
+    ffmpeg
+    fzf
+    tesseract4
+    imagemagick
+    taskwarrior3
+    e2fsprogs
+  ];
 }

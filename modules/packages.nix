@@ -82,6 +82,8 @@ in {
     # binutils ## colisão com gcc
     # jdk ## colisão com graalvm-ce
     # jdk8
+    # php83Packages.composer # colisão com flutter
+
     # php83Packages.composer
   ];
 }
