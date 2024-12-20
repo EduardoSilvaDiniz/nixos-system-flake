@@ -1,3 +1,7 @@
 {
-  environment.sessionVariables.TERM = "wezterm";
+  imports = [
+    # ./kitty.nix
+    # ./wezterm.nix
+    ./foot.nix
+  ];
 }
