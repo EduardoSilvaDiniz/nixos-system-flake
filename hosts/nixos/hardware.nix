@@ -3,7 +3,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = ["kvm-amd"];
+    kernelModules = []; # kernelModules = ["kvm-amd"];
     extraModulePackages = [];
     initrd = {
       availableKernelModules = [
@@ -13,12 +13,12 @@
         "usb_storage"
         "sd_mod"
       ];
-      kernelModules = ["amdgpu"];
+      kernelModules = []; # kernelModules = ["amdgpu"];
     };
-    extraModprobeConfig = ''
-      drm_kms_helper
-      options drm_kms_helper poll=N
-    '';
+    # extraModprobeConfig = ''
+    #   drm_kms_helper
+    #   options drm_kms_helper poll=N
+    # '';
   };
 
   fileSystems = {
@@ -42,7 +42,8 @@
     }
   ];
   imports = [
-    ../common/graphicApis.nix
-    ../common/xserver.nix
+    ../common/graphics.nix
+    # ../common/graphicApis.nix
+    # ../common/xserver.nix
   ];
 }
