@@ -3,7 +3,7 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
     kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = []; # kernelModules = ["kvm-amd"];
+    kernelModules = [];
     extraModulePackages = [];
     initrd = {
       availableKernelModules = [
@@ -13,12 +13,11 @@
         "usb_storage"
         "sd_mod"
       ];
-      kernelModules = []; # kernelModules = ["amdgpu"];
+      kernelModules = [];
     };
-    # extraModprobeConfig = ''
-    #   drm_kms_helper
-    #   options drm_kms_helper poll=N
-    # '';
+  };
+  hardware = {
+    enableAllFirmware = true; # necessario para amdgpu wifi e bluetooth
   };
 
   fileSystems = {
@@ -41,11 +40,13 @@
       randomEncryption.enable = true;
     }
   ];
+
+
   imports = [
     ../common/graphics.nix
     ../common/bluetooth.nix
     ../common/cpu-amd.nix
-    # ../common/graphicApis.nix
-    # ../common/xserver.nix
+    ../common/audio.nix
+    ../common/network.nix
   ];
 }

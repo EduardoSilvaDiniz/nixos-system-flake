@@ -12,11 +12,8 @@
   system.stateVersion = "24.11";
   imports = [
     ../common/user/edu.nix
-    ../common/network.nix
     ../common/apps/pcloud.nix
-    ../common/sound.nix
     ../common/packages.nix
-    ../common/opts.nix
     ../common/desktops/sway.nix
     ./hardware.nix
   ];
