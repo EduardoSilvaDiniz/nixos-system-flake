@@ -1,5 +1,6 @@
-{lib, ...}: {
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+{
+  networking.hostName = "nixos";
+  system.stateVersion = "24.11";
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -8,8 +9,6 @@
     substituters = ["https://aseipp-nix-cache.freetls.fastly.net"];
     auto-optimise-store = true;
   };
-  networking.hostName = "nixos";
-  system.stateVersion = "24.11";
   imports = [
     ../common/user/edu.nix
     ../common/apps/pcloud.nix

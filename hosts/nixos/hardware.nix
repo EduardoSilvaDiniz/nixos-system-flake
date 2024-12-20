@@ -1,25 +1,4 @@
-{pkgs, ...}: {
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
-    kernelPackages = pkgs.linuxPackages_latest;
-    kernelModules = [];
-    extraModulePackages = [];
-    initrd = {
-      availableKernelModules = [
-        "nvme"
-        "xhci_pci"
-        "ahci"
-        "usb_storage"
-        "sd_mod"
-      ];
-      kernelModules = [];
-    };
-  };
-  hardware = {
-    enableAllFirmware = true; # necessario para amdgpu wifi e bluetooth
-  };
-
+{
   fileSystems = {
     "/" = {
       device = "/dev/disk/by-uuid/b71e7e70-af18-4de2-bc98-bf4954832d9e";
@@ -41,8 +20,8 @@
     }
   ];
 
-
   imports = [
+    ../common/boot.nix
     ../common/graphics.nix
     ../common/bluetooth.nix
     ../common/cpu-amd.nix
