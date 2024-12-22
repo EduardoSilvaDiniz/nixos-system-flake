@@ -16,6 +16,7 @@
     ../common/desktops/sway.nix
     ../common/desktops/fonts.nix
     ./hardware.nix
+    ../common/desktops/steam.nix
 
     ## Services
     # ../common/services/android.nix
