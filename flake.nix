@@ -1,4 +1,4 @@
-{
+{ 
   description = "My system configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
@@ -33,6 +33,17 @@
       ];
     };
 
-    homeConfigurations.edu = import ./modules {inherit inputs pkgs pkgs-unstable lib;};
+    nixosConfigurations.zweihander = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/zweihander
+      ];
+    };
+
+    homeConfigurations.edu = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {inherit pkgs-unstable;};
+      modules = [./modules];
+    };
   };
 }
