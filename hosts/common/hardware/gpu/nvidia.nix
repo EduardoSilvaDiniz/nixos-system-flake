@@ -48,11 +48,6 @@ with lib; {
       CUDA_CACHE_PATH = "$XDG_CACHE_HOME/nv";
     };
   };
-
-  modules.desktop.browsers.firefox.settings = {
-    "media.ffmpeg.vaapi.enabled" = true;
-    "gfx.webrender.enabled" = true;
-  };
 }
 ## font configuration
 # https://github.com/hlissner/dotfiles/blob/master/modules/profiles/hardware/gpu/nvidia.nix
