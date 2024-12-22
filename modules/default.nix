@@ -14,7 +14,6 @@
     ./desktop/apps/emulatores.nix
     ./desktop/apps/launchers.nix
     ./desktop/apps/minecraft.nix
-    ./desktop/apps/steam.nix
     ./desktop/apps/wine.nix
     ./desktop/term
     ./packages.nix
