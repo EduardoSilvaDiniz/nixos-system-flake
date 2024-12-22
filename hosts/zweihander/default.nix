@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  networking.hostName = "nagakiba";
+  networking.hostName = "zweihander";
   system.stateVersion = "24.11";
   nixpkgs.config.allowUnfree = true;
   nix.settings = {
@@ -13,7 +13,7 @@
   environment.systemPackages = with pkgs; [home-manager];
   imports = [
     ../common/user/edu.nix
-    ../common/desktops/sway.nix
+    ../common/desktops/plasma.nix
     ../common/desktops/fonts.nix
     ./hardware.nix
 
