@@ -5,7 +5,7 @@
   
   xdg = {
     configFile."wezterm" = {
-      source = ../../config/wezterm;
+      source = ../../../config/wezterm;
     };
   };
 }
