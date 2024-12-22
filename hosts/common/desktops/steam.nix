@@ -18,8 +18,8 @@
       enable = true;
     };
   };
-  user.extraGroups = ["gamemode"];
-  home.packages = with pkgs; [
+  users.users.edu.extraGroups = ["gamemode"];
+  environment.systemPackages = with pkgs; [
     mangohud
     goverlay
   ];
