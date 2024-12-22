@@ -13,6 +13,7 @@
 in {
   home.packages = with pkgs; [
     ## Aplications
+    (retroarch.override {cores = with libretro; [parallel-n64];}) ## só funciona aqui
     keepassxc
     thunderbird
     vlc
@@ -27,13 +28,12 @@ in {
     pdfarranger
     obs-studio
     google-chrome
-    syncthing
     stremio
     just
     pcloudFixes
     qbittorrent
-    gcc
-    binutils
+    # gcc
+    # binutils
     clang-tools
 
     ## Compilers/interpreters
@@ -71,10 +71,6 @@ in {
     # Rust vem do cargo
     # Lua vem do luarocks
 
-    ## TODO coloca no emacs config
-    #emacs-lsp-booster
-    #yarn
-
     ## Removido do system
     # clang
     #TODO resolver as colições
@@ -83,7 +79,6 @@ in {
     # jdk ## colisão com graalvm-ce
     # jdk8
     # php83Packages.composer # colisão com flutter
-
     # php83Packages.composer
   ];
 }
