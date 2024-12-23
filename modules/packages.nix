@@ -35,6 +35,7 @@ in {
     # gcc
     # binutils
     clang-tools
+    mpv
 
     ## Compilers/interpreters
     rustc
