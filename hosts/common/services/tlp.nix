@@ -1,6 +1,12 @@
 {
+  lib,
+  config,
+  ...
+}: {
   services.tlp = {
-    enable = true;
+    enable =
+      lib.mkDefault ((lib.versionOlder (lib.versions.majorMinor lib.version) "21.05")
+        || !config.services.power-profiles-daemon.enable);
     settings = {
       PLATFORM_PROFILE_ON_AC = "performance";
       PLATFORM_PROFILE_ON_BAT = "balanced";
