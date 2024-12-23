@@ -13,7 +13,7 @@
   environment.systemPackages = with pkgs; [home-manager];
   imports = [
     ../common/user/edu.nix
-    ../common/desktops/sway.nix
+    ../common/desktops/gnome.nix
     ../common/desktops/fonts.nix
     ./hardware.nix
     ../common/desktops/steam.nix
