@@ -21,7 +21,7 @@
     ## Services
     # ../common/services/android.nix
     # ../common/services/docker.nix
-    # ../common/services/flatpak.nix
+    ../common/services/flatpak.nix
     ../common/services/libinput.nix
     # ../common/services/mpd.nix
     ../common/services/syncthing.nix
