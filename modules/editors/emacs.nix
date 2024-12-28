@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   programs.emacs = {
     enable = true;
     package = pkgs.emacs-git;
@@ -13,5 +9,4 @@
         mu4e
       ];
   };
-  home.packages = import ./coding-tools.nix {inherit pkgs pkgs-unstable;};
 }
