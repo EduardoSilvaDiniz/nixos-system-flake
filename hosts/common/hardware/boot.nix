@@ -17,6 +17,6 @@
     };
   };
 
-  # EXTREMAMENTE IMPORTANTE
-  hardware.enableAllFirmware = true; # necessario para amdgpu wifi e bluetooth
+  # very important
+  hardware.enableAllFirmware = true; # need to amd and wifi/bluetooth
 }
