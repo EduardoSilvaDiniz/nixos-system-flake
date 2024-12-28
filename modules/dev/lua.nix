@@ -1,3 +1,6 @@
-
-#TODO adicionar configuração
-{}
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    lua-language-server # LSP
+    stylua # format
+  ];
+}
