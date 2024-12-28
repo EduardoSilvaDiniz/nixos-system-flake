@@ -2,10 +2,8 @@
   programs.wezterm = {
     enable = true;
   };
-  
-  xdg = {
-    configFile."wezterm" = {
-      source = ../../../config/wezterm;
-    };
+
+  xdg.configFile."wezterm" = {
+    source = ../../../config/wezterm;
   };
 }

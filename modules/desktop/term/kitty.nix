@@ -7,18 +7,12 @@
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
-
       confirm_os_window_close = 0;
       linux_display_server = "auto";
-
       scrollback_lines = 2000;
       wheel_scroll_min_lines = 1;
-
       enable_audio_bell = "no";
-
       window_padding_width = 4;
-
-      # Put the following lines in your ~/.config/kitty/kitty.conf
       foreground = "#bbc2cf";
       background = "#282c34";
       color0 = "#282c34";
