@@ -1,3 +1,0 @@
-{
-  environment.sessionVariables.BROWSER = "chrome";
-}
