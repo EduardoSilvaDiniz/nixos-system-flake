@@ -7,29 +7,32 @@
     enable = true;
     defaultEditor = true;
     package = pkgs-unstable.neovim-unwrapped;
-    withPython3 = true;
+    withPython3 = false;
     withNodeJs = false;
     withRuby = false;
 
-    plugins = with pkgs.vimPlugins; [
-      nvim-treesitter.withAllGrammars
+    plugins = with pkgs.vimPlugins; [nvim-treesitter.withAllGrammars];
+
+    extraPackages = with pkgs; [
+      ## Nix
+      nil # LSP
+      alejandra # format
+      deadnix # diagnostics
+      statix # code action
+      uncrustify # format
+      ## dependencies for fzf-lua
+      chafa
+      ueberzugpp
     ];
-
-    # por enquanto vou deixa comentado pois já coloquei a instalação
-    # do lsp do python dentro do coding-tools.
-    # extraPython3Packages = ps:
-    #   with ps; [
-    #     python-lsp-server # LSP python
-    #   ];
-
-    ## TODO mesmo motivo de baixo!
-    extraPackages = import ./coding-tools.nix {inherit pkgs pkgs-unstable;};
   };
-
-  # TODO não é home manager que esta carregando esse arquivo
-  home.packages = with pkgs; [
-    lazygit
-    lua51Packages.lua
-    lua51Packages.luarocks
-  ];
+  home.packages =
+    (with pkgs; [
+      sqlite
+      tree-sitter
+      lazygit
+    ])
+    ++ (with pkgs.lua51Packages; [
+      lua
+      luarocks
+    ]);
 }
