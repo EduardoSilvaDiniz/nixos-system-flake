@@ -14,13 +14,7 @@
     plugins = with pkgs.vimPlugins; [nvim-treesitter.withAllGrammars];
 
     extraPackages = with pkgs; [
-      ## Nix
-      nil # LSP
-      alejandra # format
-      deadnix # diagnostics
-      statix # code action
-      uncrustify # format
-      ## dependencies for fzf-lua
+      uncrustify
       chafa
       ueberzugpp
     ];
