@@ -9,14 +9,15 @@
   };
 
   imports = [
-    ./editors
-    ./shell
     ./desktop/apps/emulatores.nix
     ./desktop/apps/launchers.nix
     ./desktop/apps/minecraft.nix
     ./desktop/apps/wine.nix
-    ./desktop/term
-    ./packages.nix
     ./desktop/term/wezterm.nix
+    ./desktop/browsers/chrome.nix
+    ./editors/neovim.nix
+    ./shell/zsh.nix
+    ./shell/git.nix
+    ./packages.nix
   ];
 }
