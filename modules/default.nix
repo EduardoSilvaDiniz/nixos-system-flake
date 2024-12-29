@@ -17,6 +17,7 @@
     ./desktop/browsers/edge.nix
 
     ./editors/neovim.nix
+    ./editors/jetbrains.nix
 
     ./shell/zsh.nix
     ./shell/git.nix
