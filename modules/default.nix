@@ -14,7 +14,7 @@
     ./desktop/apps/minecraft.nix
     ./desktop/apps/wine.nix
     ./desktop/term/wezterm.nix
-    ./desktop/browsers/chrome.nix
+    ./desktop/browsers/edge.nix
 
     ./editors/neovim.nix
 
