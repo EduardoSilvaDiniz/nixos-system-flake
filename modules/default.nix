@@ -22,17 +22,17 @@
     ./shell/zsh.nix
     ./shell/git.nix
 
-    ./dev/cc.nix
-    ./dev/clojure.nix
+     ./dev/cc.nix
+    # ./dev/clojure.nix
     # ./dev/docker.nix
-    ./dev/editorconfig.nix
+     ./dev/editorconfig.nix
     # ./dev/go.nix
     # ./dev/html.nix
-    ./dev/java.nix
+     ./dev/java.nix
     # ./dev/javascript.nix
-    ./dev/lua.nix
+     ./dev/lua.nix
     # ./dev/markdown.nix
-    ./dev/nix.nix
+     ./dev/nix.nix
     # ./dev/php.nix
     # ./dev/python.nix
     # ./dev/rust.nix
