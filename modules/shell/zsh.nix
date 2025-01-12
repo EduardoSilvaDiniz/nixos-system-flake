@@ -72,5 +72,6 @@
     imagemagick
     taskwarrior3
     e2fsprogs
+		yt-dlp
   ];
 }
