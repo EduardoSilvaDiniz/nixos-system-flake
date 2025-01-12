@@ -14,8 +14,7 @@
     in {
       rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
       rbi = "sudo nixos-rebuild boot --flake ${flakeDir}";
-      upd = "nix flake update ${flakeDir}";
-      upg = "sudo nixos-rebuild switch --upgrade --flake ${flakeDir}";
+      upd = "nix flake update --flake ${flakeDir} && sudo nixos-rebuild boot --upgrade --flake ${flakeDir} && home-manager boot --flake ${flakeDir}";
       hms = "home-manager switch --flake ${flakeDir}";
       conf = "nvim ${flakeDir}/nixos/configuration.nix";
       pkgs = "nvim ${flakeDir}/nixos/packages.nix";
