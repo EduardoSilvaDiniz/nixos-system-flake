@@ -26,6 +26,5 @@
     # ../common/services/mpd.nix
     ../common/services/syncthing.nix
     ../common/services/tlp.nix
-    ../common/services/systemd.nix
   ];
 }
