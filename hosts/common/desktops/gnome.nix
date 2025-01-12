@@ -7,13 +7,17 @@
     gnome-tour
     epiphany
     geary
-    gnome-tweaks
-    gnome-settings-daemon
-    adwaita-icon-theme
   ];
-  environment.systemPackages = with pkgs.gnomeExtensions; [
-    appindicator
-    vitals
-    gtk4-desktop-icons-ng-ding
-  ];
+  environment.systemPackages =
+    (with pkgs; [
+      gnome-tweaks
+      adwaita-icon-theme
+      gnome-settings-daemon
+      gnome-online-accounts
+    ])
+    ++ (with pkgs.gnomeExtensions; [
+      appindicator
+      vitals
+      gtk4-desktop-icons-ng-ding
+    ]);
 }
