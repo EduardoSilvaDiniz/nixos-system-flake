@@ -7,8 +7,8 @@
     enable = true;
     defaultEditor = true;
     package = pkgs-unstable.neovim-unwrapped;
-    withPython3 = false;
-    withNodeJs = false;
+    withPython3 = true;
+    withNodeJs = true;
     withRuby = true;
 
     plugins = with pkgs.vimPlugins; [nvim-treesitter.withAllGrammars];
@@ -20,14 +20,17 @@
     ];
   };
   home.packages =
-    (with pkgs; [
+    (with pkgs.lua51Packages; [
+      lua
+      luarocks
+    ])
+    ++ (with pkgs-unstable; [
       sqlite
       tree-sitter
       lazygit
-			hpx
-    ])
-    ++ (with pkgs.lua51Packages; [
-      lua
-      luarocks
+      hpx
+      ruby_3_4
+      nodejs_22
+      python3
     ]);
 }
