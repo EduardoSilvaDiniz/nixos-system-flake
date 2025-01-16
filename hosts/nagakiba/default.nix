@@ -12,11 +12,12 @@
   };
   environment.systemPackages = with pkgs; [home-manager];
   imports = [
+    ./hardware.nix
     ../common/user/edu.nix
     ../common/desktops/gnome.nix
     ../common/desktops/fonts.nix
-    ./hardware.nix
     ../common/desktops/steam.nix
+    ../common/desktops/tools.nix
 
     ## Services
     # ../common/services/android.nix
@@ -25,6 +26,6 @@
     ../common/services/libinput.nix
     # ../common/services/mpd.nix
     ../common/services/syncthing.nix
-    ../common/services/tlp.nix
+    # ../common/services/tlp.nix
   ];
 }

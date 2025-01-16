@@ -29,8 +29,5 @@
       tree-sitter
       lazygit
       hpx
-      ruby_3_4
-      nodejs_22
-      python3
     ]);
 }
