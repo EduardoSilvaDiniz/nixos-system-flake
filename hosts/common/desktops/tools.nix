@@ -14,5 +14,8 @@
     unixtools.netstat
     usbutils # lsusb
     binutils
+    ruby
+    nodejs_22
+    python3
   ];
 }
