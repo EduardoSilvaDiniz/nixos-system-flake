@@ -9,7 +9,7 @@
     package = pkgs-unstable.neovim-unwrapped;
     withPython3 = false;
     withNodeJs = false;
-    withRuby = false;
+    withRuby = true;
 
     plugins = with pkgs.vimPlugins; [nvim-treesitter.withAllGrammars];
 
@@ -24,6 +24,7 @@
       sqlite
       tree-sitter
       lazygit
+			hpx
     ])
     ++ (with pkgs.lua51Packages; [
       lua
