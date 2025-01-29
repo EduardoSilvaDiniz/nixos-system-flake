@@ -3,6 +3,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,6 +13,7 @@
     self,
     nixpkgs,
     nixpkgs-unstable,
+    nixos-wsl,
     home-manager,
     ...
   } @ inputs: let
@@ -43,6 +45,7 @@
     nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
+        nixos-wsl.nixosModules.default
         ./hosts/wsl
       ];
     };
