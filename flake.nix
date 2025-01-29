@@ -40,6 +40,13 @@
       ];
     };
 
+    nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./hosts/wsl
+      ];
+    };
+
     homeConfigurations.edu = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit pkgs-unstable;};
