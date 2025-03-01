@@ -1,37 +1,44 @@
 {pkgs, ...}:{
-  environment.systemPackages = with pkgs; [
-    brightnessctl
-    playerctl
-    libnotify
-    pamixer
-  ];
   services = {
-    enable = true;
-
-    desktopManager = {
-      xterm.enable = false;
+    dbus = {
+      enable = true;
     };
-   
+
     displayManager = {
         defaultSession = "none+i3";
     };
 
-    windowManager.i3 = {
+    xserver = {
       enable = true;
-      extraPackages = with pkgs; [
-        dmenu #application launcher most people use
-        i3status # gives you the default i3 status bar
-        i3lock #default i3 screen locker
-        i3blocks #if you are planning on using i3blocks over i3status
-     ];
-    };
-    xkb = {
-      layout = "br";
-      variant = "";
-    };
 
-    libinput.enable = true;
+
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          dmenu
+          i3status
+          i3lock
+          i3blocks
+          brightnessctl
+          playerctl
+          libnotify
+          pamixer
+          lxappearance
+          rofi
+          picom
+          autorandr
+          flameshot
+          blueman
+          networkmanagerapplet
+          gthumb
+          zathura
+          nautilus
+          nitrogen
+       ];
+      };
+   };
   };
-  # Configure keymap in X11
-  console.keyMap = "br-abnt2";
+  services.xserver.excludePackages = with pkgs; [
+    xterm
+  ];
 }
