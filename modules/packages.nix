@@ -15,8 +15,9 @@ in {
     (retroarch.override {cores = with libretro; [parallel-n64];})
     keepassxc
     thunderbird
-
+    vscode
     dbeaver-bin
+    mongodb-compass
 
     zoom-us
 
