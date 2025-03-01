@@ -1,34 +1,24 @@
 {
   fileSystems = {
-    "/" = {
-      device = "/dev/disk/by-uuid/b71e7e70-af18-4de2-bc98-bf4954832d9e";
-      fsType = "btrfs";
-      options = ["subvol=@"];
+    "/" = { 
+      device = "/dev/disk/by-uuid/4857bb47-537c-4b1f-b812-a7f28c1b1864";
+      fsType = "xfs";
     };
 
-    "/boot" = {
-      device = "/dev/disk/by-uuid/9047-DC7B";
+    "/boot" = { 
+      device = "/dev/disk/by-uuid/0498-3849";
       fsType = "vfat";
-      options = ["fmask=0022" "dmask=0022"];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
-    "/swap" = {
-      device = "/dev/disk/by-uuid/f97f3305-0d77-4842-a8c5-05323b75e5fd";
-      fsType = "ext4";
-      options = ["nofail" "defaults" "noatime"];
-    };
   };
 
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-      size = 23 * 1024;
-    }
-  ];
-
-  # hibernate not work
-  boot.kernelParams = ["resume_offset=4161536"];
-  boot.resumeDevice = "/dev/disk/by-uuid/b71e7e70-af18-4de2-bc98-bf4954832d9e";
+   swapDevices = [
+     {
+       device = "/swap/swapfile";
+       size = 8 * 1024;
+     }
+   ];
 
   imports = [
     ../common/hardware/boot.nix
