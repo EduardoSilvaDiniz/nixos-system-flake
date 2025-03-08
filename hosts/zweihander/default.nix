@@ -2,6 +2,7 @@
   networking.hostName = "zweihander";
   system.stateVersion = "24.11";
   nixpkgs.config.allowUnfree = true;
+  powerManagement.enable = true;
   nix.settings = {
     experimental-features = [
       "nix-command"
