@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    nil # LSP
+    nil
     alejandra # format
     deadnix # diagnostics
     statix # code action

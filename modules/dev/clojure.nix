@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    leiningen # clojure
-    clojure-lsp # LSP
+    leiningen
+    clojure-lsp
     clj-kondo # Diagnostics
   ];
 }

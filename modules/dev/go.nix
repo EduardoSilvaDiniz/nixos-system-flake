@@ -1,11 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     go
-    gore # Go
-    gopls # LSP
+    gore
+    gopls
     delve # DAP
-    gotests # Test
-    ### Formats
+    gotests
     gofumpt # Enforce a stricter format than gofmt, while being backwards compatible.
     golines # long lines
     gotools # adds several tools (goimports)

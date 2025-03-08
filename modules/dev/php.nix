@@ -1,9 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     php
-    php83Packages.psysh # Php
+    phpactor
+    # project manager
+    php83Packages.psysh 
     php83Packages.composer
-    phpactor # LSP
     vscode-extensions.xdebug.php-debug # DAP
     # Format
     php83Packages.php-codesniffer

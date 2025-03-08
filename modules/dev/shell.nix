@@ -1,11 +1,10 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    bashInteractive # bash
-    nodePackages_latest.bash-language-server # LSP
-    # DAP não existe, talvez seja outro nome...
+    bashInteractive
+    nodePackages_latest.bash-language-server
+    dotenv-linter # Diagnostics
     ### Format
     shellharden
     shfmt
-    dotenv-linter # Diagnostics
   ];
 }

@@ -8,36 +8,37 @@
     sessionPath = ["/home/edu/.config/emacs/bin" "/home/edu/.yarn/bin"];
   };
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-    };
-  };
+  # dconf.settings = {
+  #   "org/gnome/desktop/interface" = {
+  #     color-scheme = "prefer-dark";
+  #   };
+  # };
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-  };
-# `qt.platformTheme` has been renamed to `qt.platformTheme.name`.
-  qt = {
-    enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
-  };
+#   gtk = {
+#     enable = true;
+#     theme = {
+#       name = "Adwaita-dark";
+#       package = pkgs.gnome-themes-extra;
+#     };
+#   };
+# # `qt.platformTheme` has been renamed to `qt.platformTheme.name`.
+#   qt = {
+#     enable = true;
+#     platformTheme.name = "adwaita";
+#     style.name = "adwaita-dark";
+#   };
 
   imports = [
     # ./desktop/apps/emulatores.nix
     # ./desktop/apps/launchers.nix
-    # ./desktop/apps/minecraft.nix
+    ./desktop/apps/minecraft.nix
     # ./desktop/apps/wine.nix
     # ./desktop/term/wezterm.nix
      ./desktop/term/kitty.nix
     ./desktop/browsers/edge.nix
 
     ./editors/neovim.nix
+    ./editors/emacs.nix
     # ./editors/jetbrains.nix
     # ./editors/emacs.nix
 
