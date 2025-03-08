@@ -1,3 +1,6 @@
+> [!AVISO]
+> Este flake está em desenvolvimento continuo, então espere alterações recorrentes
+
 # O que é Nixos ??
 
 é uma distro linux declarativa, possui sua propria linguagem de programação (Nix).
