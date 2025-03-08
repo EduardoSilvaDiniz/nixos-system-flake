@@ -1,4 +1,4 @@
-{pkgs, ...}:{
+{
   programs.home-manager.enable = true;
 
   home = {
@@ -7,26 +7,6 @@
     stateVersion = "24.11";
     sessionPath = ["/home/edu/.config/emacs/bin" "/home/edu/.yarn/bin"];
   };
-
-  # dconf.settings = {
-  #   "org/gnome/desktop/interface" = {
-  #     color-scheme = "prefer-dark";
-  #   };
-  # };
-
-#   gtk = {
-#     enable = true;
-#     theme = {
-#       name = "Adwaita-dark";
-#       package = pkgs.gnome-themes-extra;
-#     };
-#   };
-# # `qt.platformTheme` has been renamed to `qt.platformTheme.name`.
-#   qt = {
-#     enable = true;
-#     platformTheme.name = "adwaita";
-#     style.name = "adwaita-dark";
-#   };
 
   imports = [
     # ./desktop/apps/emulatores.nix
