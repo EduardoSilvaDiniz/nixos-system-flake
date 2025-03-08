@@ -1,8 +1,14 @@
 {pkgs, ...}: {
-	wayland.windowManager.hyprland = {
-		enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
     xwayland.enable = true;
-	};
+  };
+
+  home.file.".config/hypr" = {
+    source = "/home/edu/Projetos/nixos/config/hypr";
+    target = "~/.config/hypr";
+  };
+
   home.packages = with pkgs; [
     wofi
     networkmanagerapplet
@@ -21,5 +27,4 @@
     mupdf
     gsettings-qt
   ];
-
 }
