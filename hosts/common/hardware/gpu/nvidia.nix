@@ -1,3 +1,5 @@
+## font configuration
+# https://github.com/hlissner/dotfiles/blob/master/modules/profiles/hardware/gpu/nvidia.nix
 {
   lib,
   config,
@@ -49,5 +51,3 @@ with lib; {
     };
   };
 }
-## font configuration
-# https://github.com/hlissner/dotfiles/blob/master/modules/profiles/hardware/gpu/nvidia.nix

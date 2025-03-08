@@ -14,11 +14,11 @@
   imports = [
     ./hardware.nix
     ../common/user/edu.nix
-    # ../common/desktops/gnome.nix
+    ../common/desktops/gnome.nix
     ../common/desktops/fonts.nix
     ../common/desktops/steam.nix
     # ../common/desktops/i3.nix
-    ../common/desktops/hyprland.nix
+    # ../common/desktops/hyprland.nix
     ../common/desktops/tools.nix
 
     ## Services

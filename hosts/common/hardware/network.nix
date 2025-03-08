@@ -1,4 +1,4 @@
-{lib, ...}:{
+{lib, ...}: {
   networking.networkmanager.enable = lib.mkForce true;
   users.users.edu.extraGroups = ["networkmanager"];
   networking.useDHCP = lib.mkDefault true;
