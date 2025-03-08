@@ -22,13 +22,13 @@
   imports = [
     ## Hardware
     #### CPU
-    ../core/hardware/cpu/amd.nix
+    ../../core/hardware/cpu/amd.nix
     #### GPU
-    ../core/hardware/gpu/amd.nix
-    ../core/hardware/audio.nix
-    ../core/hardware/bluetooth.nix
-    ../core/hardware/boot.nix
-    ../core/hardware/laptop-lenovo-15alc6.nix
-    ../core/hardware/network.nix
+    ../../core/hardware/gpu/amd.nix
+    ../../core/hardware/audio.nix
+    ../../core/hardware/bluetooth.nix
+    ../../core/hardware/boot.nix
+    ../../core/hardware/laptop-lenovo-15alc6.nix
+    ../../core/hardware/network.nix
   ];
 }

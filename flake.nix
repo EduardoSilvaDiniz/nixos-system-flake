@@ -31,14 +31,14 @@
     nixosConfigurations.nagakiba = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/nagakiba
+				./system/hosts/nagakiba
       ];
     };
 
     nixosConfigurations.zweihander = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
-        ./hosts/zweihander
+				./system/hosts/zweihander
       ];
     };
 
@@ -46,7 +46,7 @@
       system = "x86_64-linux";
       modules = [
         nixos-wsl.nixosModules.default
-        ./hosts/wsl
+				./system/hosts/wsl
       ];
     };
 

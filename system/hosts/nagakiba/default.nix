@@ -15,30 +15,30 @@
   imports = [
     ./hardware.nix
 		## Desktops
-    ../../core/desktops/gnome.nix
-    ../../core/desktops/plasma.nix
+    ../../core/desktop/gnome.nix
+    # ../../core/desktop/plasma.nix
 		## Login-Manager
 		../../core/login-manager/gdm.nix
-		../../core/login-manager/none.nix
-		../../core/login-manager/sddm.nix
-		../../core/login-manager/greetd.nix
+		# ../../core/login-manager/none.nix
+		# ../../core/login-manager/sddm.nix
+		# ../../core/login-manager/greetd.nix
 		## Programs
-    ../../core/desktops/steam.nix
-    ../../core/desktops/tools.nix
+		# ../../core/programs/steam.nix
+		../../core/programs/tools.nix
     ## Services
     ../../core/services/android.nix
     ../../core/services/docker.nix
-    ../../core/services/flatpak.nix
+    # ../../core/services/flatpak.nix
     ../../core/services/gamemode.nix
-    ../../core/services/gnome-keyring.nix
+    # ../../core/services/gnome-keyring.nix
     ../../core/services/libinput.nix
-    ../../core/services/tlp.nix
+    # ../../core/services/tlp.nix
 		## Style
     ../../core/style/fonts.nix
-    ../../core/style/prefer-dark.nix
+    # ../../core/style/prefer-dark.nix
 		## User
     ../../core/user/edu.nix
 		## Virt
-		../../core/virt/qemu.nix
+		# ../../core/virt/qemu.nix
   ];
 }
