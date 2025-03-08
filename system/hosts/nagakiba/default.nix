@@ -14,21 +14,31 @@
   environment.systemPackages = with pkgs; [home-manager];
   imports = [
     ./hardware.nix
-    ../common/user/edu.nix
-    ../common/desktops/gnome.nix
-    ../common/desktops/fonts.nix
-    ../common/desktops/steam.nix
-    # ../common/desktops/i3.nix
-    # ../common/desktops/hyprland.nix
-    ../common/desktops/tools.nix
-
+		## Desktops
+    ../../core/desktops/gnome.nix
+    ../../core/desktops/plasma.nix
+		## Login-Manager
+		../../core/login-manager/gdm.nix
+		../../core/login-manager/none.nix
+		../../core/login-manager/sddm.nix
+		../../core/login-manager/greetd.nix
+		## Programs
+    ../../core/desktops/steam.nix
+    ../../core/desktops/tools.nix
     ## Services
-    ../common/services/android.nix
-    ../common/services/docker.nix
-    # ../common/services/flatpak.nix
-    ../common/services/libinput.nix
-    # ../common/services/mpd.nix
-    # ../common/services/syncthing.nix
-    ../common/services/tlp.nix
+    ../../core/services/android.nix
+    ../../core/services/docker.nix
+    ../../core/services/flatpak.nix
+    ../../core/services/gamemode.nix
+    ../../core/services/gnome-keyring.nix
+    ../../core/services/libinput.nix
+    ../../core/services/tlp.nix
+		## Style
+    ../../core/style/fonts.nix
+    ../../core/style/prefer-dark.nix
+		## User
+    ../../core/user/edu.nix
+		## Virt
+		../../core/virt/qemu.nix
   ];
 }
