@@ -23,16 +23,9 @@
       CPU_DRIVER_OPMODE_ON_AC = "active";
       CPU_DRIVER_OPMODE_ON_BAT = "active";
       STOP_CHARGE_THRESH_BAT0 = 80;
-      USB_AUTOSUSPEND = 0;
       USB_EXCLUDE_WWAN = 1;
-      # WIFI_PWR_ON_AC = "off";
-      # WIFI_PWR_ON_BAT = "off";
       DEVICES_TO_ENABLE_ON_STARTUP = "bluetooth wifi wwan";
       RESTORE_DEVICE_STATE_ON_STARTUP = 0;
-      USB_ALLOWLIST = "046d:c52b"; #Logitech mouse
-      USB_EXCLUDE_BTUSB = 1;
-      USB_EXCLUDE_PHONE = 1;
-      # RUNTIME_PM_BLACKLIST = "046d:c52b";
     };
   };
 }
