@@ -1,4 +1,5 @@
 {pkgs, ...}: {
+  home.sessionPath = ["/home/edu/.config/emacs/bin" "/home/edu/.yarn/bin"];
   programs.emacs = {
     enable = true;
     # package = pkgs.emacs-git;
@@ -8,14 +9,12 @@
         vterm
         mu4e
       ];
-
   };
   home.packages = with pkgs; [
-  	git
-  	ripgrep
-  	coreutils
-  	fd
-  	clang
+    git
+    ripgrep
+    coreutils
+    fd
+    clang
   ];
-
 }
