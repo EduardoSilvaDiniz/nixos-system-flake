@@ -5,7 +5,6 @@
     username = "edu";
     homeDirectory = "/home/edu";
     stateVersion = "24.11";
-    sessionPath = ["/home/edu/.config/emacs/bin" "/home/edu/.yarn/bin"];
   };
 
   imports = [
