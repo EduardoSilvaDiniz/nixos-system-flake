@@ -11,28 +11,7 @@
     nativeBuildInputs = previousAttrs.nativeBuildInputs ++ [patchelfFixes];
   });
 in {
-  home.packages = with pkgs; [
-    (retroarch.override {cores = with libretro; [parallel-n64];})
-    keepassxc
-    thunderbird
-    vscode
-    dbeaver-bin
-    mongodb-compass
-
-    zoom-us
-
-    discord
-
-    obsidian
-    flowtime
-    foliate
-
-    gimp
-    pdfarranger
-    obs-studio
-
+  home.packages = [
     pcloudFixes
-    
-    qbittorrent
   ];
 }
