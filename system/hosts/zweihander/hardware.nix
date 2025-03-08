@@ -18,16 +18,23 @@
     };
   };
 
-  swapDevices = [];
+  swapDevices = [
+    {
+      device = "/swap/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   imports = [
-    ../common/hardware/boot.nix
-    ../common/hardware/cpu/amd.nix
-    ../common/hardware/gpu/nvidia.nix
-    ../common/hardware/gpu/graphics.nix
-    ../common/hardware/audio.nix
-    ../common/hardware/bluetooth.nix
-    ../common/hardware/network.nix
-    ../common/hardware/xbox-controller.nix
+    ## Hardware
+    #### CPU
+    ../core/hardware/cpu/amd.nix
+    #### GPU
+    ../core/hardware/gpu/nvidia.nix
+    ../core/hardware/audio.nix
+    ../core/hardware/bluetooth.nix
+    ../core/hardware/boot.nix
+    ../core/hardware/network.nix
+    ../core/hardware/xbox-controller.nix
   ];
 }
