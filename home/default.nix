@@ -54,17 +54,14 @@
     ./games/launcher/prism.nix
     ## Generic
     # ./generic/discord.nix
-    ./generic/flowtime.nix
-    ./generic/foliate.nix
     # ./generic/gimp.nix
     ./generic/keepassxc.nix
     # ./generic/obs.nix
     ./generic/obsidian.nix
     ./generic/pcloud.nix
-    ./generic/pdfarranger.nix
     ./generic/qbittorrent.nix
+		./generic/study.nix
     ./generic/thunderbird.nix
-    ./generic/zoom.nix
     ## media
     # ./media/mpd.nix
     ./media/mpv.nix
