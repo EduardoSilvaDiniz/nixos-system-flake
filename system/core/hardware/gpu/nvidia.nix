@@ -24,7 +24,11 @@ with lib; {
   };
 
   hardware = {
-    graphics.extraPackages = [pkgs.vaapiVdpau];
+    graphics = {
+      extraPackages = [pkgs.vaapiVdpau];
+      enable = lib.mkDefault true;
+      enable32Bit = lib.mkDefault true;
+    };
     nvidia = {
       open = mkDefault true;
       powerManagement.enable = true;
