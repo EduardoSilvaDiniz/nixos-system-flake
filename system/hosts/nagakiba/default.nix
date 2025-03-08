@@ -27,7 +27,8 @@
 		../../core/programs/tools.nix
     ## Services
     ../../core/services/android.nix
-    ../../core/services/docker.nix
+    # ../../core/services/docker.nix
+		../../core/services/podman.nix
     # ../../core/services/flatpak.nix
     ../../core/services/gamemode.nix
     # ../../core/services/gnome-keyring.nix
