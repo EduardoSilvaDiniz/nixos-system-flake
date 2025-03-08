@@ -1,5 +1,5 @@
 > [!WARNING]
-> Este flake está em desenvolvimento continuo, então espere alterações recorrentes
+> Este flake está em desenvolvimento contínuo, então espere alterações recorrentes
 
 # O que é Nixos ??
 
