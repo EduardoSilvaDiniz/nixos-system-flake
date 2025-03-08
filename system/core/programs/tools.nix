@@ -14,5 +14,10 @@
     unixtools.netstat
     usbutils # lsusb
     binutils
+		## essential for some applications
+		gcc
+		make
+		cmake
+		python3
   ];
 }
