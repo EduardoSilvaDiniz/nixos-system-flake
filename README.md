@@ -9,26 +9,15 @@ eu desenvolvir este flake para modularizar cada componente do sistema.
 
 ## estrutura
 
-- hosts configuração individual para dispositivos
-  - nagakiba laptop idepad
-  - zweihander desktop pessoal
-  - common são modulos para os hosts
-- home modulos do homeManager
-  - desktop configuração para cada aplicativo
-  - dev configuração para cada linguagem de programação
-  - editores neovim emacs
-  - games configuração para Launcheres, emuladores e ferramentas
-  - shell shells para o usuario
-  - themes
-  - virt
+- [System](https://github.com/EduardoSilvaDiniz/nixos-system-flake/tree/main/system) configurações para o sistema e de cada host
+- [Home](https://github.com/EduardoSilvaDiniz/nixos-system-flake/tree/main/home) configurações para as ferramentas do usuario
 
 ## principais ferrramentas
 
 |           | Wayland                                                            |
 | --------- | ------------------------------------------------------------------ |
-| Shell:    | zsh + oymyzsh                                                      |
-| WM:       | swaywm                                                             |
+| Shell:    | zsh + OyMyZsh                                                      |
+| DE:       | Gnome                                                              |
 | Editor:   | [neovim](https://github.com/EduardoSilvaDiniz/neovim-from-scratch) |
-| Terminal: | foot                                                               |
-| Launcher: | rofi                                                               |
-| Browser:  | google chrome                                                      |
+| Terminal: | Kitty                                                              |
+| Browser:  | Microsoft Edge                                                     |
