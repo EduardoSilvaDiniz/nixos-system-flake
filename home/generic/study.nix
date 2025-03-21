@@ -4,5 +4,6 @@
     flowtime
     foliate
     zoom-us
+		anki
   ];
 }
