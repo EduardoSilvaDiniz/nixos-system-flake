@@ -16,7 +16,7 @@
     binutils
 		## essential for some applications
 		gcc
-		make
+		gnumake
 		cmake
 		python3
   ];
