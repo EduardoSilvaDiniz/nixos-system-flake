@@ -47,7 +47,6 @@
     libtool
     bc
     viu
-    zsh
     zip
     unzip
     unrar

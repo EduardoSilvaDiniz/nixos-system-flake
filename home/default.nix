@@ -74,7 +74,8 @@
     ./shell/zsh.nix
     ## Term
     # ./term/foot.nix
-    ./term/kitty.nix
+    # ./term/kitty.nix
     # ./term/wezterm.nix
+		./term/ghostty.nix
   ];
 }
