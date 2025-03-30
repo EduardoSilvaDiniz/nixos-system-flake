@@ -15,12 +15,12 @@
   imports = [
     ./hardware.nix
 		## Desktops
-    ../../core/desktop/gnome.nix
-    # ../../core/desktop/plasma.nix
+    # ../../core/desktop/gnome.nix
+    ../../core/desktop/plasma.nix
 		## Login-Manager
-		../../core/login-manager/gdm.nix
+		# ../../core/login-manager/gdm.nix
 		# ../../core/login-manager/none.nix
-		# ../../core/login-manager/sddm.nix
+		../../core/login-manager/sddm.nix
 		# ../../core/login-manager/greetd.nix
 		## Programs
 		# ../../core/programs/steam.nix
