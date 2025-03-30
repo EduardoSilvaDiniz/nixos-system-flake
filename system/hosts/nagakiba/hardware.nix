@@ -10,6 +10,12 @@
       fsType = "vfat";
       options = ["fmask=0077" "dmask=0077"];
     };
+
+    "/mnt/win_linux" = {
+      device = "/dev/nvme0n1p6";
+      fsType = "ntfs3";
+      options = ["defaults" "rw" "noauto" "uid=1000" "gid=100" "umask=0022"];
+    };
   };
 
   swapDevices = [
