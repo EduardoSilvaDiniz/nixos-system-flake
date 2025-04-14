@@ -27,7 +27,7 @@
     # ./dev/language/clojure.nix
     # ./dev/language/docker.nix
     # ./dev/language/editorconfig.nix
-    # ./dev/language/go.nix
+    ./dev/language/go.nix
     # ./dev/language/html.nix
     # ./dev/language/java.nix
     ./dev/language/javascript.nix
@@ -68,6 +68,7 @@
     # ./media/stremio.nix
     # ./media/vlc.nix
     ## Services
+    ./services/jellyfin.nix
     # ./services/syncthing.nix
     ## Shell
     # ./shell/gpg-agent.nix
