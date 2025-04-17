@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+	# jdk21
 	graalvm-ce
 	jdt-language-server
 	vscode-extensions.vscjava.vscode-java-debug
@@ -8,5 +9,7 @@
 	checkstyle
 	pmd
 	spring-boot-cli
+	gradle
+	maven
   ];
 }
