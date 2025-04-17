@@ -12,6 +12,7 @@
     withRuby = false;
 
     plugins = with pkgs.vimPlugins; [nvim-treesitter.withAllGrammars];
+		extraLuaPackages = ps: [ ps.magick ];
 
     extraPackages = with pkgs; [
 			imagemagick
