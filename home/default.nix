@@ -15,8 +15,8 @@
     ## Dev
     ./dev/git.nix
     #### db-admin
-    ./dev/db-admin/mongocompass.nix
-    ./dev/db-admin/pgadmin.nix
+    # ./dev/db-admin/mongocompass.nix
+    # ./dev/db-admin/pgadmin.nix
     #### editor
     # ./dev/editor/emacs.nix
     ./dev/editor/neovim.nix
@@ -29,7 +29,7 @@
     # ./dev/language/editorconfig.nix
     ./dev/language/go.nix
     # ./dev/language/html.nix
-    # ./dev/language/java.nix
+    ./dev/language/java.nix
     ./dev/language/javascript.nix
     ./dev/language/lua.nix
     ./dev/language/markdown.nix
