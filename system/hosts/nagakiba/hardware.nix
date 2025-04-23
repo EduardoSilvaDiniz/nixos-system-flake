@@ -36,5 +36,6 @@
     ../../core/hardware/boot.nix
     ../../core/hardware/laptop-lenovo-15alc6.nix
     ../../core/hardware/network.nix
+    ../../core/hardware/xbox-controller.nix
   ];
 }
