@@ -9,10 +9,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    podman-desktop
     dive
     podman-tui
-		podman-docker
-    podman-compose
+		docker-compose # start group docker, required to replace docker calls to podman
+    podman-compose # start group podman
   ];
 }
