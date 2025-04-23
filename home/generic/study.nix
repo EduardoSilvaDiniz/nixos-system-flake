@@ -5,5 +5,6 @@
     foliate
     zoom-us
 		anki
+		libreoffice-qt6
   ];
 }
