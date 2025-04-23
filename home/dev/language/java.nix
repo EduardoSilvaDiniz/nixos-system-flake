@@ -11,5 +11,6 @@
 	spring-boot-cli
 	gradle
 	maven
+	libxml2
   ];
 }
