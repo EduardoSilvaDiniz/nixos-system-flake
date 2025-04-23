@@ -25,8 +25,6 @@
     #### language
     # ./dev/language/cc.nix
     # ./dev/language/clojure.nix
-    # ./dev/language/docker.nix
-    # ./dev/language/editorconfig.nix
     ./dev/language/go.nix
     # ./dev/language/html.nix
     ./dev/language/java.nix
@@ -38,13 +36,13 @@
     # ./dev/language/python.nix
     # ./dev/language/rust.nix
     ./dev/language/shell.nix
-    ./dev/language/sql.nix
+    ./dev/language/utils.nix
     ## Games
     # ./games/performace-monitor.nix
     #### emulador
     # ./games/emulador/dolphin.nix
     # ./games/emulador/retroarch.nix
-    # ./games/emulador/pcsx2.nix
+    ./games/emulador/pcsx2.nix
     # ./games/emulador/rpcs3.nix
     # ./games/emulador/duckstation.nix
     #### launcher
