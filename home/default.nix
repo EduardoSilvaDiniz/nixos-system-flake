@@ -40,11 +40,11 @@
     ## Games
     # ./games/performace-monitor.nix
     #### emulador
-    # ./games/emulador/dolphin.nix
-    # ./games/emulador/retroarch.nix
+    ./games/emulador/dolphin.nix
+    ./games/emulador/retroarch.nix
     ./games/emulador/pcsx2.nix
     # ./games/emulador/rpcs3.nix
-    # ./games/emulador/duckstation.nix
+    ./games/emulador/duckstation.nix
     #### launcher
     # ./games/launcher/bottles.nix
     # ./games/launcher/heroic.nix

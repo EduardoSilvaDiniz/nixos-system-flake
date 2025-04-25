@@ -33,7 +33,7 @@
     ../../core/services/gamemode.nix
     # ../../core/services/gnome-keyring.nix
     ../../core/services/libinput.nix
-    # ../../core/services/tlp.nix
+    ../../core/services/tlp.nix
 		## Style
     ../../core/style/fonts.nix
     # ../../core/style/prefer-dark.nix
