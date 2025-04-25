@@ -6,5 +6,6 @@
     zoom-us
 		anki
 		libreoffice-qt6
+		drawio
   ];
 }
