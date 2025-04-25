@@ -5,5 +5,6 @@
     sqlfluff # SQL
     editorconfig-checker # EditorConfig
     hadolint # Docker
+		prettierd
   ];
 }
