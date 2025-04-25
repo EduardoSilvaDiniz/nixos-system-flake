@@ -1,5 +1,7 @@
 {pkgs-unstable, ...}: {
   home.packages = with pkgs-unstable; [
-    (retroarch.override {cores = with libretro; [parallel-n64];})
+		(retroarch.withCores (cores: with cores; [
+		parallel-n64
+  ]))
   ];
 }
