@@ -5,7 +5,9 @@
   ];
   environment.systemPackages =
     (with pkgs; [
-      ])
+      gnome-calculator
+    ])
     ++ (with pkgs.kdePackages; [
-      ]);
+      filelight
+    ]);
 }
