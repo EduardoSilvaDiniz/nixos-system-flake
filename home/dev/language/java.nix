@@ -12,5 +12,6 @@
 	gradle
 	maven
 	libxml2
+	quarkus
   ];
 }
