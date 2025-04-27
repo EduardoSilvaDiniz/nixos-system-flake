@@ -11,7 +11,7 @@
     ## browsers
     # ./browsers/chrome.nix
     ./browsers/edge.nix
-    # ./browsers/firefox.nix
+    ./browsers/firefox.nix
     ## Dev
     ./dev/git.nix
     #### db-admin
