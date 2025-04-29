@@ -13,5 +13,6 @@
 	maven
 	libxml2
 	quarkus
+	sdkmanager
   ];
 }
